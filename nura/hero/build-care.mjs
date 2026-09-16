@@ -82,9 +82,12 @@ const RULES = [
 
 function rules(o) {
   return `
-    <div style="margin-top:${o.gap3}px;">
-      <div style="font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:${T.ink3};margin-bottom:${o.rulesMb}px;">How the balance behaves</div>
-${RULES.map((t, i) => `      <div class="serif" style="font-size:${o.rule}px;font-weight:400;line-height:1.36;letter-spacing:-0.01em;color:${T.ink};padding:${o.rulePadY}px 0;border-top:1px solid ${i === 0 ? T.ink : T.hairline};${i === RULES.length - 1 ? `border-bottom:1px solid ${T.hairline};` : ''}text-wrap:pretty;">${t}</div>`).join('\n')}
+    <div style="margin-top:${o.gap3}px;display:grid;grid-template-columns:${o.stackHead ? 'minmax(0,1fr)' : 'auto minmax(0,1fr)'};gap:${o.stackHead ? 0 : 44}px;align-items:start;">
+      <div style="font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:${T.ink3};${o.stackHead ? `margin-bottom:${o.rulesMb}px;` : 'padding-top:20px;'}">How the balance behaves</div>
+      <div>
+${RULES.map((t, i) => `        <div class="serif" style="font-size:${o.rule}px;font-weight:400;line-height:1.36;letter-spacing:-0.01em;color:${T.ink};padding:${o.rulePadY}px 0;border-top:1px solid ${i === 0 ? T.ink : T.hairline};${i === RULES.length - 1 ? `border-bottom:1px solid ${T.hairline};` : ''}text-wrap:pretty;">${t}</div>`).join('\n')}
+        <div class="serif" style="margin-top:${o.gap4}px;font-size:${o.closer}px;font-weight:400;line-height:1.28;letter-spacing:-0.012em;color:${T.ink};max-width:${o.closerMax}px;text-wrap:pretty;">The only number she ever sees is the time dinner arrives.</div>
+      </div>
     </div>`;
 }
 
@@ -132,49 +135,47 @@ function build(file, W, H, o) {
 ${shelf(o)}
 ${rules(o)}
 
-    <div class="serif" style="margin-top:${o.gap4}px;font-size:${o.closer}px;font-weight:400;line-height:1.28;letter-spacing:-0.012em;color:${T.ink};max-width:${o.closerMax}px;text-wrap:pretty;">The only number she ever sees is the time dinner arrives.</div>
-
   </div>` + tail);
 }
 
-build('Care1440.dc.html', 1440, 1660, {
-  margin:96, padY:152, eyebrow:11, headGap:80, headMt:32, h2:46, h2Max:520, lead:19, leadMax:500,
-  gap1:80, chip:14, chipPad:'12px 16px', bub:16, bubPad:'14px 20px', bubMax:320, turnGap:22, arrowMin:56,
+build('Care1440.dc.html', 1440, 1370, {
+  margin:96, padY:72, eyebrow:11, headGap:88, headMt:32, h2:46, h2Max:520, lead:19, leadMax:500,
+  gap1:56, chip:14, chipPad:'12px 16px', bub:16, bubPad:'14px 20px', bubMax:320, turnGap:22, arrowMin:56,
   cap:14.5, capMt:22, capMax:560,
-  gap2:72, panelPad:'52px 60px', key:12.5, keyGap:24, keyMb:28,
+  gap2:56, panelPad:'44px 52px', key:12.5, keyGap:24, keyMb:28,
   colB:220, rowGapX:40, rowPadY:24, rowLabel:24, rowWho:13.5,
   mw:13, mh:17, mGap:8, footPadT:26, foot:20,
-  gap3:72, rulesMb:26, rule:27, rulePadY:22,
-  gap4:72, closer:34, closerMax:700 });
+  gap3:56, rulesMb:22, rule:27, rulePadY:22,
+  gap4:48, closer:34, closerMax:700 });
 
-build('Care1280.dc.html', 1280, 1470, {
-  margin:64, padY:128, eyebrow:11, headGap:56, headMt:24, h2:40, h2Max:460, lead:17.5, leadMax:460,
-  gap1:64, chip:13, chipPad:'11px 14px', bub:15, bubPad:'13px 18px', bubMax:290, turnGap:18, arrowMin:44,
+build('Care1280.dc.html', 1280, 1200, {
+  margin:64, padY:64, eyebrow:11, headGap:64, headMt:24, h2:40, h2Max:460, lead:17.5, leadMax:460,
+  gap1:48, chip:13, chipPad:'11px 14px', bub:15, bubPad:'13px 18px', bubMax:290, turnGap:18, arrowMin:44,
   cap:13.5, capMt:20, capMax:520,
-  gap2:68, panelPad:'48px 56px', key:12, keyGap:20, keyMb:24,
+  gap2:48, panelPad:'40px 48px', key:12, keyGap:20, keyMb:24,
   colB:195, rowGapX:32, rowPadY:21, rowLabel:21, rowWho:13,
   mw:12, mh:16, mGap:7, footPadT:22, foot:18,
-  gap3:68, rulesMb:22, rule:24, rulePadY:20,
-  gap4:56, closer:30, closerMax:620 });
+  gap3:40, rulesMb:18, rule:24, rulePadY:20,
+  gap4:40, closer:30, closerMax:620 });
 
-build('Care768.dc.html', 768, 1630, {
-  margin:48, padY:112, eyebrow:11, stackHead:true, headGap:28, headMt:24, h2:38, h2Max:520, lead:17, leadMax:560,
-  gap1:56, turnStack:true, chip:13, chipPad:'11px 14px', bub:15, bubPad:'13px 18px', bubMax:300,
+build('Care768.dc.html', 768, 1445, {
+  margin:48, padY:56, eyebrow:11, stackHead:true, headGap:28, headMt:24, h2:38, h2Max:520, lead:17, leadMax:560,
+  gap1:36, turnStack:true, chip:13, chipPad:'11px 14px', bub:15, bubPad:'13px 18px', bubMax:300,
   cap:14, capMt:24, capMax:560,
-  gap2:60, panelPad:'44px 44px', key:12, keyGap:18, keyMb:24,
+  gap2:44, panelPad:'40px 40px', key:12, keyGap:18, keyMb:24,
   colB:175, rowGapX:22, rowPadY:20, rowLabel:21, rowWho:12.5,
   mw:12, mh:16, mGap:7, footPadT:22, foot:18,
-  gap3:60, rulesMb:22, rule:24, rulePadY:20,
-  gap4:56, closer:28, closerMax:600 });
+  gap3:44, rulesMb:20, rule:24, rulePadY:20,
+  gap4:40, closer:28, closerMax:600 });
 
-build('Care375.dc.html', 375, 1775, {
-  margin:24, padY:80, eyebrow:10.5, stackHead:true, headGap:22, headMt:20, h2:31, h2Max:340, lead:16, leadMax:340,
-  gap1:44, turnStack:true, chip:13, chipPad:'10px 14px', bub:14.5, bubPad:'12px 16px', bubMax:280,
+build('Care375.dc.html', 375, 1625, {
+  margin:24, padY:44, eyebrow:10.5, stackHead:true, headGap:22, headMt:20, h2:31, h2Max:340, lead:16, leadMax:340,
+  gap1:36, turnStack:true, chip:13, chipPad:'10px 14px', bub:14.5, bubPad:'12px 16px', bubMax:280,
   cap:13.5, capMt:22, capMax:340,
-  gap2:48, panelPad:'32px 24px', key:11.5, keyGap:14, keyMb:22, shelfStack:true,
+  gap2:40, panelPad:'30px 24px', key:11.5, keyGap:14, keyMb:22, shelfStack:true,
   rowStackGap:13, rowPadY:20, rowLabel:20, rowWho:12.5,
   mw:12, mh:16, mGap:7, footPadT:20, foot:17,
-  gap3:48, rulesMb:20, rule:21, rulePadY:18,
-  gap4:44, closer:25, closerMax:340 });
+  gap3:40, rulesMb:18, rule:21, rulePadY:18,
+  gap4:32, closer:25, closerMax:340 });
 
 console.log('wrote 4 care balance artboards');

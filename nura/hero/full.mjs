@@ -1,0 +1,10 @@
+import { chromium } from 'playwright';
+const [name, w, scale] = process.argv.slice(2);
+const b = await chromium.launch({ executablePath: '/opt/pw-browsers/chromium-1194/chrome-linux/chrome' });
+const p = await b.newPage({ viewport:{width:+w, height:900}, deviceScaleFactor: +(scale||1) });
+await p.goto(`file://${process.cwd()}/.preview/${name}.html`);
+await p.waitForTimeout(2600);
+const h = Math.ceil(await p.evaluate(() => document.body.firstElementChild.getBoundingClientRect().height));
+await p.screenshot({ path:`.preview/${name}-full.png`, fullPage:true });
+console.log(name, w, h);
+await b.close();

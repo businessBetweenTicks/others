@@ -86,24 +86,24 @@ ${PACKS.map(p => card(o, p)).join('')}${o.spanNote ? `
   </div>` + tail);
 }
 
-buildClosed('Pack1440.dc.html', 1440, 1320, {
-  margin:96, padY:152, eyebrow:11, headGap:80, headMt:32, h2:46, h2Max:520, lead:19, leadMax:520,
-  gridMt:88, cols:3, gridGap:20, cardPad:'34px 34px', cardGap:20, name:26, price:13.5, priceGap:9, change:14.5, plusPt:6,
+buildClosed('Pack1440.dc.html', 1440, 1135, {
+  margin:96, padY:72, eyebrow:11, headGap:88, headMt:32, h2:46, h2Max:520, lead:19, leadMax:520,
+  gridMt:60, cols:3, gridGap:20, cardPad:'34px 34px', cardGap:20, name:26, price:13.5, priceGap:9, change:14.5, plusPt:6,
   spanNote:2, notePadX:34, note:28, noteMax:420 });
 
-buildClosed('Pack1280.dc.html', 1280, 1140, {
-  margin:64, padY:128, eyebrow:11, headGap:56, headMt:24, h2:40, h2Max:460, lead:17.5, leadMax:470,
-  gridMt:72, cols:3, gridGap:16, cardPad:'28px 28px', cardGap:18, name:23, price:13, priceGap:8, change:13.5, plusPt:5,
+buildClosed('Pack1280.dc.html', 1280, 995, {
+  margin:64, padY:64, eyebrow:11, headGap:64, headMt:24, h2:40, h2Max:460, lead:17.5, leadMax:470,
+  gridMt:52, cols:3, gridGap:16, cardPad:'28px 28px', cardGap:18, name:23, price:13, priceGap:8, change:13.5, plusPt:5,
   spanNote:2, notePadX:28, note:24, noteMax:360 });
 
-buildClosed('Pack768.dc.html', 768, 1420, {
-  margin:48, padY:112, eyebrow:11, stackHead:true, headGap:28, headMt:24, h2:38, h2Max:520, lead:17, leadMax:560,
-  gridMt:60, cols:2, gridGap:16, cardPad:'28px 28px', cardGap:18, name:23, price:13, priceGap:8, change:14, plusPt:5,
+buildClosed('Pack768.dc.html', 768, 1290, {
+  margin:48, padY:56, eyebrow:11, stackHead:true, headGap:28, headMt:24, h2:38, h2Max:520, lead:17, leadMax:560,
+  gridMt:44, cols:2, gridGap:16, cardPad:'28px 28px', cardGap:18, name:23, price:13, priceGap:8, change:14, plusPt:5,
   noteMt:40, note:24 });
 
-buildClosed('Pack375.dc.html', 375, 2170, {
-  margin:24, padY:80, eyebrow:10.5, stackHead:true, headGap:22, headMt:20, h2:31, h2Max:340, lead:16, leadMax:340,
-  gridMt:48, cols:1, gridGap:12, cardPad:'26px 24px', cardGap:16, name:24, price:13, priceGap:8, change:14.5, plusPt:6,
+buildClosed('Pack375.dc.html', 375, 2095, {
+  margin:24, padY:44, eyebrow:10.5, stackHead:true, headGap:22, headMt:20, h2:31, h2Max:340, lead:16, leadMax:340,
+  gridMt:40, cols:1, gridGap:12, cardPad:'26px 24px', cardGap:16, name:24, price:13, priceGap:8, change:14.5, plusPt:6,
   noteMt:36, note:21 });
 
 console.log('wrote 4 closed package artboards');

@@ -45,6 +45,11 @@ const PAYOFF = 'nurse coming at ten, weights by text, your doctor said okay';
 const PULL = 'It was not an app I had to check. It was someone handling the part I did not have the room to handle.';
 
 function buildSection(file, W, H, o) {
+  const aside = `
+        <div style="margin-top:${o.asideMt}px;display:flex;flex-direction:column;gap:${o.asideGap}px;align-items:flex-start;">
+          ${link('Read her whole first week', o)}
+          <div style="font-size:${o.disc}px;line-height:1.6;color:${T.ink3};max-width:${o.discMax}px;text-wrap:pretty;">Written in the first person because that is how it is lived. Nura is new \u2014 this is the week it is built to handle, not a customer\u2019s account.</div>
+        </div>`;
   writeFileSync(file, head(W, H) + `
   <div style="padding:${o.padY}px ${o.margin}px;">
 
@@ -52,6 +57,7 @@ function buildSection(file, W, H, o) {
       <div>
         <div style="font-size:${o.eyebrow}px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:${T.moss};">First Week Check</div>
         <h2 class="serif" style="margin:${o.headMt}px 0 0 0;font-size:${o.h2}px;font-weight:400;line-height:1.1;letter-spacing:-0.02em;max-width:${o.h2Max}px;text-wrap:pretty;">The first week, handled.</h2>
+${aside}
       </div>
 
       <div>
@@ -60,39 +66,32 @@ function buildSection(file, W, H, o) {
 ${SHORT.map(p => `          <p class="serif" style="margin:0;font-size:${o.para}px;font-weight:400;line-height:1.52;letter-spacing:-0.006em;color:${T.ink};max-width:${o.paraMax}px;text-wrap:pretty;">${p}</p>`).join('\n')}
         </div>
         <div style="margin-top:${o.bubMt}px;">${bubble(PAYOFF, o)}</div>
+        <div class="serif" style="margin-top:${o.pullMt}px;padding-top:${o.pullPt}px;border-top:1px solid ${T.ink};font-size:${o.pull}px;font-weight:400;line-height:1.28;letter-spacing:-0.015em;color:${T.ink};max-width:${o.pullMax}px;text-wrap:pretty;">${PULL}</div>
       </div>
     </div>
-
-    <div style="margin-top:${o.pullMt}px;padding-top:${o.pullPt}px;border-top:1px solid ${T.ink};display:grid;grid-template-columns:${o.stack ? 'minmax(0,1fr)' : 'minmax(0,4fr) minmax(0,7fr)'};gap:${o.headGap}px;align-items:end;">
-      <div class="serif" style="font-size:${o.pull}px;font-weight:400;line-height:1.28;letter-spacing:-0.015em;color:${T.ink};max-width:${o.pullMax}px;text-wrap:pretty;${o.stack ? '' : 'grid-column:2;'}">${PULL}</div>
-    </div>
-
-    <div style="margin-top:${o.discMt}px;font-size:${o.disc}px;line-height:1.6;color:${T.ink3};max-width:${o.discMax}px;${o.stack ? '' : `margin-left:calc((100% - ${o.headGap}px) * 4 / 11 + ${o.headGap}px);`}">Written in the first person because that is how it is lived. Nura is new — this is the week it is built to handle, not a customer's account.</div>
-
-    <div style="margin-top:${o.linkMt}px;${o.stack ? '' : `margin-left:calc((100% - ${o.headGap}px) * 4 / 11 + ${o.headGap}px);`}">${link('Read her whole first week', o)}</div>
 
   </div>` + tail);
 }
 
-buildSection('FWC1440.dc.html', 1440, 1130, {
-  margin:96, padY:152, eyebrow:11, headGap:96, headMt:32, h2:46, h2Max:340,
+buildSection('FWC1440.dc.html', 1440, 830, {
+  margin:96, padY:72, eyebrow:11, headGap:88, headMt:32, h2:46, h2Max:340, asideMt:48, asideGap:22,
   wordsMt:26, paraGap:26, para:25, paraMax:720, bubMt:36, bub:16, bubPad:'15px 20px', bubMax:440,
-  pullMt:88, pullPt:52, pull:36, pullMax:780, discMt:40, disc:14, discMax:700, linkMt:36, link:16 });
+  pullMt:56, pullPt:44, pull:36, pullMax:780, disc:14, discMax:340, link:16 });
 
-buildSection('FWC1280.dc.html', 1280, 980, {
-  margin:64, padY:128, eyebrow:11, headGap:72, headMt:24, h2:40, h2Max:300,
+buildSection('FWC1280.dc.html', 1280, 750, {
+  margin:64, padY:64, eyebrow:11, headGap:64, headMt:24, h2:40, h2Max:300, asideMt:40, asideGap:20,
   wordsMt:22, paraGap:22, para:22, paraMax:660, bubMt:30, bub:15, bubPad:'14px 18px', bubMax:370,
-  pullMt:72, pullPt:44, pull:31, pullMax:700, discMt:32, disc:13.5, discMax:640, linkMt:30, link:15 });
+  pullMt:48, pullPt:36, pull:31, pullMax:700, disc:13.5, discMax:300, link:15 });
 
-buildSection('FWC768.dc.html', 768, 1040, {
-  margin:48, padY:112, eyebrow:11, stack:true, headGap:36, headMt:24, h2:38, h2Max:420,
+buildSection('FWC768.dc.html', 768, 955, {
+  margin:48, padY:56, eyebrow:11, stack:true, headGap:36, headMt:24, h2:38, h2Max:420, asideMt:32, asideGap:18,
   wordsMt:20, paraGap:22, para:22, paraMax:620, bubMt:30, bub:15, bubPad:'14px 18px', bubMax:360,
-  pullMt:64, pullPt:40, pull:29, pullMax:620, discMt:32, disc:13.5, discMax:600, linkMt:28, link:15 });
+  pullMt:48, pullPt:36, pull:29, pullMax:620, disc:13.5, discMax:560, link:15 });
 
-buildSection('FWC375.dc.html', 375, 1035, {
-  margin:24, padY:80, eyebrow:10.5, stack:true, headGap:28, headMt:20, h2:31, h2Max:340,
+buildSection('FWC375.dc.html', 375, 1020, {
+  margin:24, padY:44, eyebrow:10.5, stack:true, headGap:28, headMt:20, h2:31, h2Max:340, asideMt:26, asideGap:16,
   wordsMt:18, paraGap:20, para:19, paraMax:340, bubMt:26, bub:14.5, bubPad:'13px 17px', bubMax:300,
-  pullMt:48, pullPt:32, pull:24, pullMax:340, discMt:26, disc:13, discMax:340, linkMt:24, link:15 });
+  pullMt:40, pullPt:30, pull:24, pullMax:340, disc:13, discMax:340, link:15 });
 
 console.log('wrote 4 first week check sections');
 
