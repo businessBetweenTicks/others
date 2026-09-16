@@ -10,15 +10,15 @@ const LEAD = 'One package, not a basket. Each one is a single thing lifted off h
 // name, price, the one-line "she can change" note
 const PACKS = [
   ['First weeks home',     300, 'Pause any week she says we have food.'],
-  ['The Thursday afternoon', 220, 'Move the day, or skip it, with one word.'],
-  ['Body back',            260, 'Change the practitioner, or stop when she is done.'],
-  ['Head',                 240, 'Say no to a session without explaining why.'],
-  ['Feed',                 180, 'However she is feeding, and she can end the check-ins.'],
-  ['Out the door',         160, 'Cancel a ride the morning of.'],
-  ['Her table',            200, 'Pick who comes, or keep it to herself.'],
-  ['Paperwork',            140, 'Hand over only the forms she wants chased.'],
-  ['Clean house',          190, 'Choose the rooms. Nobody goes upstairs unless she says.'],
-  ['Sleep',                280, 'Swap the nights, or keep the hours short.'],
+  ['The Thursday afternoon', 300, 'Move the day, or skip it, with one word.'],
+  ['Body back',            300, 'Change the practitioner, or stop when she is done.'],
+  ['Head',                 300, 'Say no to a session without explaining why.'],
+  ['Feed',                 300, 'However she is feeding, and she can end the check-ins.'],
+  ['Out the door',         300, 'Cancel a ride the morning of.'],
+  ['Her table',            300, 'Pick who comes, or keep it to herself.'],
+  ['Paperwork',            250, 'Hand over only the forms she wants chased.'],
+  ['Clean house',          400, 'Choose the rooms. Nobody goes upstairs unless she says.'],
+  ['Sleep',                500, 'Swap the nights, or keep the hours short.'],
 ];
 
 const arrow = `<svg width="14" height="9" viewBox="0 0 14 9" fill="none" style="display:block;"><path d="M0 4.5H12.5M9 1L12.8 4.5L9 8" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linejoin="round"/></svg>`;
@@ -79,22 +79,22 @@ ${sectionHead(o)}
     <div style="margin-top:${o.gridMt}px;display:grid;grid-template-columns:repeat(${o.cols},minmax(0,1fr));gap:${o.gridGap}px;">
 ${PACKS.map(p => card(o, p)).join('')}${o.spanNote ? `
         <div style="grid-column:span ${o.spanNote};display:flex;align-items:center;padding:0 ${o.notePadX}px;">
-          <div class="serif" style="font-size:${o.note}px;font-weight:400;line-height:1.3;letter-spacing:-0.012em;color:${T.ink};max-width:${o.noteMax}px;text-wrap:pretty;">Ten in all. She only ever needs one.</div>
+          <div class="serif" style="font-size:${o.note}px;font-weight:400;line-height:1.3;letter-spacing:-0.012em;color:${T.ink};max-width:${o.noteMax}px;text-wrap:pretty;">Ten in all, and most cost the same. The difference is what gets lifted off her.</div>
         </div>` : ''}
     </div>${o.spanNote ? '' : `
-    <div style="margin-top:${o.noteMt}px;" class="serif"><span style="font-size:${o.note}px;font-weight:400;line-height:1.3;letter-spacing:-0.012em;color:${T.ink};">Ten in all. She only ever needs one.</span></div>`}
+    <div style="margin-top:${o.noteMt}px;" class="serif"><span style="font-size:${o.note}px;font-weight:400;line-height:1.3;letter-spacing:-0.012em;color:${T.ink};">Ten in all, and most cost the same. The difference is what gets lifted off her.</span></div>`}
   </div>` + tail);
 }
 
 buildClosed('Pack1440.dc.html', 1440, 1135, {
   margin:96, padY:72, eyebrow:11, headGap:88, headMt:32, h2:46, h2Max:520, lead:19, leadMax:520,
   gridMt:60, cols:3, gridGap:20, cardPad:'34px 34px', cardGap:20, name:26, price:13.5, priceGap:9, change:14.5, plusPt:6,
-  spanNote:2, notePadX:34, note:28, noteMax:420 });
+  spanNote:2, notePadX:34, note:28, noteMax:480 });
 
 buildClosed('Pack1280.dc.html', 1280, 995, {
   margin:64, padY:64, eyebrow:11, headGap:64, headMt:24, h2:40, h2Max:460, lead:17.5, leadMax:470,
   gridMt:52, cols:3, gridGap:16, cardPad:'28px 28px', cardGap:18, name:23, price:13, priceGap:8, change:13.5, plusPt:5,
-  spanNote:2, notePadX:28, note:24, noteMax:360 });
+  spanNote:2, notePadX:28, note:24, noteMax:400 });
 
 buildClosed('Pack768.dc.html', 768, 1290, {
   margin:48, padY:56, eyebrow:11, stackHead:true, headGap:28, headMt:24, h2:38, h2Max:520, lead:17, leadMax:560,

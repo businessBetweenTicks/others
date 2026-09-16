@@ -121,8 +121,8 @@ screen('Flow1.dc.html', 1, 'Pick one thing to have handled.', null, `
     </div>
     <div style="display:flex;flex-direction:column;gap:12px;">
 ${openCard}
-${smallCard('The Thursday afternoon', 220, 'Move the day, or skip it, with one word.')}
-${smallCard('Body back', 260, 'Change the practitioner, or stop when she is done.')}
+${smallCard('The Thursday afternoon', 300, 'Move the day, or skip it, with one word.')}
+${smallCard('Body back', 300, 'Change the practitioner, or stop when she is done.')}
     </div>`, 'Choose this one', 'See all ten', 1190);
 
 // ---------------- 2 · Set the amount and open a pool ----------------

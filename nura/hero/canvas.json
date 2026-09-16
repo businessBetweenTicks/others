@@ -1,6 +1,10 @@
 {
   "pages": [
     {
+      "id": "page-sub",
+      "name": "Submission"
+    },
+    {
       "id": "page-0",
       "name": "Complete landing page — 4 breakpoints"
     },
@@ -38,6 +42,15 @@
     }
   ],
   "artboards": [
+    {
+      "file": "Submission.dc.html",
+      "page": "page-sub",
+      "x": 0,
+      "y": 0,
+      "w": 1000,
+      "h": 3690,
+      "title": "Submission — the line, the work, and what is flagged"
+    },
     {
       "file": "Landing1440.dc.html",
       "page": "page-0",
@@ -738,10 +751,18 @@
       "y": 0,
       "w": 640,
       "text": "The whole page, assembled from the same section sources rather than redrawn — every section here is the artboard from its own page in this file, so nothing can drift out of sync.\n\nOrder follows the brief: hero, the problem, the thread, data forward, care balance, packages, First Week Check, the physical gift, chip in together. Section 7 (add-ons) lives in the gift flow, not on the landing page.\n\nOne rhythm rule holds the whole thing together: every section is 152px of padding top and bottom at 1440, and only two sections break the ground colour — the problem, which sits on Field, and the physical gift, whose plate bleeds off the right edge the way the hero's does. Everything else is type on one background."
+    },
+    {
+      "id": "sub-note",
+      "page": "page-sub",
+      "x": 1100,
+      "y": 0,
+      "w": 600,
+      "text": "The brief says the one line about data forward is the tell. So it goes first, at full size, before anything else — a submission that opens with credentials has already answered a different question.\n\nThe portfolio block is left empty on purpose. Everything in this file is speculative work made for this brief; presenting it as a client history would be the same kind of untruth as a testimonial from a customer who does not exist yet. Attach real past work there.\n\nThe flagged section is not hedging. A client who wrote “do not share the pricing math or the clinical plans” is testing whether anyone noticed, and naming the three cuts — including the competitor passage most likely to reach a public page by mistake — is the proof that someone read to the end."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-0"
+    "page": "page-sub"
   }
 }
