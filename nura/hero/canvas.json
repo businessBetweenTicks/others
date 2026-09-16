@@ -19,6 +19,10 @@
     {
       "id": "page-5",
       "name": "Care balance — 4 breakpoints"
+    },
+    {
+      "id": "page-6",
+      "name": "Packages — grid, open state, motion"
     }
   ],
   "artboards": [
@@ -246,6 +250,69 @@
       "w": 740,
       "h": 2040,
       "title": "Care balance — motion and tone"
+    },
+    {
+      "file": "Pack375.dc.html",
+      "page": "page-6",
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 2170,
+      "title": "Packages · 375 phone"
+    },
+    {
+      "file": "Pack768.dc.html",
+      "page": "page-6",
+      "x": 475,
+      "y": 0,
+      "w": 768,
+      "h": 1420,
+      "title": "Packages · 768 tablet"
+    },
+    {
+      "file": "Pack1280.dc.html",
+      "page": "page-6",
+      "x": 1343,
+      "y": 0,
+      "w": 1280,
+      "h": 1140,
+      "title": "Packages · 1280 laptop"
+    },
+    {
+      "file": "Pack1440.dc.html",
+      "page": "page-6",
+      "x": 2723,
+      "y": 0,
+      "w": 1440,
+      "h": 1320,
+      "title": "Packages · 1440 wide desktop"
+    },
+    {
+      "file": "PackOpen1440.dc.html",
+      "page": "page-6",
+      "x": 4263,
+      "y": 0,
+      "w": 1440,
+      "h": 1140,
+      "title": "Open state · desktop, expanded in the grid"
+    },
+    {
+      "file": "PackOpen375.dc.html",
+      "page": "page-6",
+      "x": 5803,
+      "y": 0,
+      "w": 375,
+      "h": 990,
+      "title": "Open state · 375 detail view"
+    },
+    {
+      "file": "PackMotion.dc.html",
+      "page": "page-6",
+      "x": 6278,
+      "y": 0,
+      "w": 740,
+      "h": 2340,
+      "title": "Packages — motion and tone"
     }
   ],
   "annotations": [
@@ -376,10 +443,50 @@
       "y": 1620,
       "w": 560,
       "text": "Somebody has to watch the balance, and it must not be her. The third rule — when it runs low, her circle is told, only them and quietly — is what stops a gift from becoming a bill she is behind on.\n\nIt also answers the obvious objection about the panel above: on this page the reader IS the circle, so showing it to them is correct. Showing it to her would not be.\n\nOne deliberate departure from the brief's wording: “she never sees a wallet or a number” loses the wallet. That word is on the packages sheet's banned list, and a banned word is not made safe by being negated — printing it is still the only time a reader meets it."
+    },
+    {
+      "id": "pk-cards",
+      "page": "page-6",
+      "x": 2723,
+      "y": -480,
+      "w": 640,
+      "text": "The risk in a ten-card grid is that it becomes a pricing table, which is the one thing this brand cannot be. Three defences: paper surfaces with a hairline and no shadow; the price small and grey, set BELOW the name rather than beside it, so it is available but never the headline; and no card marked recommended, popular or best value. Nothing here ranks the packages against each other.\n\nThree columns, not two — at 1440 a two-column card is far wider than its content and reads as empty. Ten into three leaves a ragged last row, so the closing line takes the two spare cells rather than being tidied away below the grid."
+    },
+    {
+      "id": "pk-refuse",
+      "page": "page-6",
+      "x": 0,
+      "y": 2250,
+      "w": 640,
+      "text": "The brief says each card carries a one-line “she can change” note. That single decision is what keeps the grid off-brand-for-everyone-else.\n\nEvery other gift site teases a package with what you get. Here each card teases with what she is allowed to refuse — pause any week she says we have food, say no to a session without explaining why, nobody goes upstairs unless she says. Ten of them read in a row become one argument: this is a gift that can be turned down in pieces, and that is what makes it safe to accept."
+    },
+    {
+      "id": "pk-open",
+      "page": "page-6",
+      "x": 4263,
+      "y": -480,
+      "w": 700,
+      "text": "Designed once, reused by all ten. It answers the brief's three questions in its order — what it is, what is included, what she can change — and then does one thing the brief implies but does not ask for.\n\n“She never composes; she just replies” is shown rather than claimed: a message and a one-word answer, in the hero's own bubbles, placed as the last thing before the button. The final impression before someone spends money is her, not the product.\n\n“What it is” sits alone in the serif at full width. It is the only sentence a reader must take in; the two columns beneath are for whoever wants more. Someone who reads that line and presses the button has understood the package correctly.\n\nIt expands in place rather than opening as an overlay — an overlay would hide the other nine, and the point is that she only needs one of them."
+    },
+    {
+      "id": "pk-phone",
+      "page": "page-6",
+      "x": 5803,
+      "y": 1070,
+      "w": 420,
+      "text": "At 375 the card opens as its own screen rather than an accordion: ten expanding rows on a phone buries the grid. Pushed in from the right, back control returns to the same scroll position.\n\nThe button is sticky and 56px, in thumb reach. Everything on this screen works one-handed, which is the brief's rule for the whole site."
+    },
+    {
+      "id": "pk-flags",
+      "page": "page-6",
+      "x": 6278,
+      "y": -300,
+      "w": 640,
+      "text": "Verbatim from the brief: the heading, all ten package names in its order, and the whole of the First weeks home open state including “she never composes; she just replies”.\n\nMine, and needing confirmation against the packages sheet: the nine remaining “she can change” lines, and every price except the $300 the brief states. Prices are placeholders in a plausible range; the layout holds three digits and needs revisiting at four."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-5"
+    "page": "page-6"
   }
 }

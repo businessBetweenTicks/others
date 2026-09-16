@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    .serif { font-family: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; }
+    .lbl { font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279; }
+    .p { font-size: 12.5px; line-height: 1.72; color: #55504A; }
+    .beat { font-size: 11.5px; line-height: 1.62; color: #55504A; }
+    .bt { font-size: 13px; margin-bottom: 6px; color: #1C1A17; }
+    .n { font-family: 'Newsreader', Georgia, serif; font-size: 20px; color: #D9CFC3; padding: 14px 0 0 0; }
+  </style>
+</helmet>
+
+<div style="width: 740px; min-height: 2340px; background: #F7F3ED; color: #1C1A17; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px;">
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E7A61;">The packages</div>
+    <h2 class="serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.12; letter-spacing: -0.018em;">Pick one thing to have handled.</h2>
+  </div>
+
+  <div style="background: #4E2A44; border-radius: 2px; padding: 26px 30px;">
+    <div class="lbl" style="color: #D9CFC3; margin-bottom: 12px;">The approach, in one line</div>
+    <div class="serif" style="font-size: 21px; font-weight: 400; line-height: 1.44; color: #F7F3ED; font-style: italic;">Every closed card leads with what she can refuse, and the open state ends by showing her saying one word — so the depth the brief asks for is depth about her control, not about features.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Why it is built this way</div>
+    <div class="p">The brief asks for quiet cards and says the open state “is where the depth lives.” The risk in a ten-card grid is that it becomes a pricing table, which is the one thing this brand cannot be. Three defences: paper surfaces with a hairline and no shadow, never a fill or a border that competes; the price set small and grey, below the name rather than beside it, so it is available but never the headline; and no card marked recommended, best value or most popular. Nothing on this page ranks the packages against each other.</div>
+    <div class="p">The closed card carries the brief's one-line “she can change” note, and that choice does most of the work. Every other gift site teases a package with what you get. Here each card teases with what she is allowed to refuse — <em>pause any week she says we have food</em>, <em>say no to a session without explaining why</em>, <em>nobody goes upstairs unless she says</em>. Ten cards read in a row become one argument: this is a gift that can be turned down in pieces, and that is what makes it safe to accept.</div>
+    <div class="p">The open state answers the brief's three questions in its order — what it is, what is included, what she can change — and then does one thing the brief's copy implies but does not ask for. “She never composes; she just replies” is shown rather than claimed: a message and a one-word answer, in the hero's own bubbles. That exchange is the last thing in the panel before the button, so the final impression before someone spends money is her, not the product.</div>
+    <div class="p">“What it is” is set in the serif at full width, alone. It is the only sentence in the panel a reader must take in, and the two columns beneath it are for the reader who wants more. Someone who reads that one line and presses the button has understood the package correctly.</div>
+  </div>
+
+  <div style="height: 1px; background: #E2DAD0;"></div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div class="lbl">Sequence · the grid arriving</div>
+
+    <div style="display: grid; grid-template-columns: 30px 1fr; gap: 0 18px;">
+      <div class="n">1</div>
+      <div style="padding: 14px 0; border-top: 1px solid #1C1A17;">
+        <div class="bt">Heading, then the line beside it</div>
+        <div class="beat">Opacity 0 → 1, y +14px → 0, 620ms on ease-rise; eyebrow 220ms ahead. The same opening as every other section.</div>
+      </div>
+
+      <div class="n">2</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">Cards rise in a gentle stagger</div>
+        <div class="beat">The brief's instruction, taken literally and kept slow. Each card: opacity 0 → 1, y +12px → 0, 620ms on ease-rise. Stagger is 90ms, ordered by row and then by column, so the grid fills the way a page is read rather than in a diagonal sweep. Ten cards at 90ms is 810ms of stagger — short enough that the last card is not still arriving when the reader has reached it. Rows below the fold trigger on their own as they enter, never all at once on load.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div class="lbl">Sequence · the open state expanding</div>
+
+    <div style="display: grid; grid-template-columns: 30px 1fr; gap: 0 18px;">
+      <div class="n">3</div>
+      <div style="padding: 14px 0; border-top: 1px solid #1C1A17;">
+        <div class="bt">The card becomes the panel</div>
+        <div class="beat">On desktop the card expands to the full width of the grid and the rest of its row moves down; it does not open as an overlay, because an overlay would hide the other nine and the point is that she only needs one of them. Height animates 620ms on ease-settle, width 420ms, both starting together so the panel widens slightly ahead of its own height. The surface crossfades paper → field over 220ms, and the plus becomes a minus by the vertical stroke scaling to zero on ease-settle.</div>
+      </div>
+
+      <div class="n">4</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">The contents, after the box has finished</div>
+        <div class="beat">Nothing inside fades in until the panel has reached its height. Then: the rule under the header draws left to right, 620ms on ease-settle; “What it is” rises, 620ms; the two columns follow 130ms apart, with the Included rows at 90ms each; and the exchange last — the question, then a 420ms hold, then “yes”. Content appearing while the box is still growing is what makes an accordion feel cheap, and the hold before her reply is the same beat used in care balance.</div>
+      </div>
+
+      <div class="n">5</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">Closing, and one at a time</div>
+        <div class="beat">Only one card is ever open. Opening a second closes the first in the same gesture: the old panel collapses on ease-settle at 420ms while the new one expands, and the page scrolls to keep the new card's top edge where the old one's was, so the grid never jumps under the reader's hands. Closing reverses the expansion at 420ms — quicker than opening, because nobody needs to watch something they have dismissed.</div>
+      </div>
+
+      <div class="n">6</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">Phone — a detail view, not an accordion</div>
+        <div class="beat">At 375 the card opens as its own screen, pushed in from the right over 420ms on ease-settle, with the list behind it holding still rather than sliding. The back control returns the reader to the grid at the same scroll position, with the card they opened briefly carrying a field tint so they can find their place. The button is sticky at the bottom of the viewport and 56px tall: everything on this screen is reachable one-handed, which is the brief's rule for the whole site.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Never in this section</div>
+    <div class="p">No card marked recommended, popular or best value, and no ordering by price. No badges, ribbons, strikethroughs or “was/now”. No countdown, no scarcity, no number of gifts bought this week. No card that grows, lifts or shadows on hover — the hairline darkens to Ink 3 and the cursor changes, and that is the entire hover state. No accordion that bounces. No package shown as unavailable to make another look better.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Reduced motion</div>
+    <div class="p">prefers-reduced-motion: cards are present on load with no rise and no stagger; the panel opens with height animation only, 220ms, and its contents are there when it lands; the phone detail view crossfades instead of pushing. Nothing is lost, because every state here is designed to read as a still.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Accessibility</div>
+    <div class="p">Each card is one control, not a card with a button inside it — the whole surface is the target, which is also what makes it work one-handed. The plus is decorative; the control announces its own expanded state and the panel is labelled by the package name. Focus moves to the panel heading on open and returns to the card on close. The ten cards are a list, so a reader arriving by keyboard is told there are ten before they start. Price is never conveyed by position or colour alone.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Copy flags for the client</div>
+    <div class="p">The heading is the brief's, verbatim. All ten package names are the brief's, in its order. The open state uses the brief's example copy for First weeks home word for word, including “she never composes; she just replies”.</div>
+    <div class="p">Two things here are mine and need confirming against the packages sheet: the nine remaining “she can change” lines, written to the brief's instruction that each card carries one; and every price except the $300 the brief states. The prices are placeholders chosen to sit in a plausible range — the layout holds three digits and will need revisiting at four.</div>
+    <div class="p">One layout note for later: “Included” lists four items here. The row treatment holds three to six cleanly and starts to unbalance the two columns at seven, at which point the Included column should take the full width above the other two rather than growing taller.</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
