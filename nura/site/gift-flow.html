@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The gift flow — Nura</title>
+<meta name="description" content="Six screens, one decision each. Design only — no working checkout.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/nura.css">
+</head>
+<body>
+
+<div class="page-nav" data-onload>
+  <a class="nav__mark" href="index.html">Nura</a>
+  <a class="tlink" style="border:0;padding:0" href="index.html">Back to the gift</a>
+</div>
+
+<main class="wrap section" data-onload>
+  <p class="eyebrow" data-reveal>The gift flow</p>
+  <h1 class="serif" data-reveal data-d="220" style="font-size:var(--h2);line-height:1.1;letter-spacing:-.02em;margin-top:22px;max-width:620px">Six screens, one decision each.</h1>
+  <p class="lead standfirst" data-reveal data-d="380">Shown at phone, as the brief asks. On desktop the counter becomes named steps and the layout splits seven to four, with a sticky summary rail holding the gift so far; at 768 the names stay, the rail goes, and the summary collapses to one line above the action.</p>
+  <p class="fwc__disc" data-reveal data-d="500" style="margin-top:18px;max-width:620px">Design only — there is no working checkout, and nothing here takes a payment.</p>
+
+  <div class="screens" data-stagger="130">
+
+    <div class="screen" data-reveal>
+      <div class="screen__cap"><span class="n">01</span><span class="t">Pick a package</span></div>
+      <div class="phone"><div class="phone__bar"><span>‹ Back</span><span>1 of 6</span></div><div class="phone__prog"><i style="width:16.7%"></i></div>
+        <div class="phone__body">
+          <h3>Pick one thing to have handled.</h3>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--hairline)">
+            <span style="font-size:13px;color:var(--ink3)">Prices for</span><span style="font-size:15px">United States ⌄</span></div>
+          <div style="background:var(--field);border-radius:2px;padding:22px 20px;display:flex;flex-direction:column;gap:18px">
+            <div><div class="serif" style="font-size:24px">First weeks home</div><div style="font-size:13px;color:var(--ink3);margin-top:7px">from $300</div></div>
+            <div><p class="lbl">What it is</p><p class="serif" style="font-size:18px;line-height:1.34;margin-top:10px">Dinners arrive three evenings a week, starting the day she's home.</p></div>
+            <div><p class="lbl">She can change</p>
+              <div style="display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:14px">
+                <span class="bubble" style="font-size:14px">Skip the dinners this week?</span><span class="bubble mine" style="font-size:14px">yes</span></div>
+              <p style="font-size:13px;color:var(--ink2);margin-top:14px">She never composes; she just replies.</p></div>
+          </div>
+        </div>
+        <div class="phone__foot"><span class="btn btn--full">Choose this one</span></div>
+      </div>
+    </div>
+
+    <div class="screen" data-reveal>
+      <div class="screen__cap"><span class="n">02</span><span class="t">Set the amount and open a pool</span></div>
+      <div class="phone"><div class="phone__bar"><span>‹ Back</span><span>2 of 6</span></div><div class="phone__prog"><i style="width:33.3%"></i></div>
+        <div class="phone__body">
+          <h3>Set the amount, and open it to her people.</h3>
+          <div><p class="lbl">Your part</p>
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-top:12px;padding-bottom:14px;border-bottom:1px solid var(--ink)">
+              <span class="serif" style="font-size:46px;font-weight:300;line-height:1">$300</span>
+              <span style="display:flex;gap:10px"><i style="width:34px;height:34px;border:1px solid var(--mute);border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal;color:var(--ink2)">−</i><i style="width:34px;height:34px;border:1px solid var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;font-style:normal">+</i></span></div></div>
+          <div><p class="lbl">What that buys</p>
+            <div style="margin-top:6px">
+              <div class="shelf__row" style="padding:14px 0"><span class="thing" style="font-size:15px;font-family:var(--sans)">Dinners that arrive</span><span class="toks" style="width:auto"><i class="tok tok--full"></i><i class="tok tok--full"></i><i class="tok tok--full"></i><i class="tok tok--full"></i><i class="tok tok--full"></i><i class="tok tok--full"></i></span></div>
+              <div class="shelf__row" style="padding:14px 0"><span class="thing" style="font-size:15px;font-family:var(--sans)">A sitter who comes</span><span class="toks" style="width:auto"><i class="tok tok--full"></i><i class="tok tok--full"></i><i class="tok"></i></span></div>
+              <div class="shelf__row" style="padding:14px 0"><span class="thing" style="font-size:15px;font-family:var(--sans)">A visit that gets booked</span><span class="toks" style="width:auto"><i class="tok tok--full"></i><i class="tok"></i></span></div>
+            </div>
+            <p style="font-size:13.5px;line-height:1.62;color:var(--ink2);margin-top:16px">Three evenings a week for two weeks, two afternoons, and her six-week visit booked.</p></div>
+          <div class="rule"></div>
+          <div><p class="serif" style="font-size:21px;line-height:1.26">Her people can add to this one.</p>
+            <div style="display:flex;justify-content:space-between;gap:14px;margin-top:16px;background:var(--paper);border:1px solid var(--hairline);border-radius:2px;padding:14px 15px">
+              <span style="font-size:14px;color:var(--ink2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap">nura.gift/for-maya-8fd2</span><span style="font-size:13px;color:var(--ink3)">copy</span></div>
+            <p style="font-size:13px;line-height:1.6;color:var(--ink3);margin-top:12px">Anyone with the link can add. Nobody is shown what anyone gave, her least of all.</p></div>
+        </div>
+        <div class="phone__foot"><span class="btn btn--full">Continue</span></div>
+      </div>
+    </div>
+
+    <div class="screen" data-reveal>
+      <div class="screen__cap"><span class="n">03</span><span class="t">Add one more thing</span></div>
+      <div class="phone"><div class="phone__bar"><span>‹ Back</span><span>3 of 6</span></div><div class="phone__prog"><i style="width:50%"></i></div>
+        <div class="phone__body">
+          <h3>Add one more thing.</h3>
+          <p style="font-size:15px;line-height:1.62;color:var(--ink2);margin-top:-12px">Or do not. One package is a whole gift.</p>
+          <div>
+            <div class="opt"><div class="body"><b>An extra week of dinners</b><span>Three more evenings, tacked on to the end.</span><i>$60</i></div><span class="pick on"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.6 4 7.6 10 1.4" stroke="#F7F3ED" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+            <div class="opt"><div class="body"><b>One more sitter afternoon</b><span>Another Thursday, whenever she wants it.</span><i>$45</i></div><span class="pick"></span></div>
+            <div class="opt"><div class="body"><b>A lactation visit</b><span>At home, and Nura books it around her.</span><i>$55</i></div><span class="pick"></span></div>
+            <div class="opt"><div class="body"><b>A cleaning visit</b><span>Arranged and confirmed, whichever day suits.</span><i>$70</i></div><span class="pick"></span></div>
+            <div class="rule"></div>
+          </div>
+          <p style="font-size:13.5px;line-height:1.62;color:var(--ink3)">She can move any of these, or decline them, once it is hers.</p>
+        </div>
+        <div class="phone__foot"><span class="btn btn--full">Add it</span>
+          <p style="text-align:center;margin-top:13px"><span style="font-size:13px;color:var(--ink2);border-bottom:1px solid var(--mute);padding-bottom:2px">Skip this</span></p></div>
+      </div>
+    </div>
+
+    <div class="screen" data-reveal>
+      <div class="screen__cap"><span class="n">04</span><span class="t">Tell Nura about her</span></div>
+      <div class="phone"><div class="phone__bar"><span>‹ Back</span><span>4 of 6</span></div><div class="phone__prog"><i style="width:66.7%"></i></div>
+        <div class="phone__body">
+          <h3>Tell Nura about her.</h3>
+          <div style="display:flex;flex-direction:column;gap:26px">
+            <div class="fld"><b>Her name</b><span>Maya Osei</span></div>
+            <div class="fld"><b>Her mobile</b><span>+1 201 555 0142</span></div>
+            <div class="fld"><b>The date she is due</b><span>14 March</span></div>
+            <div class="fld"><b>Where the box goes</b><span class="ph">Add an address</span></div>
+          </div>
+          <div class="rule"></div>
+          <div style="display:flex;flex-direction:column;gap:26px">
+            <div><p class="lbl">Optional</p><p style="font-size:13.5px;line-height:1.62;color:var(--ink2);margin-top:10px">Each one makes Nura better at one thing. Leave any of them blank.</p></div>
+            <div class="fld"><b>How she is feeding</b><span class="ph">Add</span><em>So it never asks her the wrong question.</em></div>
+            <div class="fld"><b>Anything she is already dreading</b><span class="ph">Add</span><em>So that one gets handled first.</em></div>
+            <div class="fld"><b>Her doctor, if you know</b><span class="ph">Add</span><em>So referrals can be chased without asking her.</em></div>
+          </div>
+          <p style="font-size:13px;line-height:1.62;color:var(--ink2);padding-top:18px;border-top:1px solid var(--hairline)">Only the mobile is used to reach her. None of this is shown to anyone else who adds to the gift.</p>
+        </div>
+        <div class="phone__foot"><span class="btn btn--full">Continue</span></div>
+      </div>
+    </div>
+
+    <div class="screen" data-reveal>
+      <div class="screen__cap"><span class="n">05</span><span class="t">Write the card</span></div>
+      <div class="phone"><div class="phone__bar"><span>‹ Back</span><span>5 of 6</span></div><div class="phone__prog"><i style="width:83.3%"></i></div>
+        <div class="phone__body">
+          <h3>Write the card.</h3>
+          <div><p class="lbl">Your words</p>
+            <div style="margin-top:12px;background:var(--paper);border:1px solid var(--ink);border-radius:2px;padding:15px;min-height:100px;font-size:15px;line-height:1.62">Thought of you at three in the morning. This is me, feeding you.</div>
+            <p style="font-size:12.5px;color:var(--ink3);margin-top:9px">Printed, not emailed. It goes in the box.</p></div>
+          <div><p class="lbl">How it prints</p>
+            <div style="margin-top:14px;background:var(--paper);border:1px solid var(--hairline);border-radius:2px;padding:30px 26px;box-shadow:0 12px 34px -22px rgba(28,26,23,.30)">
+              <p class="serif" style="font-size:18px;line-height:1.5">Thought of you at three in the morning. This is me, feeding you.</p>
+              <p class="serif" style="font-size:16px;font-style:italic;color:var(--ink2);margin-top:22px">— Priya</p></div></div>
+          <div class="rule"></div>
+          <div><p class="lbl">Where the box goes</p>
+            <div style="margin-top:6px">
+              <div class="opt"><div class="body"><b>Send it to me</b><span>You hand it over yourself.</span><i>Arrives in 3 days</i></div><span class="pick on"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.6 4 7.6 10 1.4" stroke="#F7F3ED" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+              <div class="opt"><div class="body"><b>Send it to her</b><span>Straight to her door, with your card inside.</span><i>Arrives on the 14th</i></div><span class="pick"></span></div>
+              <div class="rule"></div></div></div>
+        </div>
+        <div class="phone__foot"><span class="btn btn--full">Continue</span></div>
+      </div>
+    </div>
+
+    <div class="screen" data-reveal>
+      <div class="screen__cap"><span class="n">06</span><span class="t">Pay</span></div>
+      <div class="phone"><div class="phone__bar"><span>‹ Back</span><span>6 of 6</span></div><div class="phone__prog"><i style="width:100%"></i></div>
+        <div class="phone__body">
+          <h3>Pay.</h3>
+          <div><p class="lbl">What you are sending</p>
+            <div style="margin-top:6px">
+              <div class="sum"><span>First weeks home</span><span>$300</span></div>
+              <div class="sum"><span>An extra week of dinners</span><span>$60</span></div>
+              <div class="sum total"><span>Total</span><b>$360</b></div>
+              <div class="rule"></div></div></div>
+          <div style="display:flex;flex-direction:column;gap:24px">
+            <div class="fld"><b>Card number</b><span>4242 4242 4242 4242</span></div>
+            <div style="display:flex;gap:20px"><div class="fld" style="flex:1"><b>Expiry</b><span>04 / 28</span></div><div class="fld" style="flex:1"><b>CVC</b><span>123</span></div></div>
+            <div class="fld"><b>Name on card</b><span>P. Raman</span></div>
+          </div>
+          <p style="font-size:13px;line-height:1.62;color:var(--ink2);padding-top:18px;border-top:1px solid var(--hairline)">Stripe takes the payment. Nura never sees your card, and her people never see what you gave.</p>
+        </div>
+        <div class="phone__foot"><span class="btn btn--full">Pay $360</span></div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="wrap footer">
+  <span class="serif" style="font-size:20px;color:var(--ink)">Nura</span>
+  <div class="footer__links"><a href="index.html">The gift</a><a href="first-week-check.html">First Week Check</a><a href="index.html#packages">Packages</a></div>
+  <span style="color:var(--ink3)">Grisaille Labs</span>
+</footer>
+
+<script src="assets/motion.js"></script>
+</body>
+</html>
