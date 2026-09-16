@@ -20,20 +20,27 @@ const CTA = 'See the gift';
 const CAPTION = 'She did none of it.';
 const HELLO = 'Hi Maya. It’s Nura. Is now a good time?';
 const VISIT = 'Your six-week visit is Tuesday at 10. Someone will be there for the baby.';
+const DINNER = 'Dinner lands at six tonight, then Thursday and Saturday.';
+const WALK = 'Thursday at four is yours. I’ve asked Ana to come for the baby.';
 
 const arrow = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="${T.ground}" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7h10M8 3l4 4-4 4"></path></svg>`;
 const tick = (s=15) => `<svg width="${s}" height="${s}" viewBox="0 0 16 16" fill="none" stroke="${T.moss}" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M3 8.6 6.2 11.8 13 5"></path></svg>`;
 const label = (t, mb) => `<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: ${T.ink3}; margin-bottom: ${mb}px;">${t}</div>`;
 
-// No device shell. The brief says "No app." — a phone frame says the opposite.
-const thread = (o) => {
-  const bIn = t => `        <div style="max-width: ${o.bubbleMax}px; background: ${T.paper}; border-radius: 14px 14px 14px 4px; padding: ${o.bubblePad}; font-size: ${o.bubble}px; line-height: 1.52; color: ${T.ink};">${t}</div>`;
-  const bOut = t => `        <div style="align-self: flex-end; background: ${T.plum}; color: ${T.ground}; border-radius: 14px 14px 4px 14px; padding: ${o.bubblePadOut}; font-size: ${o.bubble}px; line-height: 1.52;">${t}</div>`;
-  return `      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: ${o.bubbleGap}px;${o.threadMax ? ` max-width: ${o.threadMax}px;` : ''}">
+// The phone is back, but it is sized BY its content — there is no fixed height to
+// half fill, so it can never read as an empty glass pane again.
+const phone = (o) => {
+  const bIn = t => `          <div style="max-width: ${o.bubbleMax}px; background: ${T.field}; border-radius: 14px 14px 14px 4px; padding: ${o.bubblePad}; font-size: ${o.bubble}px; line-height: 1.5; color: ${T.ink};">${t}</div>`;
+  const bOut = t => `          <div style="align-self: flex-end; background: ${T.plum}; color: ${T.ground}; border-radius: 14px 14px 4px 14px; padding: ${o.bubblePadOut}; font-size: ${o.bubble}px; line-height: 1.5;">${t}</div>`;
+  return `      <div style="width: ${o.phoneW}px; flex-shrink: 0; background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 30px; box-shadow: 0 24px 60px -30px rgba(28,26,23,0.30); padding: ${o.phonePad}; box-sizing: border-box; display: flex; flex-direction: column; align-items: flex-start; gap: ${o.bubbleGap}px;">
+          <div style="font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: ${T.ink3}; margin-bottom: 6px;">Nura</div>
 ${bIn(HELLO)}
 ${bOut('yes')}
 ${bIn(VISIT)}
 ${bOut('ok')}
+${bIn(DINNER)}${o.shortThread ? '' : `
+${bIn(WALK)}
+${bOut('thank you')}`}
       </div>`;
 };
 
@@ -41,8 +48,20 @@ ${bOut('ok')}
 const ledger = (o) => ROWS.map(([t, s], i) => `
       <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 20px; padding: ${o.rowPad}px 0; border-top: 1px solid ${T.hairline};${i === ROWS.length - 1 ? ` border-bottom: 1px solid ${T.hairline};` : ''}">
         <div style="display: flex; align-items: center; gap: 13px;">${tick(o.tick)}<div style="font-size: ${o.rowTitle}px; color: ${T.ink};">${t}</div></div>
-        <div style="font-size: ${o.rowMeta}px; color: ${T.ink3}; text-align: right;">${s}</div>
+        <div style="font-size: ${o.rowMeta}px; color: ${T.ink3}; text-align: right; white-space: nowrap;">${s}</div>
       </div>`).join('');
+
+const thread375 = (o) => {
+  const bIn = t => `        <div style="max-width: ${o.bubbleMax}px; background: ${T.paper}; border-radius: 14px 14px 14px 4px; padding: ${o.bubblePad}; font-size: ${o.bubble}px; line-height: 1.52; color: ${T.ink};">${t}</div>`;
+  const bOut = t => `        <div style="align-self: flex-end; background: ${T.plum}; color: ${T.ground}; border-radius: 14px 14px 4px 14px; padding: ${o.bubblePadOut}; font-size: ${o.bubble}px; line-height: 1.52;">${t}</div>`;
+  return `      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: ${o.bubbleGap}px;">
+${bIn(HELLO)}
+${bOut('yes')}
+${bIn(VISIT)}
+${bOut('ok')}
+${bIn(DINNER)}
+      </div>`;
+};
 
 const caption = (o) => `      <div class="serif" style="font-size: ${o.capSize}px; line-height: 1.4; font-style: italic; color: ${T.ink2}; margin-top: ${o.capMt}px;">${CAPTION}</div>`;
 
@@ -102,8 +121,8 @@ const cue = (o, l) => `
 {
   const o = { margin:96, navTop:36, navGap:40, wordmark:24, nav:14, eyebrow:11, eyebrowMb:32,
     h1:78, h1lh:1.03, h1ls:'-0.024em', lead:19, leadMt:32, leadMax:470, cueMb:48, btn:14, btnPad:'20px 40px',
-    bubble:14, bubbleMax:338, bubblePad:'12px 16px', bubblePadOut:'11px 17px', bubbleGap:10, outIndent:40,
-    threadMax:466, rowPad:18, rowTitle:14.5, rowMeta:12, tick:15, capSize:20, capMt:32 };
+    phoneW:268, phonePad:'22px 18px', bubble:13, bubbleMax:196, bubblePad:'11px 13px', bubblePadOut:'10px 14px', bubbleGap:9,
+    rowPad:18, rowTitle:14.5, rowMeta:12, tick:15, capSize:20, capMt:32 };
   writeFileSync('Main.dc.html', head(1440, 840) + navWide(o) + `
   <div style="display: flex; align-items: stretch; flex: 1;">
     <div style="width: 700px; flex-shrink: 0; box-sizing: border-box; padding: 120px 64px 0 96px; display: flex; flex-direction: column;">${copyCol(o)}
@@ -113,13 +132,13 @@ ${cta(o)}
 ${cue(o, 'Next — the problem, in her words')}
     </div>
     <div style="flex: 1; position: relative; margin-top: 120px; background: ${T.field}; overflow: hidden;">${LIGHT}${GRAIN}
-      <div style="position: relative; padding: 46px 96px 0 72px;">
-${label('Nura', 22)}
-${thread(o)}
-        <div style="height: 44px;"></div>
+      <div style="position: relative; height: 100%; box-sizing: border-box; padding: 56px 96px 56px 64px; display: flex; align-items: center; gap: 48px;">
+${phone(o)}
+        <div style="flex: 1;">
 ${label('Handled', 10)}
 ${ledger(o)}
 ${caption(o)}
+        </div>
       </div>
     </div>
   </div>` + tail);
@@ -129,8 +148,8 @@ ${caption(o)}
 {
   const o = { margin:64, navTop:32, navGap:32, wordmark:22, nav:13.5, eyebrow:11, eyebrowMb:24,
     h1:63, h1lh:1.04, h1ls:'-0.022em', lead:17.5, leadMt:24, leadMax:430, cueMb:40, btn:13, btnPad:'20px 32px',
-    bubble:13.5, bubbleMax:302, bubblePad:'11px 15px', bubblePadOut:'10px 16px', bubbleGap:9, outIndent:36,
-    threadMax:426, rowPad:16, rowTitle:14, rowMeta:11.5, tick:15, capSize:18.5, capMt:28 };
+    phoneW:240, phonePad:'20px 16px', bubble:12.5, bubbleMax:186, bubblePad:'10px 12px', bubblePadOut:'9px 13px', bubbleGap:8,
+    rowPad:16, rowTitle:14, rowMeta:11.5, tick:15, capSize:18.5, capMt:28 };
   writeFileSync('Hero1280.dc.html', head(1280, 780) + navWide(o) + `
   <div style="display: flex; align-items: stretch; flex: 1;">
     <div style="width: 620px; flex-shrink: 0; box-sizing: border-box; padding: 100px 56px 0 64px; display: flex; flex-direction: column;">${copyCol(o)}
@@ -140,13 +159,13 @@ ${cta(o)}
 ${cue(o, 'Next — the problem, in her words')}
     </div>
     <div style="flex: 1; position: relative; margin-top: 100px; background: ${T.field}; overflow: hidden;">${LIGHT}${GRAIN}
-      <div style="position: relative; padding: 38px 64px 0 60px;">
-${label('Nura', 20)}
-${thread(o)}
-        <div style="height: 40px;"></div>
+      <div style="position: relative; height: 100%; box-sizing: border-box; padding: 48px 64px 48px 56px; display: flex; align-items: center; gap: 36px;">
+${phone(o)}
+        <div style="flex: 1;">
 ${label('Handled', 10)}
 ${ledger(o)}
 ${caption(o)}
+        </div>
       </div>
     </div>
   </div>` + tail);
@@ -156,9 +175,9 @@ ${caption(o)}
 {
   const o = { eyebrow:11, eyebrowMb:24, h1:51, h1lh:1.05, h1ls:'-0.02em', h1Max:560,
     lead:17, leadMt:24, leadMax:460, btn:13, btnPad:'20px 32px',
-    bubble:13.5, bubbleMax:290, bubblePad:'11px 15px', bubblePadOut:'10px 16px', bubbleGap:9, outIndent:32,
+    shortThread:true, phoneW:264, phonePad:'22px 18px', bubble:13, bubbleMax:192, bubblePad:'11px 13px', bubblePadOut:'10px 14px', bubbleGap:9,
     rowPad:16, rowTitle:14, rowMeta:11.5, tick:15, capSize:18.5, capMt:28 };
-  writeFileSync('Hero768.dc.html', head(768, 1000) + `
+  writeFileSync('Hero768.dc.html', head(768, 1080) + `
   <div style="display: flex; align-items: center; justify-content: space-between; padding: 24px 48px 0 48px;">
     <div class="serif" style="font-size: 21px; font-weight: 400; letter-spacing: 0.02em;">Nura</div>
     <div style="display: flex; align-items: center; gap: 24px;">
@@ -175,11 +194,8 @@ ${cta(o)}
     </div>
   </div>
   <div style="position: relative; background: ${T.field}; overflow: hidden; margin-top: 72px;">${LIGHT}${GRAIN}
-    <div style="position: relative; padding: 56px 48px 60px 48px; display: flex; gap: 44px; align-items: flex-start;">
-      <div style="width: 308px; flex-shrink: 0;">
-${label('Nura', 20)}
-${thread(o)}
-      </div>
+    <div style="position: relative; padding: 56px 48px; display: flex; gap: 44px; align-items: center;">
+${phone(o)}
       <div style="flex: 1;">
 ${label('Handled', 10)}
 ${ledger(o)}
@@ -197,7 +213,7 @@ ${caption(o)}
 {
   const o = { bubble:14, bubbleMax:252, bubblePad:'11px 14px', bubblePadOut:'10px 15px', bubbleGap:9, outIndent:24,
     rowPad:15, rowTitle:14, rowMeta:11.5, tick:15, capSize:17.5, capMt:26 };
-  writeFileSync('Hero375.dc.html', head(375, 1160) + `
+  writeFileSync('Hero375.dc.html', head(375, 1180) + `
   <div style="display: flex; align-items: center; justify-content: space-between; padding: 16px 24px 0 24px;">
     <div class="serif" style="font-size: 20px; font-weight: 400; letter-spacing: 0.02em;">Nura</div>
     <div style="display: flex; flex-direction: column; gap: 5px; width: 22px; padding: 12px 0;">
@@ -216,7 +232,7 @@ ${caption(o)}
   <div style="position: relative; background: ${T.field}; overflow: hidden; margin-top: 48px;">${LIGHT}${GRAIN}
     <div style="position: relative; padding: 40px 24px 44px 24px;">
 ${label('Nura', 20)}
-${thread(o)}
+${thread375(o)}
       <div style="height: 44px;"></div>
 ${label('Handled', 10)}
 ${ledger(o)}

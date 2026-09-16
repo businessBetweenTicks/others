@@ -20,7 +20,7 @@
       "x": 0,
       "y": 0,
       "w": 375,
-      "h": 1160,
+      "h": 1180,
       "title": "Hero · 375 phone"
     },
     {
@@ -29,7 +29,7 @@
       "x": 475,
       "y": 0,
       "w": 768,
-      "h": 1000,
+      "h": 1080,
       "title": "Hero · 768 tablet"
     },
     {
@@ -137,7 +137,7 @@
       "x": 0,
       "y": 0,
       "w": 1200,
-      "h": 3000,
+      "h": 3060,
       "title": "Style set"
     },
     {
@@ -155,23 +155,23 @@
       "id": "bp-375",
       "page": "page-1",
       "x": 0,
-      "y": 1240,
+      "y": 1260,
       "w": 375,
-      "text": "375 — panel bleeds edge to edge and stacks: thread, then ledger, then the line. The photograph drops out here and returns further down the page as the section's own image; at 327px the plate would be a stamp. CTA is full width at 56px."
+      "text": "375 — the device goes: she is holding one, and drawing a phone inside a phone is a picture of a picture. The thread plays directly on the panel, which bleeds edge to edge and stacks — thread, then ledger, then the line. The photograph drops out here too and returns further down the page as the section's own image. CTA is full width at 56px."
     },
     {
       "id": "bp-768",
       "page": "page-1",
       "x": 475,
-      "y": 1240,
+      "y": 1260,
       "w": 500,
-      "text": "768 — the columns stack and the panel bleeds edge to edge, which it cannot do on desktop without swallowing the copy. Inside it the two halves go side by side: thread left, ledger right. Copy holds a 560px measure rather than running the full width, so the headline still breaks where it should."
+      "text": "768 — the columns stack and the panel bleeds edge to edge, which it cannot do on desktop without swallowing the copy. Device left, ledger right, both centred against each other. The thread runs two messages shorter here so the device does not tower over the ledger beside it. Copy holds a 560px measure rather than running the full width, so the headline still breaks where it should."
     },
     {
       "id": "bp-1280",
       "page": "page-1",
       "x": 1343,
-      "y": 1240,
+      "y": 1260,
       "w": 500,
       "text": "1280 — the same composition at a tighter measure: copy 500px against a 64px margin, panel bleeding right. Nothing reflows. If the two desktop widths looked different from each other, one of them would be wrong."
     },
@@ -179,7 +179,7 @@
       "id": "bp-1440",
       "page": "page-1",
       "x": 2723,
-      "y": 1240,
+      "y": 1260,
       "w": 560,
       "text": "1440+ — the media side bleeds to the edge of the viewport and off the bottom. It is not an inset rectangle with a margin on both sides; that reads as a widget dropped onto a page. Its top edge aligns with the eyebrow, so the two columns start on one line and then diverge.\n\nCopy sits in a 540px measure against a 96px margin. The headline breaks in two lines, and nothing is centred anywhere on the page."
     },
@@ -221,7 +221,7 @@
       "x": 2723,
       "y": -620,
       "w": 560,
-      "text": "Two decisions shape the whole right-hand side.\n\nNo device frame, at any width. The brief's own caption is “No app.” A phone shell says the opposite of that in the first half-second, and it costs a third of the panel to a bezel holding nothing.\n\nNo cards. Three bordered white rectangles with drop shadows is a dashboard, and dashboards are on the banned list. What she is no longer chasing is set as rows of type under hairlines, with the detail right-aligned — a ledger, or a receipt. It is quieter, it is more editorial, and it is the same idea the data forward section will need later."
+      "text": "Two decisions shape the right-hand side.\n\nThe device is sized BY its content — no fixed height, so it can never be half full. That is the whole fix: a shell with dead space in it reads as a pane of glass rather than something a person is holding, and the thread runs long enough to fill it honestly. It holds seven messages on desktop, five on tablet, and none at 375, where she is holding the phone already.\n\nNo cards. Three bordered white rectangles with drop shadows is a dashboard, and dashboards are on the banned list. What she is no longer chasing is set as rows of type under hairlines with the detail right-aligned — a ledger, or a receipt. Quieter, more editorial, and the same device the data forward section will need."
     }
   ],
   "launch": {
