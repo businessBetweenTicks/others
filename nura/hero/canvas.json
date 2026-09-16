@@ -1,6 +1,10 @@
 {
   "pages": [
     {
+      "id": "page-0",
+      "name": "Complete landing page — 4 breakpoints"
+    },
+    {
       "id": "page-1",
       "name": "Hero — 4 breakpoints"
     },
@@ -34,6 +38,42 @@
     }
   ],
   "artboards": [
+    {
+      "file": "Landing1440.dc.html",
+      "page": "page-0",
+      "x": 2723,
+      "y": 0,
+      "w": 1440,
+      "h": 9431,
+      "title": "Landing · 1440 wide desktop"
+    },
+    {
+      "file": "Landing1280.dc.html",
+      "page": "page-0",
+      "x": 1343,
+      "y": 0,
+      "w": 1280,
+      "h": 8237,
+      "title": "Landing · 1280 laptop"
+    },
+    {
+      "file": "Landing768.dc.html",
+      "page": "page-0",
+      "x": 475,
+      "y": 0,
+      "w": 768,
+      "h": 10029,
+      "title": "Landing · 768 tablet"
+    },
+    {
+      "file": "Landing375.dc.html",
+      "page": "page-0",
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 10801,
+      "title": "Landing · 375 phone"
+    },
     {
       "file": "Hero375.dc.html",
       "page": "page-1",
@@ -690,10 +730,18 @@
       "y": 3720,
       "w": 700,
       "text": "Three cuts from the source document, made on the brief's own instruction that nothing about vendors, pricing math, clinical plans or medical records travels beyond the one data forward paragraph.\n\n1. The named county programme and its rollout dates — now “my state has a free nurse who comes to the house in my county.” True, hers, and it commits the client to no coverage map in public.\n2. The weight-loss thresholds, day-14 triggers and the fax protocol. A marketing page that prints thresholds is making a clinical promise in public. The substance survives as one plain paragraph in a quiet panel.\n3. “Why nobody else sells this” — competitor rates ending in “that is the sentence to test in the debut.” A note to the founders, not page copy. Cut entirely, and named here rather than quietly dropped, because it is the passage most likely to be pasted onto a page by mistake.\n\nKept on purpose: “app,” twice, both in her voice and both negations. Naming what Nura is not is the positioning the whole site rests on."
+    },
+    {
+      "id": "lp-order",
+      "page": "page-0",
+      "x": 4263,
+      "y": 0,
+      "w": 640,
+      "text": "The whole page, assembled from the same section sources rather than redrawn — every section here is the artboard from its own page in this file, so nothing can drift out of sync.\n\nOrder follows the brief: hero, the problem, the thread, data forward, care balance, packages, First Week Check, the physical gift, chip in together. Section 7 (add-ons) lives in the gift flow, not on the landing page.\n\nOne rhythm rule holds the whole thing together: every section is 152px of padding top and bottom at 1440, and only two sections break the ground colour — the problem, which sits on Field, and the physical gift, whose plate bleeds off the right edge the way the hero's does. Everything else is type on one background."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-8"
+    "page": "page-0"
   }
 }

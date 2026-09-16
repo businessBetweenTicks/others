@@ -55,7 +55,7 @@ function buildSection(file, W, H, o) {
       </div>
 
       <div>
-        <div class="lbl">In her words</div>
+        <div class="lbl">How the first week goes</div>
         <div style="margin-top:${o.wordsMt}px;display:flex;flex-direction:column;gap:${o.paraGap}px;">
 ${SHORT.map(p => `          <p class="serif" style="margin:0;font-size:${o.para}px;font-weight:400;line-height:1.52;letter-spacing:-0.006em;color:${T.ink};max-width:${o.paraMax}px;text-wrap:pretty;">${p}</p>`).join('\n')}
         </div>
@@ -67,6 +67,8 @@ ${SHORT.map(p => `          <p class="serif" style="margin:0;font-size:${o.para}
       <div class="serif" style="font-size:${o.pull}px;font-weight:400;line-height:1.28;letter-spacing:-0.015em;color:${T.ink};max-width:${o.pullMax}px;text-wrap:pretty;${o.stack ? '' : 'grid-column:2;'}">${PULL}</div>
     </div>
 
+    <div style="margin-top:${o.discMt}px;font-size:${o.disc}px;line-height:1.6;color:${T.ink3};max-width:${o.discMax}px;${o.stack ? '' : `margin-left:calc((100% - ${o.headGap}px) * 4 / 11 + ${o.headGap}px);`}">Written in the first person because that is how it is lived. Nura is new — this is the week it is built to handle, not a customer's account.</div>
+
     <div style="margin-top:${o.linkMt}px;${o.stack ? '' : `margin-left:calc((100% - ${o.headGap}px) * 4 / 11 + ${o.headGap}px);`}">${link('Read her whole first week', o)}</div>
 
   </div>` + tail);
@@ -75,22 +77,22 @@ ${SHORT.map(p => `          <p class="serif" style="margin:0;font-size:${o.para}
 buildSection('FWC1440.dc.html', 1440, 1130, {
   margin:96, padY:152, eyebrow:11, headGap:96, headMt:32, h2:46, h2Max:340,
   wordsMt:26, paraGap:26, para:25, paraMax:720, bubMt:36, bub:16, bubPad:'15px 20px', bubMax:440,
-  pullMt:88, pullPt:52, pull:36, pullMax:780, linkMt:52, link:16 });
+  pullMt:88, pullPt:52, pull:36, pullMax:780, discMt:40, disc:14, discMax:700, linkMt:36, link:16 });
 
 buildSection('FWC1280.dc.html', 1280, 980, {
   margin:64, padY:128, eyebrow:11, headGap:72, headMt:24, h2:40, h2Max:300,
   wordsMt:22, paraGap:22, para:22, paraMax:660, bubMt:30, bub:15, bubPad:'14px 18px', bubMax:370,
-  pullMt:72, pullPt:44, pull:31, pullMax:700, linkMt:44, link:15 });
+  pullMt:72, pullPt:44, pull:31, pullMax:700, discMt:32, disc:13.5, discMax:640, linkMt:30, link:15 });
 
 buildSection('FWC768.dc.html', 768, 1040, {
   margin:48, padY:112, eyebrow:11, stack:true, headGap:36, headMt:24, h2:38, h2Max:420,
   wordsMt:20, paraGap:22, para:22, paraMax:620, bubMt:30, bub:15, bubPad:'14px 18px', bubMax:360,
-  pullMt:64, pullPt:40, pull:29, pullMax:620, linkMt:40, link:15 });
+  pullMt:64, pullPt:40, pull:29, pullMax:620, discMt:32, disc:13.5, discMax:600, linkMt:28, link:15 });
 
 buildSection('FWC375.dc.html', 375, 1035, {
   margin:24, padY:80, eyebrow:10.5, stack:true, headGap:28, headMt:20, h2:31, h2Max:340,
   wordsMt:18, paraGap:20, para:19, paraMax:340, bubMt:26, bub:14.5, bubPad:'13px 17px', bubMax:300,
-  pullMt:48, pullPt:32, pull:24, pullMax:340, linkMt:32, link:15 });
+  pullMt:48, pullPt:32, pull:24, pullMax:340, discMt:26, disc:13, discMax:340, linkMt:24, link:15 });
 
 console.log('wrote 4 first week check sections');
 
@@ -138,10 +140,11 @@ function buildPage(file, W, H, o) {
 
     <div style="font-size:${o.eyebrow}px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:${T.moss};">First Week Check</div>
     <h1 class="serif" style="margin:${o.headMt}px 0 0 0;font-size:${o.h1}px;font-weight:400;line-height:1.06;letter-spacing:-0.024em;max-width:${o.h1Max}px;text-wrap:pretty;">The first week, handled.</h1>
-    <p style="margin:${o.standMt}px 0 0 0;font-size:${o.stand}px;line-height:1.62;color:${T.ink2};max-width:${o.standMax}px;text-wrap:pretty;">One week, as one mother told it. Then, plainly, what happened behind it.</p>
+    <p style="margin:${o.standMt}px 0 0 0;font-size:${o.stand}px;line-height:1.62;color:${T.ink2};max-width:${o.standMax}px;text-wrap:pretty;">One week, told from the inside. Then, plainly, what happened behind it.</p>
+    <p style="margin:${o.discMtP}px 0 0 0;font-size:${o.discP}px;line-height:1.6;color:${T.ink3};max-width:${o.standMax}px;text-wrap:pretty;">Written in the first person because that is how it is lived. Nura is new, so this is the week it is built to handle rather than a customer\u2019s account. When there are real ones, they will run here instead, with her name on them.</p>
 
     <div style="margin-top:${o.sceneMt}px;padding-top:${o.scenePt}px;border-top:1px solid ${T.ink};">
-      <div class="lbl">In her words</div>
+      <div class="lbl">How the first week goes</div>
       <div style="margin-top:${o.wordsMt}px;display:flex;flex-direction:column;gap:${o.paraGap}px;">
 ${SCENE.map(p => `        <p class="serif" style="margin:0;font-size:${o.para}px;font-weight:400;line-height:1.56;letter-spacing:-0.006em;color:${T.ink};max-width:${o.paraMax}px;text-wrap:pretty;">${p}</p>`).join('\n')}
       </div>
@@ -178,7 +181,7 @@ ${list(ITS, o, true)}
 
 buildPage('FWCPage1440.dc.html', 1440, 3140, {
   margin:96, navY:26, mark:20, navLink:14, padY:112, padB:152, eyebrow:11, headMt:30, h1:64, h1Max:820,
-  standMt:28, stand:19, standMax:620,
+  standMt:28, stand:19, standMax:620, discMtP:22, discP:14,
   sceneMt:96, scenePt:56, wordsMt:30, paraGap:28, para:23, paraMax:820,
   behindMt:112, colsMt:56, ledgerCols:'minmax(0,4fr) minmax(0,7fr)', colsGap:112, listMb:22, rowPadY:17, row:16.5,
   noteMt:56, notePad:'32px 36px', note:16, noteMax:820,
@@ -186,7 +189,7 @@ buildPage('FWCPage1440.dc.html', 1440, 3140, {
 
 buildPage('FWCPage375.dc.html', 375, 3650, {
   margin:24, navY:20, mark:18, navLink:13, padY:56, padB:80, eyebrow:10.5, headMt:20, h1:36, h1Max:340,
-  standMt:20, stand:16, standMax:340,
+  standMt:20, stand:16, standMax:340, discMtP:18, discP:13.5,
   sceneMt:56, scenePt:36, wordsMt:22, paraGap:22, para:18.5, paraMax:340,
   behindMt:64, colsMt:40, ledgerCols:'minmax(0,1fr)', colsGap:44, listMb:16, rowPadY:15, row:15.5,
   noteMt:40, notePad:'24px 22px', note:15, noteMax:340,
