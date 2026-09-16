@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    .serif { font-family: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; }
+    .lbl { font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279; }
+    .p { font-size: 12.5px; line-height: 1.72; color: #55504A; }
+    .beat { font-size: 11.5px; line-height: 1.62; color: #55504A; }
+    .bt { font-size: 13px; margin-bottom: 6px; color: #1C1A17; }
+    .n { font-family: 'Newsreader', Georgia, serif; font-size: 20px; color: #D9CFC3; padding: 14px 0 0 0; }
+  </style>
+</helmet>
+
+<div style="width: 740px; min-height: 2000px; background: #F7F3ED; color: #1C1A17; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px;">
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E7A61;">Care balance</div>
+    <h2 class="serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.12; letter-spacing: -0.018em;">How this section shows a balance without showing money</h2>
+  </div>
+
+  <div style="background: #4E2A44; border-radius: 2px; padding: 26px 30px;">
+    <div class="lbl" style="color: #D9CFC3; margin-bottom: 12px;">The approach, in one line</div>
+    <div class="serif" style="font-size: 21px; font-weight: 400; line-height: 1.44; color: #F7F3ED; font-style: italic;">Count the care, never the cash — the balance is a short list of real things, held by the people who put them there, and it is the one thing she is never shown.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Why it is built this way</div>
+    <div class="p">A balance is a number, and every convention for drawing one is a convention for drawing money: the progress bar, the goal, the thermometer, the running total. Each of them turns her recovery into a target somebody is falling short of. So the section does not draw a quantity at all. It draws an <em>inventory</em> — four things, counted in the things themselves, the way you would count what is left in a cupboard.</div>
+    <div class="p">The marks are deliberately not a bar. They are spaced apart so they read as separate objects, and no two rows share a total, because a shared denominator is what makes a row look like progress toward something. Four dinners is not 66% of anything. It is four dinners.</div>
+    <div class="p">The turn at the top is the whole mechanic in two objects: someone adds, and a message arrives. There is no third object between them, because there is nothing she needs to understand about the middle. The one line under it does the work the brief asks for — <em>she is told who it came from, she is never told what it cost</em>. Names travel. Amounts never do. That distinction keeps the gift warm without letting it become a price list.</div>
+    <div class="p">The last of the three rules is the section's real argument. Somebody has to watch the balance, and it must not be her. Telling her circle when it runs low — quietly, and only them — is what stops a gift from turning into a bill she is behind on.</div>
+  </div>
+
+  <div style="height: 1px; background: #E2DAD0;"></div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div class="lbl">Sequence · triggered once when the section is 40% in view</div>
+
+    <div style="display: grid; grid-template-columns: 30px 1fr; gap: 0 18px;">
+      <div class="n">1</div>
+      <div style="padding: 14px 0; border-top: 1px solid #1C1A17;">
+        <div class="bt">Heading, then the line beside it</div>
+        <div class="beat">Opacity 0 → 1, y +14px → 0, 620ms on ease-rise. The eyebrow goes first, alone, 220ms ahead. Same opening as every other section on the page.</div>
+      </div>
+
+      <div class="n">2</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">The turn — and the pause inside it</div>
+        <div class="beat">The chip fades up first, 620ms on ease-rise. Then <strong>nothing for 420ms.</strong> The arrow draws left to right over 620ms on ease-settle, and the message rises as it lands. That hold is the only place in the section where waiting is doing the argument's work: what she gets is not the money, and the beat between the two objects is where the money stops existing. Close the gap and it reads as a transaction.</div>
+      </div>
+
+      <div class="n">3</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">The shelf, counted out one at a time</div>
+        <div class="beat">The heavy rule draws first, 620ms on ease-settle. Rows arrive top to bottom, 130ms apart. Inside a row the hollow marks come first — what has already arrived, the past — then the solid ones, 90ms apart, left to right. Each mark is its own fade at 220ms; the row is never a single element growing in width, because a thing growing in width is a bar, and a bar is a budget. Total row stagger is capped at 540ms so the longest row does not outrun the next one starting.</div>
+      </div>
+
+      <div class="n">4</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">The three rules, and the third one alone</div>
+        <div class="beat">620ms each on ease-rise, 130ms apart, rules drawing under each. The third line — <em>when it runs low, her circle is told</em> — waits an extra 220ms after the second. It is the section's point and it is allowed the room. The closing serif line follows at 900ms, y +10px only.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="height: 1px; background: #E2DAD0;"></div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Live behaviour · when someone actually adds</div>
+    <div class="p">One new solid mark appears at the end of its row, 420ms on ease-rise, and the row's meta updates. That is the entire event. No number counts up, no total re-renders, no sound, no celebration. Somebody quietly put a dinner on the shelf; the page should behave the way a person would.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Never in this section</div>
+    <div class="p">No currency symbol, anywhere, in any state — including empty states and error copy. No progress bar, percentage, goal, target, thermometer or countdown. No amount next to anyone's name, and no ordering of givers by how much they gave. No confetti or scale-up when a gift lands. No red, and no low-balance warning that can ever reach her screen. No “only two left” urgency written at her.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Reduced motion</div>
+    <div class="p">prefers-reduced-motion: the arrow is drawn at rest, every mark is present, and the three rules cross-fade in at 220ms with no travel. Nothing is lost — the section is legible as a still, which is how it is designed and how it appears in the storyboard.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Accessibility</div>
+    <div class="p">The marks are decorative individually and hidden from the reader; the row carries the meaning as a label — “Dinners: two already arrived, four still waiting for her.” Plum on field clears contrast at this size, but the hollow mark's hairline does not, which is why quantity is never carried by the mark alone. The legend sits above the first row rather than below the last, so it is read before it is needed.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Copy flags for the client</div>
+    <div class="p">“Amount” and “cost” appear only in the negative, and only once each. “Balance” is the brief's own word for this section and is kept; if the packages sheet rules it out downstream, the section survives being renamed <em>What is in it now</em>, which is already the panel's label. The four things shown are placeholders for whatever the real catalogue turns out to be — the layout holds any four, and breaks at seven.</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

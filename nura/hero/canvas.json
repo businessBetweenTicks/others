@@ -15,6 +15,10 @@
     {
       "id": "page-4",
       "name": "Data forward — 4 breakpoints"
+    },
+    {
+      "id": "page-5",
+      "name": "Care balance — 4 breakpoints"
     }
   ],
   "artboards": [
@@ -197,6 +201,51 @@
       "w": 740,
       "h": 1900,
       "title": "Data forward — motion and tone"
+    },
+    {
+      "file": "Care375.dc.html",
+      "page": "page-5",
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 1775,
+      "title": "Care balance · 375 phone"
+    },
+    {
+      "file": "Care768.dc.html",
+      "page": "page-5",
+      "x": 475,
+      "y": 0,
+      "w": 768,
+      "h": 1540,
+      "title": "Care balance · 768 tablet"
+    },
+    {
+      "file": "Care1280.dc.html",
+      "page": "page-5",
+      "x": 1343,
+      "y": 0,
+      "w": 1280,
+      "h": 1470,
+      "title": "Care balance · 1280 laptop"
+    },
+    {
+      "file": "Care1440.dc.html",
+      "page": "page-5",
+      "x": 2723,
+      "y": 0,
+      "w": 1440,
+      "h": 1660,
+      "title": "Care balance · 1440 wide desktop"
+    },
+    {
+      "file": "CareMotion.dc.html",
+      "page": "page-5",
+      "x": 4263,
+      "y": 0,
+      "w": 740,
+      "h": 2000,
+      "title": "Care balance — motion and tone"
     }
   ],
   "annotations": [
@@ -295,10 +344,42 @@
       "y": 1950,
       "w": 620,
       "text": "The hardest sentence in the brief is “not with the giver.” The person reading this page IS the giver, and is about to spend money. Telling them plainly that they will never see any of it is the most trust-building thing the section does, so it gets its own block rather than a clause in a paragraph.\n\nThe three names carry a quiet dash, never a cross. A cross says something was refused; a dash says it was never on the list. In the motion, the dashed line finishes drawing BEFORE those names appear — the barrier exists before the people do."
+    },
+    {
+      "id": "cb-idea",
+      "page": "page-5",
+      "x": 2723,
+      "y": -460,
+      "w": 620,
+      "text": "Every convention for drawing a balance is a convention for drawing money — the bar, the goal, the thermometer, the running total — and each one turns her recovery into a target somebody is behind on.\n\nSo this section draws no quantity at all. It draws an inventory: four things, counted in the things themselves, the way you count what is left in a cupboard. Four dinners is not 66% of anything. It is four dinners."
+    },
+    {
+      "id": "cb-marks",
+      "page": "page-5",
+      "x": 1343,
+      "y": 1560,
+      "w": 620,
+      "text": "The marks are spaced so they read as separate objects, never as segments of a bar, and no two rows share a total — a shared denominator is exactly what makes a row look like progress toward a goal.\n\nHollow is what has already arrived, solid is what is still waiting for her, and they run left to right in that order because that is the direction time runs. Depletion is not a loss here; a mark going hollow means somebody was fed."
+    },
+    {
+      "id": "cb-turn",
+      "page": "page-5",
+      "x": 0,
+      "y": 1860,
+      "w": 620,
+      "text": "The turn at the top is the whole mechanic in two objects: someone adds, and a message arrives. Nothing sits between them, because there is nothing about the middle she needs to understand.\n\nThe line under it is the section's rule — she is told who it came from, she is never told what it cost. Names travel, amounts never do. That is what keeps the gift warm without letting it become a price list.\n\nIn the motion there is a 420ms hold between the chip and the message. That gap is where the money stops existing. Close it and the whole thing reads as a transaction."
+    },
+    {
+      "id": "cb-rules",
+      "page": "page-5",
+      "x": 475,
+      "y": 1620,
+      "w": 560,
+      "text": "Somebody has to watch the balance, and it must not be her. The third rule — when it runs low, her circle is told, only them and quietly — is the section's real argument, and it is what stops a gift from turning into a bill she is behind on.\n\nIt is also why she is never shown the panel above. On this page the reader IS the circle, so showing them the balance is correct; showing it to her would not be."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-4"
+    "page": "page-5"
   }
 }
