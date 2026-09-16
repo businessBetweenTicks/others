@@ -159,7 +159,7 @@
       "x": 0,
       "y": 0,
       "w": 375,
-      "h": 1070,
+      "h": 1870,
       "title": "Data forward · 375 phone"
     },
     {
@@ -168,7 +168,7 @@
       "x": 475,
       "y": 0,
       "w": 768,
-      "h": 1190,
+      "h": 1830,
       "title": "Data forward · 768 tablet"
     },
     {
@@ -177,7 +177,7 @@
       "x": 1343,
       "y": 0,
       "w": 1280,
-      "h": 1120,
+      "h": 1290,
       "title": "Data forward · 1280 laptop"
     },
     {
@@ -186,7 +186,7 @@
       "x": 2723,
       "y": 0,
       "w": 1440,
-      "h": 1300,
+      "h": 1500,
       "title": "Data forward · 1440 wide desktop"
     },
     {
@@ -195,7 +195,7 @@
       "x": 4263,
       "y": 0,
       "w": 740,
-      "h": 1800,
+      "h": 1900,
       "title": "Data forward — motion and tone"
     }
   ],
@@ -276,25 +276,25 @@
       "id": "df-idea",
       "page": "page-4",
       "x": 2723,
-      "y": -380,
+      "y": -420,
       "w": 600,
-      "text": "The heading and the three closing lines are the brief's copy, verbatim. The lead is the brief's sentence with its second half removed — what Nura uses the two records FOR is now shown by the diagram rather than restated under it.\n\nThe section never argues. A privacy block fails the moment it starts reassuring you, because that tells the reader there is something to be afraid of — and a mother two weeks postpartum has no patience for a defence. So it shows a trade and lets her do the arithmetic."
+      "text": "The section's job is to explain, plainly, what the mother chooses to share and what is done with it. So it explains — in three numbered steps, in this order: who decides, what is read, what she gets back.\n\nIt never argues. A trust block fails the moment it starts reassuring you, because that tells the reader there is something to fear. It makes no case; it answers the question and stops."
     },
     {
-      "id": "df-rows",
+      "id": "df-steps",
       "page": "page-4",
       "x": 1343,
-      "y": 1280,
-      "w": 600,
-      "text": "Only two things appear on the left, because only two are in the brief's paragraph: her delivery record and her insurance. The pull is to pad it to four for a fuller composition. Two is the honest number, and a short list of real things reads as more trustworthy than a long list of vague ones.\n\nEach carries a four-word return — “nothing to repeat”, “everything booked, covered”. That is the entire argument of the section, in eight words."
+      "y": 1950,
+      "w": 620,
+      "text": "Every step leads with its picture, not its words.\n\n01 shows the asking and the one-word yes, so consent is a thing you watch happen rather than a claim.\n02 shows the two records as two chips. Two is the entire list, and a short list of real things reassures more than any sentence about safety.\n03 shows what came back as the actual messages, in the same bubbles as the hero — a described benefit is worth less than the benefit sitting on the page."
     },
     {
-      "id": "df-diagram",
+      "id": "df-line",
       "page": "page-4",
       "x": 0,
-      "y": 1280,
-      "w": 560,
-      "text": "What comes back is not a description of the thread, it is the thread — the same bubbles, the same shape, the same entrance as the hero. She gave two things; these arrived. Nothing captions it.\n\nNo arrowheads, because nothing is being sent anywhere. No padlock, no shield, no server, no toggles, no green. Every one of those is the reflex move for a data section and every one announces risk.\n\nAt 768 and 375 the diagram turns ninety degrees — two sources across the top, the thread beneath — rather than shrinking the desktop version into a stamp."
+      "y": 1950,
+      "w": 620,
+      "text": "The hardest sentence in the brief is “not with the giver.” The person reading this page IS the giver, and is about to spend money. Telling them plainly that they will never see any of it is the most trust-building thing the section does, so it gets its own block rather than a clause in a paragraph.\n\nThe three names carry a quiet dash, never a cross. A cross says something was refused; a dash says it was never on the list. In the motion, the dashed line finishes drawing BEFORE those names appear — the barrier exists before the people do."
     }
   ],
   "launch": {
