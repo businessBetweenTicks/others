@@ -21,11 +21,11 @@ const RAMP = [
   ['Section head / h2', '28', '34', '40', '46', 'Newsreader 400 · lh 1.14 · tracking −0.015em · first used below the hero'],
   ['Lead paragraph', '16', '17', '17.5', '19', 'Instrument Sans 400 · lh 1.62 · measure 41–52 characters'],
   ['Body', '15', '15.5', '16', '16', 'Instrument Sans 400 · lh 1.65 · measure 62–68 characters · first used below the hero'],
-  ['Stage caption', '17', '17', '17', '18', 'Newsreader 400 italic · Ink 3 · the one italic line in the stage'],
+  ['Stage caption', '17.5', '18.5', '18.5', '20', 'Newsreader 400 italic · Ink 2 · the payoff line, and the one italic in the stage'],
   ['Nav / UI label', '—', '13.5', '13.5', '14', 'Instrument Sans 400 · at 375 the nav is the wordmark and a two-rule menu only'],
-  ['Card title', '13', '12.5', '12.5', '13', 'Instrument Sans 400 · Ink when handled, Ink 3 when not'],
-  ['Caption / meta', '11.5', '11', '11', '11.5', 'Instrument Sans 400 · lh 1.55 · Ink 3 only · never smaller than 11'],
-  ['Thread bubble', '13', '12.5', '12.5', '12.5', 'Instrument Sans 400 · lh 1.5 · 13 on phone where the thread is real UI; 12.5 in the desktop stage where it is a miniature'],
+  ['Ledger row', '14', '14', '14', '14.5', 'Instrument Sans 400 · Ink when handled, Ink 3 when not · one hairline above each row'],
+  ['Caption / meta', '11.5', '11.5', '11.5', '12', 'Instrument Sans 400 · lh 1.55 · Ink 3 only · never smaller than 11'],
+  ['Thread bubble', '14', '13.5', '13.5', '14', 'Instrument Sans 400 · lh 1.52 · no device frame at any width, so the thread reads at real size everywhere'],
   ['Eyebrow', '10.5', '11', '11', '11', 'Instrument Sans 500 · uppercase · tracking 0.18em · Moss'],
   ['Button', '13', '13', '13', '14', 'Instrument Sans 500 · uppercase · tracking 0.06em · 56px tall on phone'],
 ];
@@ -82,14 +82,14 @@ const html = `<!doctype html>
   </style>
 </helmet>
 
-<div style="width: 1200px; min-height: 2900px; background: ${T.ground}; color: ${T.ink}; padding: 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px;">
+<div style="width: 1200px; min-height: 3000px; background: ${T.ground}; color: ${T.ink}; padding: 56px; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px;">
 
   <div style="display: flex; align-items: flex-end; justify-content: space-between;">
     <div style="display: flex; flex-direction: column; gap: 10px;">
       <div style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: ${T.moss};">Nura · consumer gift site</div>
       <h2 class="serif" style="margin: 0; font-size: 42px; font-weight: 400; letter-spacing: -0.02em;">Style set</h2>
     </div>
-    <div style="font-size: 12px; line-height: 1.6; color: ${T.ink3}; max-width: 380px; text-align: right;">Everything the hero establishes. Each value below becomes one named Figma variable or style. Ten colours, two families, three easing curves, four durations, two shadows, three radii.</div>
+    <div style="font-size: 12px; line-height: 1.6; color: ${T.ink3}; max-width: 380px; text-align: right;">Everything the hero establishes. Each value below becomes one named Figma variable or style. Ten colours, two families, three easing curves, four durations, one shadow, two radii.</div>
   </div>
 
   <div style="height: 1px; background: ${T.hairline};"></div>
@@ -187,15 +187,17 @@ ${GRID.map((g, i) => gridRow(g, i === GRID.length - 1)).join('')}
 
     <div style="display: flex; flex-direction: column; gap: 18px;">
       <div class="lbl">Surface</div>
-${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 2px; flex-shrink: 0;"></div>`, 'Radius 2px', 'Everything except the thread and the device shell. Square-ish reads editorial; rounded reads like software.')}
+${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 2px; flex-shrink: 0;"></div>`, 'Radius 2px', 'Everything that is not a message bubble. Square-ish reads editorial; rounded reads like software.')}
 ${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.field}; border-radius: 14px 14px 14px 4px; flex-shrink: 0;"></div>`, 'Radius 14px, one corner 4px', 'Message bubbles only, incoming and outgoing. The one soft shape on the site, reserved for the thread.')}
-${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 24px; flex-shrink: 0;"></div>`, 'Radius 24px', 'The phone shell inside the stage, and nothing else. It appears once per page at most, and never at 375.')}
-${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 2px; box-shadow: 0 14px 34px -22px rgba(28,26,23,0.32); flex-shrink: 0;"></div>`, 'Lift', '0 14px 34px −22px rgba(28,26,23,.32). For a card that has arrived. Never on buttons, never on hover.')}
-${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 24px; box-shadow: 0 24px 60px -30px rgba(28,26,23,0.30); flex-shrink: 0;"></div>`, 'Lift, deep', '0 24px 60px −30px rgba(28,26,23,.30). The phone shell only — it sits above the photography plate, so it needs the longer throw.')}
+${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 2px; box-shadow: 0 14px 34px -22px rgba(28,26,23,0.32); flex-shrink: 0;"></div>`, 'Lift', '0 14px 34px −22px rgba(28,26,23,.32). The only shadow on the site, and the hero does not use it — it is for the package card open state below the fold. Never on buttons, never on hover.')}
 ${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.plum}; border-radius: 2px; flex-shrink: 0;"></div>`, 'Primary button', 'Plum on Ground. 20/40 at 1440, 20/32 at 1280 and 768, full width at 56px on phone. Hover darkens to #3B1F33 over 220ms. One per screen.')}
 ${surfaceRow(`<div style="width: 84px; height: 56px; background: ${T.ground}; border-radius: 2px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 12px; box-sizing: border-box; flex-shrink: 0;"><div style="font-size: 11px; color: ${T.plum}; border-bottom: 1px solid ${T.mute}; padding-bottom: 2px;">Start a gift</div></div>`, 'Secondary', 'Plum text on a 1px Mute underline. There are no outline buttons anywhere on the site.')}
 
-      <div style="background: ${T.field}; border-radius: 2px; padding: 18px 20px; margin-top: 4px;">
+      <div style="background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 2px; padding: 18px 20px; margin-top: 4px;">
+        <div style="font-size: 11.5px; line-height: 1.65; color: ${T.ink2};"><strong style="font-weight: 500; color: ${T.ink};">No boxes, no device frame.</strong> Things that are handled are rows of type under a hairline, never cards with borders and shadows — three bordered cards in a row is a dashboard, and the brief bans dashboards. There is no phone shell either, at any width: the brief says <em>No app</em>, and a device frame says the opposite of that in the first half-second.</div>
+      </div>
+
+      <div style="background: ${T.field}; border-radius: 2px; padding: 18px 20px;">
         <div style="font-size: 11.5px; line-height: 1.65; color: ${T.ink2};"><strong style="font-weight: 500; color: ${T.ink};">Photography</strong> — one image per section at most, warm low light: her hands, her back, her at a table. No baby in frame, no pram, no nursery. Images sit flush in a 2px-radius plate with no border and no overlay text. Every plate in these artboards is a marked placeholder; nothing is licensed yet.</div>
       </div>
     </div>

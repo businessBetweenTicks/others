@@ -20,7 +20,7 @@
       "x": 0,
       "y": 0,
       "w": 375,
-      "h": 1180,
+      "h": 1160,
       "title": "Hero · 375 phone"
     },
     {
@@ -29,7 +29,7 @@
       "x": 475,
       "y": 0,
       "w": 768,
-      "h": 1140,
+      "h": 1000,
       "title": "Hero · 768 tablet"
     },
     {
@@ -38,7 +38,7 @@
       "x": 1343,
       "y": 0,
       "w": 1280,
-      "h": 840,
+      "h": 780,
       "title": "Hero · 1280 laptop"
     },
     {
@@ -47,7 +47,7 @@
       "x": 2723,
       "y": 0,
       "w": 1440,
-      "h": 920,
+      "h": 840,
       "title": "Hero · 1440 wide desktop"
     },
     {
@@ -137,7 +137,7 @@
       "x": 0,
       "y": 0,
       "w": 1200,
-      "h": 2900,
+      "h": 3000,
       "title": "Style set"
     },
     {
@@ -155,33 +155,33 @@
       "id": "bp-375",
       "page": "page-1",
       "x": 0,
-      "y": 1300,
+      "y": 1240,
       "w": 375,
-      "text": "375 — two things leave the stage. The phone silhouette goes, because she is already holding one and drawing a phone inside a phone is a picture of a picture. The photography plate goes too; at 327px it would be a stamp, so the photograph returns further down the page as the section's own image. The thread plays straight on the field and the cards resolve beneath a hairline. CTA is full width at 56px."
+      "text": "375 — panel bleeds edge to edge and stacks: thread, then ledger, then the line. The photograph drops out here and returns further down the page as the section's own image; at 327px the plate would be a stamp. CTA is full width at 56px."
     },
     {
       "id": "bp-768",
       "page": "page-1",
       "x": 475,
-      "y": 1300,
+      "y": 1240,
       "w": 500,
-      "text": "768 — the two hero columns stack. Copy keeps a 560px measure instead of running the full width, so the headline breaks in two lines and the lead stays inside 52 characters. The stage drops below it and is actually wider here than on laptop — 672px against 564 — so the cards spread into the extra room rather than the phone growing. Nav collapses to wordmark, Start a gift, and a two-rule menu."
+      "text": "768 — the columns stack and the panel bleeds edge to edge, which it cannot do on desktop without swallowing the copy. Inside it the two halves go side by side: thread left, ledger right. Copy holds a 560px measure rather than running the full width, so the headline still breaks where it should."
     },
     {
       "id": "bp-1280",
       "page": "page-1",
       "x": 1343,
-      "y": 1300,
+      "y": 1240,
       "w": 500,
-      "text": "1280 — same asymmetric 5 / 6 split as 1440, margins at 64, stage 520 tall. Nothing reflows here; it is the same layout at a tighter measure. If the two widths looked different from each other, one of them would be wrong."
+      "text": "1280 — the same composition at a tighter measure: copy 500px against a 64px margin, panel bleeding right. Nothing reflows. If the two desktop widths looked different from each other, one of them would be wrong."
     },
     {
       "id": "bp-1440",
       "page": "page-1",
       "x": 2723,
-      "y": 1300,
+      "y": 1240,
       "w": 560,
-      "text": "1440+ — 12 columns, 96px margins. Copy sits in columns 1–5, the stage in 7–12, so a whole empty column separates them. That gap is the most expensive thing on the page. Content caps at 1440 and centres beyond it; the ground colour runs edge to edge."
+      "text": "1440+ — the media side bleeds to the edge of the viewport and off the bottom. It is not an inset rectangle with a margin on both sides; that reads as a widget dropped onto a page. Its top edge aligns with the eyebrow, so the two columns start on one line and then diverge.\n\nCopy sits in a 540px measure against a 96px margin. The headline breaks in two lines, and nothing is centred anywhere on the page."
     },
     {
       "id": "hero-copy",
@@ -214,6 +214,14 @@
       "y": 1840,
       "w": 900,
       "text": "Commissioned, not stocked. Every stock library's “new mother” is the exact thing this brand exists to be the opposite of, and one wrong frame undoes the whole palette.\n\nThe constraint that matters most is in shot 01: the right half of the frame must be empty room, because the resolved cards live there. That is layout, not styling — if it is not shot that way the hero does not assemble."
+    },
+    {
+      "id": "right-side",
+      "page": "page-1",
+      "x": 2723,
+      "y": -620,
+      "w": 560,
+      "text": "Two decisions shape the whole right-hand side.\n\nNo device frame, at any width. The brief's own caption is “No app.” A phone shell says the opposite of that in the first half-second, and it costs a third of the panel to a bezel holding nothing.\n\nNo cards. Three bordered white rectangles with drop shadows is a dashboard, and dashboards are on the banned list. What she is no longer chasing is set as rows of type under hairlines, with the detail right-aligned — a ledger, or a receipt. It is quieter, it is more editorial, and it is the same idea the data forward section will need later."
     }
   ],
   "launch": {

@@ -4,27 +4,24 @@ const GROUND='#F7F3ED', FIELD='#EFE9E0', PAPER='#FFFDFA', HAIRLINE='#E2DAD0', MU
       INK='#1C1A17', INK2='#55504A', INK3='#8A8279', PLUM='#4E2A44', MOSS='#6E7A61';
 
 const scene = (op) => `
-      <div style="position: relative; width: 180px; height: 300px; background: ${HAIRLINE}; border: 1px dashed ${MUTE}; border-radius: 2px; opacity: ${op}; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; box-sizing: border-box;">
+      <div style="position: relative; width: 158px; height: 300px; background: ${HAIRLINE}; border: 1px dashed ${MUTE}; border-radius: 2px; opacity: ${op}; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; box-sizing: border-box;">
         <div style="font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: ${INK3}; line-height: 1.6;">Photography<br>her, low light,<br>no baby in frame</div>
       </div>`;
 
 const bIn = (t, op=1) => `
-        <div style="max-width: 172px; background: ${PAPER}; border: 1px solid ${HAIRLINE}; border-radius: 14px 14px 14px 4px; padding: 9px 11px; font-size: 11px; line-height: 1.45; color: ${INK}; opacity: ${op};">${t}</div>`;
+        <div style="max-width: 162px; background: ${PAPER}; border: 1px solid ${HAIRLINE}; border-radius: 14px 14px 14px 4px; padding: 9px 11px; font-size: 11px; line-height: 1.45; color: ${INK}; opacity: ${op};">${t}</div>`;
 const bOut = (t, op=1) => `
         <div style="align-self: flex-end; background: ${PLUM}; color: ${GROUND}; border-radius: 14px 14px 4px 14px; padding: 8px 12px; font-size: 11px; line-height: 1.45; opacity: ${op};">${t}</div>`;
 const bGrey = (t, op=1) => `
         <div style="align-self: flex-end; background: ${MUTE}; color: ${INK3}; border-radius: 14px 14px 4px 14px; padding: 8px 12px; font-size: 11px; line-height: 1.45; font-style: italic; opacity: ${op};">${t}</div>`;
 
-const tick = `<svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="${MOSS}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.6 6.2 11.8 13 5"></path></svg>`;
-const ring = `<div style="width: 14px; height: 14px; border: 1px dashed ${MUTE}; border-radius: 50%;"></div>`;
+const tick = `<svg width="13" height="13" style="flex-shrink:0;" viewBox="0 0 16 16" fill="none" stroke="${MOSS}" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.6 6.2 11.8 13 5"></path></svg>`;
+const ring = `<div style="flex-shrink:0; width: 13px; height: 13px; border: 1px dashed ${MUTE}; border-radius: 50%;"></div>`;
 
 const card = (title, sub, done, rot=0) => `
-        <div style="background: ${done ? PAPER : FIELD}; border: 1px ${done ? 'solid ' + HAIRLINE : 'dashed ' + MUTE}; border-radius: 2px; padding: 11px 12px; display: flex; align-items: center; gap: 10px; transform: rotate(${rot}deg);">
-          ${done ? tick : ring}
-          <div style="display: flex; flex-direction: column; gap: 2px;">
-            <div style="font-size: 11px; color: ${done ? INK : INK3};">${title}</div>
-            <div style="font-size: 9.5px; color: ${INK3};">${sub}</div>
-          </div>
+        <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 9px 0; border-top: 1px ${done ? 'solid ' + HAIRLINE : 'dashed ' + MUTE}; transform: rotate(${rot}deg);">
+          <div style="display: flex; align-items: center; gap: 9px;">${done ? tick : ring}<div style="font-size: 11px; color: ${done ? INK : INK3};">${title}</div></div>
+          <div style="font-size: 9px; color: ${INK3}; text-align: right;">${sub}</div>
         </div>`;
 
 const OPEN  = [['Six-week visit','no date yet',-0.8], ['Dinners','nobody asked',0.6], ['The walk','not since Tuesday',-0.5]];
@@ -49,8 +46,8 @@ const frames = [
 
   { n:'03', title:'The scene beside it', time:'2.60 — 4.20s', dur:'1600ms', ease:'ease-soft / ease-rise', sceneOp:1,
     thread:bIn(HELLO), items:open(0),
-    onScreen:'The photography plate comes up to full. Three unresolved items appear at the right as dashed, un-ticked cards, each fractionally off-axis. Their copy is Ink 3, not Ink.',
-    motion:'Plate: opacity 0.55 → 1 over 900ms on ease-soft, with a 1.02 → 1.00 scale on the same curve — a settle, not a zoom. Cards: staggered 130ms apart, opacity 0 → 1, y +14px → 0, 620ms each on ease-rise. Their rotation (−0.8°, +0.6°, −0.5°) is the load; it is removed later, not here.',
+    onScreen:'The photography plate comes up to full. Three unresolved items appear at the right as dashed, un-ticked rows, each fractionally off-axis. Their copy is Ink 3, not Ink.',
+    motion:'Plate: opacity 0.55 → 1 over 900ms on ease-soft, with a 1.02 → 1.00 scale on the same curve — a settle, not a zoom. Rows: staggered 130ms apart, opacity 0 → 1, y +14px → 0, 620ms each on ease-rise. Their rotation (−0.8°, +0.6°, −0.5°) is the load; it is removed later, not here.',
     note:'The tilt is the only place the piece is allowed to look untidy. Keep it under 1°.' },
 
   { n:'04', title:'She replies with one word', time:'4.20 — 5.20s', dur:'1000ms', ease:'ease-rise', sceneOp:1,
@@ -61,20 +58,20 @@ const frames = [
 
   { n:'05', title:'The appointment ticks booked', time:'5.20 — 6.80s', dur:'1600ms', ease:'ease-settle', sceneOp:1,
     thread:bIn(HELLO, 0.4) + bOut('yes', 0.55) + bIn(VISIT), items:open(1),
-    onScreen:'The first card turns over: dashed border to hairline, Field fill to Paper, Ink 3 copy to Ink, and a moss tick where the empty ring was. A third bubble explains it in her thread.',
-    motion:'Card: fill and border cross-fade 420ms on ease-soft; rotation −0.8° → 0° over 620ms on ease-settle. Tick: SVG stroke-dashoffset draws in 420ms on ease-settle, starting 220ms after the fill changes, so the tick reads as the last thing to happen. Bubble: 620ms on ease-rise, starting 220ms after the card.',
+    onScreen:'The first row turns over: its dashed rule goes solid hairline, its copy goes Ink 3 to Ink, and a moss tick draws where the empty ring was. No box appears — it stays a line of type. A third bubble explains it in her thread.',
+    motion:'Row: rule and copy cross-fade 420ms on ease-soft; rotation −0.8° → 0° over 620ms on ease-settle. Tick: SVG stroke-dashoffset draws in 420ms on ease-settle, starting 220ms after the rule changes, so the tick reads as the last thing to happen. Bubble: 620ms on ease-rise, starting 220ms after the row.',
     note:'The tick is the only moss on screen so far. It is a 14px stroke, never a filled badge.' },
 
   { n:'06', title:'A dinner arrives', time:'6.80 — 8.20s', dur:'1400ms', ease:'ease-settle', sceneOp:1,
     thread:bIn(HELLO, 0.3) + bOut('yes', 0.4) + bIn(VISIT, 0.55) + bIn('Dinner lands at six, Tuesday, Thursday, Saturday.'), items:open(2),
-    onScreen:'Second card resolves the same way. The thread has begun to scroll: the oldest bubbles are down to 30% and drifting up out of frame.',
-    motion:'Identical card sequence to Frame 05 — same durations, same curves, no variation. Thread column translates y −14px over 620ms on ease-settle while the top bubble fades 0.4 → 0.3.',
+    onScreen:'Second row resolves the same way. The thread has begun to scroll: the oldest bubbles are down to 30% and drifting up out of frame.',
+    motion:'Identical row sequence to Frame 05 — same durations, same curves, no variation. Thread column translates y −14px over 620ms on ease-settle while the top bubble fades 0.4 → 0.3.',
     note:'Reuse the resolve sequence exactly. The repetition is what makes it feel like a system rather than a set of tricks.' },
 
   { n:'07', title:'A walk happens', time:'8.20 — 9.60s', dur:'1400ms', ease:'ease-settle', sceneOp:1,
     thread:bIn(VISIT, 0.3) + bIn('Dinner lands at six, Tuesday, Thursday, Saturday.', 0.5) + bIn('Thursday at four is yours. Someone is coming for the baby.') + bGrey('is this normal?'), items:allDone,
-    onScreen:'Third card resolves. All three are now Paper, hairline, ticked and square to the grid. In the same beat her own grey question arrives at the bottom of the thread, unanswered — it is the only thing left open on screen.',
-    motion:'Same resolve sequence as 05 and 06. Her grey bubble enters last, 620ms on ease-rise, 220ms after the card settles, and is deliberately left hanging into Frame 08.',
+    onScreen:'Third row resolves. All three are now hairline, ticked and square to the grid. In the same beat her own grey question arrives at the bottom of the thread, unanswered — it is the only thing left open on screen.',
+    motion:'Same resolve sequence as 05 and 06. Her grey bubble enters last, 620ms on ease-rise, 220ms after the row settles, and is deliberately left hanging into Frame 08.',
     note:'The grey bubble must appear here, not in 08. An answer with no question in front of it reads as a feature, not a reply.' },
 
   { n:'08', title:'The worry clears', time:'9.60 — 11.40s', dur:'1800ms', ease:'ease-soft', sceneOp:1,
@@ -84,8 +81,8 @@ const frames = [
     note:'The only frame where nothing is ticked. Resist adding a tick here; being answered is not a task completing.' },
 
   { n:'09', title:'Weight lifting — rest state', time:'11.40 — 14.00s', dur:'2600ms', ease:'ease-settle / ease-soft', sceneOp:1,
-    thread:bIn(HELLO, 0.45) + bOut('yes', 0.6) + bIn(VISIT, 0.75) + bOut('ok'), items:allDone,
-    onScreen:'Everything square, everything quiet. The thread settles back to its opening and its close — the first message and the last word — and the three cards hold. “She did none of it.” fades up beneath them in the serif, italic. This composition is the hero poster frame, card for card and bubble for bubble.',
+    thread:bIn(HELLO, 0.45) + bOut('yes', 0.6) + bIn(VISIT, 0.75) + bOut('ok'), items:allDone + `\n        <div class="serif" style="font-size: 13px; font-style: italic; color: ${INK2}; margin-top: 12px;">She did none of it.</div>`,
+    onScreen:'Everything square, everything quiet. The thread settles back to its opening and its close — the first message and the last word — and the three lines hold. “She did none of it.” fades up beneath them in the serif, italic. This composition is the hero poster frame, line for line and bubble for bubble.',
     motion:'Intermediate bubbles fade out over 620ms on ease-soft as the column resolves to four. The whole composition then lifts y −14px over 1200ms on ease-settle — the weight coming off, read as the scene rising rather than anything falling — and shadows soften about 20% on the same curve. Caption fades in at 1.10s, 900ms on ease-soft, ending at 2.00s. The final 600ms is dead still. 2000 + 600 = 2600ms.',
     note:'End here and hold. Plays once on load; a quiet Replay appears bottom-right of the stage after the hold, never an auto-loop — a loop turns a moment of relief into a nervous tic.' },
 ];
@@ -127,12 +124,12 @@ for (const f of frames) {
 
   <div style="background: ${FIELD}; border-radius: 2px; padding: 24px; display: flex; gap: 18px; align-items: stretch;">
 ${scene(f.sceneOp)}
-    <div style="width: 200px; display: flex; flex-direction: column; gap: 7px;">
+    <div style="width: 186px; display: flex; flex-direction: column; gap: 7px;">
       <div style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: ${INK3}; margin-bottom: 3px;">Thread</div>
 ${f.thread || `      <div style="font-size: 10.5px; color: ${INK3}; font-style: italic; padding-top: 4px;">empty</div>`}
     </div>
-    <div style="width: 200px; display: flex; flex-direction: column; gap: 7px;">
-      <div style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: ${INK3}; margin-bottom: 3px;">Around her</div>
+    <div style="width: 238px; display: flex; flex-direction: column; gap: 7px;">
+      <div style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: ${INK3}; margin-bottom: 3px;">Handled</div>
 ${f.items || `      <div style="font-size: 10.5px; color: ${INK3}; font-style: italic; padding-top: 4px;">nothing yet</div>`}
     </div>
   </div>
