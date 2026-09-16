@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    .serif { font-family: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; }
+    .lbl { font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279; }
+    .p { font-size: 12.5px; line-height: 1.72; color: #55504A; }
+    .beat { font-size: 11.5px; line-height: 1.62; color: #55504A; }
+    .bt { font-size: 13px; margin-bottom: 6px; color: #1C1A17; }
+    .n { font-family: 'Newsreader', Georgia, serif; font-size: 20px; color: #D9CFC3; padding: 14px 0 0 0; }
+  </style>
+</helmet>
+
+<div style="width: 740px; min-height: 2780px; background: #F7F3ED; color: #1C1A17; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px;">
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E7A61;">The gift flow</div>
+    <h2 class="serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.12; letter-spacing: -0.018em;">Six screens, one decision each</h2>
+  </div>
+
+  <div style="background: #4E2A44; border-radius: 2px; padding: 26px 30px;">
+    <div class="lbl" style="color: #D9CFC3; margin-bottom: 12px;">The approach, in one line</div>
+    <div class="serif" style="font-size: 21px; font-weight: 400; line-height: 1.44; color: #F7F3ED; font-style: italic;">Keep her on the screen the whole way through — the money is asked for once, at the end, and every step before it shows what the money turns into rather than what it costs.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Why it is built this way</div>
+    <div class="p">A gift like this is bought by someone who is worried about a friend and slightly unsure whether the gesture is welcome. Every extra decision is a chance to reconsider. So each screen carries exactly one, the page never scrolls sideways into options, and the two screens that could balloon — add-ons and the optional fields about her — are both explicitly refusable on the screen itself rather than in a footnote.</div>
+    <div class="p">The flow inherits the marketing page's rule that money is shown as things. Step 2 is the hinge: the amount goes up, and what changes on screen is the number of dinners, not a total. Those are the same tokens as the care balance section, so the giver has already learned to read them before they get here. It is also the last time the number moves — by step 6 it is a line in a summary, not a decision.</div>
+    <div class="p">Step 4 is the flow's trust moment and it is built like the data forward section: every optional field carries a one-line reason underneath, in the brief's words, saying what it makes Nura better at. Nothing is asked for without saying why, and the screen closes by naming who does not see it — the people adding to the gift. A form that explains itself field by field is the only kind a tired person will finish.</div>
+    <div class="p">Step 5 shows the card as it will print, in the serif, on paper, with a shadow — the only real shadow anywhere in this system. It is there because it is the one physical object the giver makes, and seeing it set makes people write a better line than an empty box does.</div>
+  </div>
+
+  <div style="height: 1px; background: #E2DAD0;"></div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div class="lbl">The chrome, shared by all six</div>
+    <div style="display: grid; grid-template-columns: 30px 1fr; gap: 0 18px;">
+      <div class="n">·</div>
+      <div style="padding: 14px 0; border-top: 1px solid #1C1A17;">
+        <div class="bt">375 — as delivered</div>
+        <div class="beat">Back control and “n of 6” on one line, then a one-pixel rule across the full width with the completed fraction in Ink and the rest in Mute. It is a progress rule, not a bar: no fill colour, no percentage, no animation on load. The primary action is sticky at the bottom, 56px, always within thumb reach, and any secondary action (“Skip this”, “See all ten”) sits centred beneath it as a text link so the two can never be confused.</div>
+      </div>
+
+      <div class="n">·</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">1280 and 1440 — the treatment on the artboard beside this one</div>
+        <div class="beat">The rule becomes named steps in the header — Package, Amount, Add-ons, About her, The card, Pay — because at this width there is room to say where you are instead of counting. Content splits seven-to-four: the decision on the left at a 520–560px measure, and a summary rail on the right in Field, holding what the gift is so far and the share link, with the primary action at its foot. The rail is sticky; the left column scrolls. At 1440 the measure and the rail grow, the margins go to 96px, and nothing reflows.</div>
+      </div>
+
+      <div class="n">·</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">768 — neither one</div>
+        <div class="beat">Named steps are kept, but the rail is not: at this width a four-column rail squeezes the decision. Single column at a 560px measure against a 48px margin, and the summary collapses into one line directly above the sticky action — “First weeks home · $300 · one add-on” — expandable by tap. The action stays sticky here too; a tablet is still held.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div class="lbl">Notes per screen</div>
+    <div style="display: grid; grid-template-columns: 30px 1fr; gap: 0 18px;">
+      <div class="n">1</div>
+      <div style="padding: 14px 0; border-top: 1px solid #1C1A17;">
+        <div class="bt">Pick a package</div>
+        <div class="beat">The region selector sits above the cards, on its own rule, as a plain line of type with a chevron — not a flag, not a globe, not a dropdown that looks like a form control. Changing it re-renders every price in place with a 220ms crossfade and no layout shift, which is why prices are set on their own line rather than beside the name. The card the reader opened on the marketing page is already open here, exactly as they left it; the brief asks for that carry-in and it is the reason this screen does not feel like starting again. “See all ten” under the action expands the list rather than navigating away.</div>
+      </div>
+
+      <div class="n">2</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">Set the amount and open a pool</div>
+        <div class="beat">Stepper, not a slider: a slider invites fiddling and gives a false sense that any number is as good as another. Each press moves the amount one tier and one token appears or goes hollow, 220ms on ease-rise, with the sentence beneath rewriting itself on the same beat. The share link is live before payment, because the brief's model is that her people add to the same gift — the pool has to exist before it can be filled.</div>
+      </div>
+
+      <div class="n">3</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">Add one more thing</div>
+        <div class="beat">Three, never more, and never a builder. “Skip this” is a peer of the primary action, not hidden in the corner, and the closing line says she can decline any of them once it is hers. Selecting fills the circle with Moss and a tick at 220ms; the running total on desktop updates in the rail rather than animating on the row.</div>
+      </div>
+
+      <div class="n">4</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">Tell Nura about her</div>
+        <div class="beat">Hairline fields, no boxes: a filled field carries an Ink rule, an empty one carries Mute, and that is the only difference. Required above the divider, optional below, and every optional field has the brief's one-line reason under it. Validation is never red and never inline-as-you-type — it appears on blur, in Ink 2, as a sentence: “This needs a mobile Nura can reach her on.”</div>
+      </div>
+
+      <div class="n">5</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">Write the card</div>
+        <div class="beat">The preview updates as they type, one line behind, set in the serif at print proportions. No character counter until 40 characters remain, and then in Ink 3, never red. The two delivery options reuse the add-on row exactly — same circle, same tick — so a control learned on screen 3 still means the same thing on screen 5.</div>
+      </div>
+
+      <div class="n">6</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div class="bt">Pay</div>
+        <div class="beat">Stripe Elements styled to the same hairline fields, so the payment step does not visually change hands. Summary first, then the card, then one button that says the amount out loud. The closing line does the last piece of trust work — Stripe takes the payment, Nura never sees the card, and her people never see what this giver gave.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Motion across the flow</div>
+    <div class="p">Forward is a 280ms push from the right on ease-settle, back is the same in reverse; the header and the sticky action do not move, so only the middle changes and the frame stays still. The progress rule extends to its new fraction over 420ms on ease-settle, starting as the new screen lands rather than before it. Nothing else animates between screens — no fading numbers, no counting totals, no success flourish after payment. The confirmation is a screen, not an effect.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Never in the flow</div>
+    <div class="p">No red, anywhere, including validation and card errors. No countdown, no “3 people are viewing this”, no cart-abandon nudge, no default-on add-ons. No upsell after the package is chosen beyond the three the brief allows. No account, no password, no marketing opt-in pre-ticked, and nothing that asks the giver to make one for her. No progress bar that fills with colour. No celebration animation on payment — somebody's friend has just had a baby and is not sleeping; the tone at the end is relief, not confetti.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Accessibility</div>
+    <div class="p">Every step is a page with its own heading and title, so back and forward behave and a screen reader announces the move. The progress rule is decorative; “Step 2 of 6” carries it in text. Fields have real labels above them, never placeholders doing a label's job, and each optional field's reason is associated with its input rather than floating beside it. The stepper announces the new amount and the new sentence together. Every target on 375 clears 44px, and the whole flow is operable one-handed with the phone in the left hand — the back control top-left is the only exception, which is why nothing destructive lives there.</div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div class="lbl">Copy flags for the client</div>
+    <div class="p">All six step names are the brief's. The package names and the First weeks home content are the brief's. The three add-ons are the brief's — an extra week of dinners, one more sitter afternoon, a lactation visit.</div>
+    <div class="p">Mine and needing confirmation: every price, the three optional fields on step 4 and their reasons, the validation wording, and the Stripe line on step 6. Prices are shown for the United States so they match the marketing page; the region selector is what makes them change, and a second region is worth rendering before handover to prove the line does not reflow.</div>
+    <div class="p">One open question for the client: step 2 creates a shareable pool before payment. If the pool can be opened without the first giver paying, the share control belongs on step 2 as drawn; if it cannot, it moves to the confirmation screen and step 2 keeps only the amount. That is a product decision, not a design one, and the layout survives either.</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

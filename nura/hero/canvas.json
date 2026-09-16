@@ -23,6 +23,10 @@
     {
       "id": "page-6",
       "name": "Packages — grid, open state, motion"
+    },
+    {
+      "id": "page-7",
+      "name": "The gift flow — six screens"
     }
   ],
   "artboards": [
@@ -313,6 +317,78 @@
       "w": 740,
       "h": 2340,
       "title": "Packages — motion and tone"
+    },
+    {
+      "file": "Flow1.dc.html",
+      "page": "page-7",
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 1190,
+      "title": "1 · Pick a package"
+    },
+    {
+      "file": "Flow2.dc.html",
+      "page": "page-7",
+      "x": 475,
+      "y": 0,
+      "w": 375,
+      "h": 870,
+      "title": "2 · Set the amount and open a pool"
+    },
+    {
+      "file": "Flow3.dc.html",
+      "page": "page-7",
+      "x": 950,
+      "y": 0,
+      "w": 375,
+      "h": 815,
+      "title": "3 · Add one more thing"
+    },
+    {
+      "file": "Flow4.dc.html",
+      "page": "page-7",
+      "x": 1425,
+      "y": 0,
+      "w": 375,
+      "h": 1130,
+      "title": "4 · Tell Nura about her"
+    },
+    {
+      "file": "Flow5.dc.html",
+      "page": "page-7",
+      "x": 1900,
+      "y": 0,
+      "w": 375,
+      "h": 1010,
+      "title": "5 · Write the card"
+    },
+    {
+      "file": "Flow6.dc.html",
+      "page": "page-7",
+      "x": 2375,
+      "y": 0,
+      "w": 375,
+      "h": 815,
+      "title": "6 · Pay"
+    },
+    {
+      "file": "FlowDesktop.dc.html",
+      "page": "page-7",
+      "x": 2850,
+      "y": 0,
+      "w": 1280,
+      "h": 820,
+      "title": "Desktop treatment · step 2 at 1280"
+    },
+    {
+      "file": "FlowSpec.dc.html",
+      "page": "page-7",
+      "x": 4230,
+      "y": 0,
+      "w": 740,
+      "h": 2780,
+      "title": "The flow — chrome, motion and tone"
     }
   ],
   "annotations": [
@@ -483,10 +559,50 @@
       "y": -300,
       "w": 640,
       "text": "Verbatim from the brief: the heading, all ten package names in its order, and the whole of the First weeks home open state including “she never composes; she just replies”.\n\nMine, and needing confirmation against the packages sheet: the nine remaining “she can change” lines, and every price except the $300 the brief states. Prices are placeholders in a plausible range; the layout holds three digits and needs revisiting at four."
+    },
+    {
+      "id": "fl-one",
+      "page": "page-7",
+      "x": 0,
+      "y": -420,
+      "w": 660,
+      "text": "Six screens, one decision each. This gift is bought by someone worried about a friend and slightly unsure the gesture is welcome, so every extra decision is a chance to reconsider.\n\nThe two screens that could balloon — add-ons, and the optional fields about her — are both explicitly refusable on the screen itself rather than in a footnote. “Skip this” is a peer of the primary action, never hidden in a corner."
+    },
+    {
+      "id": "fl-money",
+      "page": "page-7",
+      "x": 475,
+      "y": 950,
+      "w": 620,
+      "text": "Step 2 is the hinge. The amount goes up and what changes on screen is the number of dinners, not a total — the same tokens as the care balance section, so the giver has already learned to read them before arriving here.\n\nA stepper, not a slider: a slider invites fiddling and implies any number is as good as another. And this is the last time the number moves. By step 6 it is a line in a summary, not a decision."
+    },
+    {
+      "id": "fl-trust",
+      "page": "page-7",
+      "x": 1425,
+      "y": 1210,
+      "w": 620,
+      "text": "Step 4 is the flow's trust moment, built like the data forward section. Every optional field carries the brief's one-line reason underneath saying what it makes Nura better at, and the screen closes by naming who does not see any of it — the people adding to the gift.\n\nNothing is asked for without saying why. A form that explains itself field by field is the only kind a tired person finishes. Validation is never red and never fires as you type: it appears on blur, in Ink 2, as a sentence."
+    },
+    {
+      "id": "fl-card",
+      "page": "page-7",
+      "x": 1900,
+      "y": 1030,
+      "w": 560,
+      "text": "The printed card is shown set, on paper, in the serif — carrying the only real drop shadow in the whole system. It is the one physical object the giver makes, and seeing it typeset makes people write a better line than an empty box does.\n\nIts two delivery options reuse the add-on row from step 3 exactly, same circle and same tick, so a control learned once means the same thing later."
+    },
+    {
+      "id": "fl-desktop",
+      "page": "page-7",
+      "x": 2850,
+      "y": 900,
+      "w": 700,
+      "text": "The brief asks for phone screens with the tablet and desktop treatment noted, so here is the note made concrete.\n\nDesktop: the counter becomes named steps, because at this width there is room to say where you are instead of counting. Seven-to-four split — the decision left at a 520–560px measure, a sticky summary rail right in Field holding the gift so far, the share link and the action.\n\n768 keeps the named steps but drops the rail, which would squeeze the decision at that width: single column, and the summary collapses to one expandable line above the sticky action.\n\nNo confetti at the end. Somebody's friend has just had a baby and is not sleeping; the tone after payment is relief, not celebration."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-6"
+    "page": "page-7"
   }
 }
