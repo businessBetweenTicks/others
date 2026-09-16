@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #55504A; text-decoration: none; }
+    a:hover { color: #1C1A17; }
+    .serif { font-family: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; }
+  </style>
+</helmet>
+
+<div style="width: 740px; min-height: 1500px; background: #F7F3ED; color: #1C1A17; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 34px;">
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E7A61;">Hero explainer</div>
+    <h2 class="serif" style="margin: 0; font-size: 36px; font-weight: 400; line-height: 1.1; letter-spacing: -0.018em;">Motion specification</h2>
+    <p style="margin: 6px 0 0 0; font-size: 13.5px; line-height: 1.65; color: #55504A; max-width: 560px;">14.0 seconds, plays once when the stage enters view. Nine beats: a message arrives, the scene beside it, one word back, three things resolve, a worry clears, the weight comes off. Storyboard frames 01–09 sit to the right.</p>
+  </div>
+
+  <!-- timeline -->
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279;">Timeline · 14.0s</div>
+    <div style="display: flex; gap: 2px; height: 34px;">
+      <div style="flex: 1400 0 0; background: #E4DCD1; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #7D7469;">01</div>
+      <div style="flex: 1200 0 0; background: #DCD2C4; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #7D7469;">02</div>
+      <div style="flex: 1600 0 0; background: #E4DCD1; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #7D7469;">03</div>
+      <div style="flex: 1000 0 0; background: #4E2A44; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #F7F3ED;">04</div>
+      <div style="flex: 1600 0 0; background: #DCD2C4; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #7D7469;">05</div>
+      <div style="flex: 1400 0 0; background: #E4DCD1; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #7D7469;">06</div>
+      <div style="flex: 1400 0 0; background: #DCD2C4; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #7D7469;">07</div>
+      <div style="flex: 1800 0 0; background: #E4DCD1; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #7D7469;">08</div>
+      <div style="flex: 2600 0 0; background: #6E7A61; border-radius: 1px; display: flex; align-items: center; justify-content: center; font-size: 9.5px; color: #F7F3ED;">09</div>
+    </div>
+    <div style="display: flex; justify-content: space-between; font-size: 9.5px; color: #A79D92;">
+      <div>0s</div><div>7s</div><div>14s</div>
+    </div>
+    <div style="font-size: 11.5px; line-height: 1.6; color: #8A8279; margin-top: 2px;">Plum marks the one beat that is her — the one-word reply. Moss marks the rest state. Every other beat is the system working, and is deliberately the same weight as every other.</div>
+  </div>
+
+  <div style="height: 1px; background: #E2DAD0;"></div>
+
+  <!-- easing -->
+  <div style="display: flex; flex-direction: column; gap: 16px;">
+    <div style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279;">Easing tokens · three curves, no others</div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px;">
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="background: #EFE9E0; border-radius: 2px; padding: 14px;">
+          <svg width="100%" height="88" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0,100 L100,100" stroke="#D9CFC3" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+            <path d="M0,100 C16,0 30,0 100,0" fill="none" stroke="#4E2A44" stroke-width="1.6" vector-effect="non-scaling-stroke"></path>
+          </svg>
+        </div>
+        <div style="font-size: 12px; font-weight: 500;">ease-rise</div>
+        <div style="font-size: 10.5px; line-height: 1.55; color: #8A8279;">cubic-bezier(0.16, 1, 0.30, 1)<br>Entrances: bubbles, cards, captions. Fast out of the gate, long settle.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="background: #EFE9E0; border-radius: 2px; padding: 14px;">
+          <svg width="100%" height="88" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0,100 L100,100" stroke="#D9CFC3" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+            <path d="M0,100 C33,100 12,0 100,0" fill="none" stroke="#4E2A44" stroke-width="1.6" vector-effect="non-scaling-stroke"></path>
+          </svg>
+        </div>
+        <div style="font-size: 12px; font-weight: 500;">ease-settle</div>
+        <div style="font-size: 10.5px; line-height: 1.55; color: #8A8279;">cubic-bezier(0.33, 0, 0.12, 1)<br>Things finding their place: rotation to zero, the final lift, the tick drawing.</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div style="background: #EFE9E0; border-radius: 2px; padding: 14px;">
+          <svg width="100%" height="88" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0,100 L100,100" stroke="#D9CFC3" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+            <path d="M0,100 C40,100 20,0 100,0" fill="none" stroke="#4E2A44" stroke-width="1.6" vector-effect="non-scaling-stroke"></path>
+          </svg>
+        </div>
+        <div style="font-size: 12px; font-weight: 500;">ease-soft</div>
+        <div style="font-size: 10.5px; line-height: 1.55; color: #8A8279;">cubic-bezier(0.40, 0, 0.20, 1)<br>Anything that only changes opacity or colour. Never moves anything.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div style="height: 1px; background: #E2DAD0;"></div>
+
+  <!-- durations -->
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <div style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279;">Durations · four values, nothing in between</div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px;">
+      <div style="border-top: 1px solid #1C1A17; padding-top: 12px; display: flex; flex-direction: column; gap: 5px;"><div style="font-size: 20px;" class="serif">220ms</div><div style="font-size: 10.5px; color: #8A8279; line-height: 1.5;">quick — hover, focus ring, nothing narrative</div></div>
+      <div style="border-top: 1px solid #1C1A17; padding-top: 12px; display: flex; flex-direction: column; gap: 5px;"><div style="font-size: 20px;" class="serif">420ms</div><div style="font-size: 10.5px; color: #8A8279; line-height: 1.5;">base — card fills, colour changes, dimming</div></div>
+      <div style="border-top: 1px solid #1C1A17; padding-top: 12px; display: flex; flex-direction: column; gap: 5px;"><div style="font-size: 20px;" class="serif">620ms</div><div style="font-size: 10.5px; color: #8A8279; line-height: 1.5;">calm — every bubble and card entrance</div></div>
+      <div style="border-top: 1px solid #1C1A17; padding-top: 12px; display: flex; flex-direction: column; gap: 5px;"><div style="font-size: 20px;" class="serif">900ms+</div><div style="font-size: 10.5px; color: #8A8279; line-height: 1.5;">long — the plate settling, the final lift</div></div>
+    </div>
+    <div style="font-size: 11.5px; line-height: 1.6; color: #8A8279;">Stagger is always 130ms. Distance is always ≤ 14px. Scale is only ever used once — the plate settling from 1.02 in frame 03.</div>
+  </div>
+
+  <div style="height: 1px; background: #E2DAD0;"></div>
+
+  <!-- never -->
+  <div style="display: flex; flex-direction: column; gap: 12px;">
+    <div style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279;">Never, in any frame</div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 24px;">
+      <div style="font-size: 12px; line-height: 1.6; color: #55504A;">No overshoot, spring or bounce on any property.</div>
+      <div style="font-size: 12px; line-height: 1.6; color: #55504A;">No confetti, sparkle, pulse or looping ambient drift.</div>
+      <div style="font-size: 12px; line-height: 1.6; color: #55504A;">No typing indicator, chime, badge or unread count.</div>
+      <div style="font-size: 12px; line-height: 1.6; color: #55504A;">No progress bar, counter, or anything resembling a number going up.</div>
+      <div style="font-size: 12px; line-height: 1.6; color: #55504A;">No baby, pram, or nursery object enters frame at any point.</div>
+      <div style="font-size: 12px; line-height: 1.6; color: #55504A;">No auto-loop. It plays once; a quiet Replay appears after the hold.</div>
+    </div>
+  </div>
+
+  <div style="height: 1px; background: #E2DAD0;"></div>
+
+  <!-- responsive + a11y -->
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <div style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279;">How it behaves at each width</div>
+    <div style="display: flex; flex-direction: column; gap: 0;">
+      <div style="display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 16px; padding: 11px 0; border-top: 1px solid #E2DAD0;"><div style="font-size: 11px; color: #1C1A17;">1440+</div><div style="font-size: 11.5px; line-height: 1.6; color: #55504A;">Full nine beats in the 6-column stage. Phone silhouette at left, cards resolving to its right.</div></div>
+      <div style="display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 16px; padding: 11px 0; border-top: 1px solid #E2DAD0;"><div style="font-size: 11px; color: #1C1A17;">1280</div><div style="font-size: 11.5px; line-height: 1.6; color: #55504A;">Identical sequence, stage scaled to 520px tall. No timing changes.</div></div>
+      <div style="display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 16px; padding: 11px 0; border-top: 1px solid #E2DAD0;"><div style="font-size: 11px; color: #1C1A17;">768</div><div style="font-size: 11.5px; line-height: 1.6; color: #55504A;">Stage drops below the copy, full content width. Same nine beats; the photography plate shifts from 180px to 40% of the stage.</div></div>
+      <div style="display: grid; grid-template-columns: 74px minmax(0, 1fr); gap: 16px; padding: 11px 0; border-top: 1px solid #E2DAD0; border-bottom: 1px solid #E2DAD0;"><div style="font-size: 11px; color: #1C1A17;">375</div><div style="font-size: 11.5px; line-height: 1.6; color: #55504A;">No phone silhouette — she is already holding one. The thread plays directly on the field, bubbles arriving top to bottom, then the three cards resolve in place beneath a hairline. Beats 03 and 07 lose the photography plate; it returns as the section's own image further down the page. Sequence shortens to 11s by trimming the holds, never the entrances.</div></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px;">
+    <div style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279;">Reduced motion, and the first paint</div>
+    <div style="background: #EFE9E0; border-radius: 2px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
+      <div style="font-size: 12px; line-height: 1.65; color: #55504A;"><strong style="font-weight: 500; color: #1C1A17;">prefers-reduced-motion: reduce</strong> — no sequence. Frame 09 renders immediately as a still, complete and legible. Nothing is lost: the rest state already says the whole thing. This is the fallback, not a degraded version.</div>
+      <div style="font-size: 12px; line-height: 1.65; color: #55504A;"><strong style="font-weight: 500; color: #1C1A17;">First paint</strong> — frame 09 is also the poster image. It renders with the page; the sequence starts only once the stage is 50% in view. The hero never waits on the animation to become readable.</div>
+      <div style="font-size: 12px; line-height: 1.65; color: #55504A;"><strong style="font-weight: 500; color: #1C1A17;">Text alternative</strong> — the stage carries a description for screen readers: “A message arrives. She replies with one word. Her six-week visit, dinners and an afternoon are booked around her.”</div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="font-size: 9.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #8A8279;">Build handoff</div>
+    <div style="font-size: 11.5px; line-height: 1.7; color: #55504A;">Everything here is DOM and CSS except the photography plate — no video, no canvas. Bubbles, cards and the tick are markup; the tick is a stroked SVG animated on <span style="font-family: ui-monospace, monospace; font-size: 11px;">stroke-dashoffset</span>. If it is built as Lottie instead, 60fps, and the nine beats stay on the frame boundaries above so either build reads identically. Total motion weight target: under 40KB excluding the photograph.</div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>

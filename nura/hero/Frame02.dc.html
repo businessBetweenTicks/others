@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Instrument+Sans:wght@400;500&display=swap">
+  <style>
+    body { margin: 0; font-family: 'Instrument Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #55504A; text-decoration: none; }
+    a:hover { color: #1C1A17; }
+    .serif { font-family: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif; }
+  </style>
+</helmet>
+
+<div style="width: 680px; min-height: 860px; background: #F7F3ED; color: #1C1A17; padding: 32px; box-sizing: border-box; display: flex; flex-direction: column; gap: 22px;">
+
+  <div style="display: flex; align-items: baseline; justify-content: space-between;">
+    <div style="display: flex; align-items: baseline; gap: 14px;">
+      <div class="serif" style="font-size: 30px; font-weight: 300; color: #D9CFC3;">02</div>
+      <div class="serif" style="font-size: 23px; font-weight: 400; letter-spacing: -0.01em;">A message arrives with her name</div>
+    </div>
+    <div style="font-size: 10px; letter-spacing: 0.1em; color: #8A8279; border: 1px solid #E2DAD0; border-radius: 2px; padding: 5px 9px;">1.40 — 2.60s</div>
+  </div>
+
+  <div style="background: #EFE9E0; border-radius: 2px; padding: 24px; display: flex; gap: 18px; align-items: stretch;">
+
+      <div style="position: relative; width: 180px; height: 300px; background: #E6DED3; border: 1px dashed #D9CFC3; border-radius: 2px; opacity: 0.55; display: flex; flex-direction: column; justify-content: flex-end; padding: 14px; box-sizing: border-box;">
+        <div style="position: absolute; inset: 0; background: rgba(28,26,23,0.05); border-radius: 2px;"></div>
+        <div style="position: relative; font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: #9A9086; line-height: 1.6;">Photography<br>her, low light,<br>no baby in frame</div>
+      </div>
+    <div style="width: 200px; display: flex; flex-direction: column; gap: 7px;">
+      <div style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #A79D92; margin-bottom: 3px;">Thread</div>
+
+        <div style="max-width: 172px; background: #FFFDFA; border: 1px solid #E2DAD0; border-radius: 12px 12px 12px 3px; padding: 9px 11px; font-size: 11px; line-height: 1.45; color: #1C1A17; opacity: 1;">Hi Maya. It’s Nura. Is now a good time?</div>
+    </div>
+    <div style="width: 200px; display: flex; flex-direction: column; gap: 7px;">
+      <div style="font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #A79D92; margin-bottom: 3px;">Around her</div>
+      <div style="font-size: 10.5px; color: #B6ABA0; font-style: italic; padding-top: 4px;">nothing yet</div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 4px;">
+
+      <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start;">
+        <div style="font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8279; padding-top: 2px;">On screen</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A; text-wrap: pretty;">One incoming bubble, left-aligned, in the thread column. Her first name is in it. No sender avatar, no app frame, no notification badge.</div>
+      </div>
+    <div style="height: 1px; background: #E2DAD0;"></div>
+
+      <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start;">
+        <div style="font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8279; padding-top: 2px;">Motion</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A; text-wrap: pretty;">Bubble: opacity 0 → 1 over 620ms, y +14px → 0, on ease-rise. It does not scale and it does not bounce. 340ms later the bubble’s own shadow settles from 0 to its resting value over 480ms on ease-soft — that shadow is what makes it read as arriving rather than appearing.</div>
+      </div>
+    <div style="height: 1px; background: #E2DAD0;"></div>
+
+      <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start;">
+        <div style="font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8279; padding-top: 2px;">Timing</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A; text-wrap: pretty;">1200ms · easing ease-rise</div>
+      </div>
+    <div style="height: 1px; background: #E2DAD0;"></div>
+
+      <div style="display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; align-items: start;">
+        <div style="font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A8279; padding-top: 2px;">Note</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A; text-wrap: pretty;">No typing indicator, no chime. Sound is off by default and the piece must work silent.</div>
+      </div>
+  </div>
+
+</div>
+</x-dc>
+</body>
+</html>
