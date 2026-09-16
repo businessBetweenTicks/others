@@ -217,7 +217,7 @@
       "x": 475,
       "y": 0,
       "w": 768,
-      "h": 1540,
+      "h": 1630,
       "title": "Care balance · 768 tablet"
     },
     {
@@ -244,7 +244,7 @@
       "x": 4263,
       "y": 0,
       "w": 740,
-      "h": 2000,
+      "h": 2040,
       "title": "Care balance — motion and tone"
     }
   ],
@@ -351,7 +351,7 @@
       "x": 2723,
       "y": -460,
       "w": 620,
-      "text": "Every convention for drawing a balance is a convention for drawing money — the bar, the goal, the thermometer, the running total — and each one turns her recovery into a target somebody is behind on.\n\nSo this section draws no quantity at all. It draws an inventory: four things, counted in the things themselves, the way you count what is left in a cupboard. Four dinners is not 66% of anything. It is four dinners."
+      "text": "The brief asks for the balance to fill as small tokens — a meal, a visit, an afternoon — not as a dollar figure, and that instruction decides the section.\n\nEvery default way of drawing a balance is a way of drawing money: the bar, the goal, the thermometer, the running total. Each one turns her recovery into a target somebody is behind on. So nothing here is a quantity. It is an inventory, counted in the things themselves, the way you count what is left in a cupboard. Four dinners is not 66% of anything.\n\nHeading and the three things are the brief's, verbatim and in its order."
     },
     {
       "id": "cb-marks",
@@ -359,7 +359,7 @@
       "x": 1343,
       "y": 1560,
       "w": 620,
-      "text": "The marks are spaced so they read as separate objects, never as segments of a bar, and no two rows share a total — a shared denominator is exactly what makes a row look like progress toward a goal.\n\nHollow is what has already arrived, solid is what is still waiting for her, and they run left to right in that order because that is the direction time runs. Depletion is not a loss here; a mark going hollow means somebody was fed."
+      "text": "Tokens are spaced so they read as separate objects, never as segments of a bar, and no two rows share a total — a shared denominator is what makes a row look like progress toward a goal.\n\nHollow is what has already arrived, solid is what is still coming, running left to right because that is the direction time runs. Depletion is not loss here: a token going hollow means somebody was fed. When Nura spends one it goes hollow in place rather than leaving the row, because what she was given did not stop having happened."
     },
     {
       "id": "cb-turn",
@@ -367,7 +367,7 @@
       "x": 0,
       "y": 1860,
       "w": 620,
-      "text": "The turn at the top is the whole mechanic in two objects: someone adds, and a message arrives. Nothing sits between them, because there is nothing about the middle she needs to understand.\n\nThe line under it is the section's rule — she is told who it came from, she is never told what it cost. Names travel, amounts never do. That is what keeps the gift warm without letting it become a price list.\n\nIn the motion there is a 420ms hold between the chip and the message. That gap is where the money stops existing. Close it and the whole thing reads as a transaction."
+      "text": "The strip is the brief's own sentence made into objects — a sister starts it, others add to it, and it turns into dinners that arrive.\n\nThe first two are chips in the system's sans, because they are things people do. The third is the serif page's message bubble, the same one the hero uses, because it is the only one of the three she ever sees. That change of voice is the transformation, and it does work no arrow could.\n\nThe rule underneath: names travel, amounts never do. She is told who it came from, because knowing your sister fed you IS the gift. There is a 420ms hold before the message lands — that beat is where the money stops existing. Close it and the strip reads as a checkout."
     },
     {
       "id": "cb-rules",
@@ -375,7 +375,7 @@
       "x": 475,
       "y": 1620,
       "w": 560,
-      "text": "Somebody has to watch the balance, and it must not be her. The third rule — when it runs low, her circle is told, only them and quietly — is the section's real argument, and it is what stops a gift from turning into a bill she is behind on.\n\nIt is also why she is never shown the panel above. On this page the reader IS the circle, so showing them the balance is correct; showing it to her would not be."
+      "text": "Somebody has to watch the balance, and it must not be her. The third rule — when it runs low, her circle is told, only them and quietly — is what stops a gift from becoming a bill she is behind on.\n\nIt also answers the obvious objection about the panel above: on this page the reader IS the circle, so showing it to them is correct. Showing it to her would not be.\n\nOne deliberate departure from the brief's wording: “she never sees a wallet or a number” loses the wallet. That word is on the packages sheet's banned list, and a banned word is not made safe by being negated — printing it is still the only time a reader meets it."
     }
   ],
   "launch": {

@@ -4,25 +4,23 @@ const T = { ground:'#F7F3ED', field:'#EFE9E0', paper:'#FFFDFA', hairline:'#E2DAD
             ink:'#1C1A17', ink2:'#55504A', ink3:'#8A8279', plum:'#4E2A44', moss:'#6E7A61' };
 
 const EYEBROW = 'Care balance';
-const HEADING = 'She never sees an amount. She sees dinner.';
-const LEAD = 'Her circle adds to the gift whenever they want to. Nothing reaches her as money. It arrives as the thing itself, and the balance stays with them.';
+const HEADING = 'Her circle fills it. Nura spends it on her.';
+const LEAD = 'Care balance is the friendly name for what her people have funded, and what is still coming. A sister starts it, others add to it, and she never sees a number — she sees what shows up.';
 
 // ---- the turn: what someone adds becomes a thing that shows up ----
 function turn(o) {
-  const chip = `<div style="display:inline-flex;align-items:center;gap:10px;background:${T.paper};border:1px solid ${T.hairline};border-radius:2px;padding:${o.chipPad};font-size:${o.chip}px;color:${T.ink};white-space:nowrap;">
-          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${T.moss};"></span>Priya adds, on Tuesday</div>`;
-  const bubble = `<div style="background:${T.paper};border:1px solid ${T.hairline};border-radius:14px 14px 14px 3px;padding:${o.bubPad};font-size:${o.bub}px;line-height:1.5;color:${T.ink};max-width:${o.bubMax}px;">Dinner at six tonight, from Priya.</div>`;
-  const arrowH = `<svg width="${o.arrow}" height="9" viewBox="0 0 ${o.arrow} 9" fill="none" style="flex-shrink:0;display:block;">
-          <path d="M0 4.5H${o.arrow - 1}" stroke="${T.ink3}" stroke-width="1"/>
-          <path d="M${o.arrow - 6} 1.2L${o.arrow - 1} 4.5L${o.arrow - 6} 7.8" stroke="${T.ink3}" stroke-width="1" fill="none" stroke-linejoin="round"/>
-        </svg>`;
-  const arrowV = `<svg width="9" height="34" viewBox="0 0 9 34" fill="none" style="flex-shrink:0;display:block;margin-left:22px;">
-          <path d="M4.5 0V33" stroke="${T.ink3}" stroke-width="1"/>
-          <path d="M1.2 27.5L4.5 33L7.8 27.5" stroke="${T.ink3}" stroke-width="1" fill="none" stroke-linejoin="round"/>
-        </svg>`;
+  const chip = (t) => `<div style="display:inline-flex;align-items:center;gap:10px;background:${T.paper};border:1px solid ${T.hairline};border-radius:2px;padding:${o.chipPad};font-size:${o.chip}px;color:${T.ink};white-space:nowrap;flex-shrink:0;">
+          <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:${T.moss};"></span>${t}</div>`;
+  const bubble = `<div style="background:${T.paper};border:1px solid ${T.hairline};border-radius:14px 14px 14px 3px;padding:${o.bubPad};font-size:${o.bub}px;line-height:1.5;color:${T.ink};max-width:${o.bubMax}px;flex-shrink:0;">Dinner at six tonight, from Priya.</div>`;
+  const chev = `<svg width="6" height="9" viewBox="0 0 6 9" fill="none" style="display:block;flex-shrink:0;"><path d="M0.6 1.2L4.8 4.5L0.6 7.8" stroke="${T.ink3}" stroke-width="1" fill="none" stroke-linejoin="round"/></svg>`;
+  const arrowH = `<div style="flex:1;display:flex;align-items:center;min-width:${o.arrowMin}px;">
+          <div style="flex:1;height:1px;background:${T.ink3};"></div>${chev}</div>`;
+  const arrowV = `<svg width="9" height="30" viewBox="0 0 9 30" fill="none" style="flex-shrink:0;display:block;margin-left:22px;">
+          <path d="M4.5 0V30" stroke="${T.ink3}" stroke-width="1"/>
+          <path d="M1.2 24.5L4.5 30L7.8 24.5" stroke="${T.ink3}" stroke-width="1" fill="none" stroke-linejoin="round"/></svg>`;
   const body = o.turnStack
-    ? `<div style="display:flex;flex-direction:column;align-items:flex-start;">${chip}${arrowV}${bubble}</div>`
-    : `<div style="display:flex;align-items:center;gap:${o.turnGap}px;">${chip}${arrowH}${bubble}</div>`;
+    ? `<div style="display:flex;flex-direction:column;align-items:flex-start;">${chip('Her sister starts it')}${arrowV}${chip('Eleven others add to it')}${arrowV}${bubble}</div>`
+    : `<div style="display:flex;align-items:center;gap:${o.turnGap}px;">${chip('Her sister starts it')}${arrowH}${chip('Eleven others add to it')}${arrowH}${bubble}</div>`;
   return `
 ${body}
       <div style="font-size:${o.cap}px;line-height:1.62;color:${T.ink2};margin-top:${o.capMt}px;max-width:${o.capMax}px;text-wrap:pretty;">She is told who it came from. She is never told what it cost.</div>`;
@@ -30,10 +28,9 @@ ${body}
 
 // ---- the balance itself, counted in things ----
 const ROWS = [
-  ['Dinners', 2, 4, 'Priya, and three others'],
-  ['An hour in the house', 1, 2, 'Her mum'],
-  ['A ride to the clinic', 0, 3, 'Dev'],
-  ['Pelvic floor physio', 1, 1, 'The Thursday group'],
+  ['Dinners that arrive', 2, 4, 'Priya, and three others'],
+  ['A sitter who comes', 1, 2, 'Her mum'],
+  ['A visit that gets booked', 0, 3, 'The Thursday group'],
 ];
 
 function marks(gone, left, o) {
@@ -62,15 +59,15 @@ ${marks(gone, left, o)}
   return `
     <div style="margin-top:${o.gap2}px;background:${T.field};border-radius:2px;padding:${o.panelPad};">
       <div style="display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:${o.keyGap}px;margin-bottom:${o.keyMb}px;">
-        <div style="font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:${T.ink3};">What is in it now</div>
+        <div style="font-size:11px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:${T.ink3};">What her people have funded</div>
         <div style="display:flex;align-items:center;gap:${o.keyGap}px;">
 ${key(false, 'already arrived')}
-${key(true, 'still waiting for her')}
+${key(true, 'still coming')}
         </div>
       </div>
 ${rows}
       <div style="border-top:1px solid ${T.hairline};padding-top:${o.footPadT}px;margin-top:0;display:flex;flex-wrap:wrap;gap:${o.keyGap}px;justify-content:space-between;align-items:baseline;">
-        <div class="serif" style="font-size:${o.foot}px;font-weight:400;color:${T.ink};">Eleven people have put something in.</div>
+        <div class="serif" style="font-size:${o.foot}px;font-weight:400;color:${T.ink};">Nura spends it as it is needed.</div>
         <div style="font-size:${o.rowWho}px;color:${T.ink3};">No one is shown what anyone gave</div>
       </div>
     </div>`;
@@ -128,10 +125,10 @@ function build(file, W, H, o) {
       </div>
       <div>
         <p style="margin:0;font-size:${o.lead}px;line-height:1.66;color:${T.ink2};max-width:${o.leadMax}px;text-wrap:pretty;">${LEAD}</p>
-${o.stackHead ? '' : `<div style="margin-top:${o.gap1}px;">${turn(o)}</div>`}
       </div>
     </div>
-${o.stackHead ? `<div style="margin-top:${o.gap1}px;">${turn(o)}</div>` : ''}
+
+    <div style="margin-top:${o.gap1}px;">${turn(o)}</div>
 ${shelf(o)}
 ${rules(o)}
 
@@ -142,37 +139,37 @@ ${rules(o)}
 
 build('Care1440.dc.html', 1440, 1660, {
   margin:96, padY:152, eyebrow:11, headGap:80, headMt:32, h2:46, h2Max:520, lead:19, leadMax:500,
-  gap1:56, chip:13.5, chipPad:'12px 16px', bub:16, bubPad:'14px 20px', bubMax:300, turnGap:20, arrow:60,
+  gap1:80, chip:14, chipPad:'12px 16px', bub:16, bubPad:'14px 20px', bubMax:320, turnGap:22, arrowMin:56,
   cap:14.5, capMt:22, capMax:560,
   gap2:72, panelPad:'52px 60px', key:12.5, keyGap:24, keyMb:28,
-  colB:210, rowGapX:40, rowPadY:24, rowLabel:24, rowWho:13.5,
+  colB:220, rowGapX:40, rowPadY:24, rowLabel:24, rowWho:13.5,
   mw:13, mh:17, mGap:8, footPadT:26, foot:20,
   gap3:72, rulesMb:26, rule:27, rulePadY:22,
   gap4:72, closer:34, closerMax:700 });
 
 build('Care1280.dc.html', 1280, 1470, {
   margin:64, padY:128, eyebrow:11, headGap:56, headMt:24, h2:40, h2Max:460, lead:17.5, leadMax:460,
-  gap1:48, chip:13, chipPad:'11px 14px', bub:15, bubPad:'13px 18px', bubMax:270, turnGap:16, arrow:48,
+  gap1:64, chip:13, chipPad:'11px 14px', bub:15, bubPad:'13px 18px', bubMax:290, turnGap:18, arrowMin:44,
   cap:13.5, capMt:20, capMax:520,
   gap2:68, panelPad:'48px 56px', key:12, keyGap:20, keyMb:24,
-  colB:185, rowGapX:32, rowPadY:21, rowLabel:21, rowWho:13,
+  colB:195, rowGapX:32, rowPadY:21, rowLabel:21, rowWho:13,
   mw:12, mh:16, mGap:7, footPadT:22, foot:18,
   gap3:68, rulesMb:22, rule:24, rulePadY:20,
   gap4:56, closer:30, closerMax:620 });
 
-build('Care768.dc.html', 768, 1540, {
+build('Care768.dc.html', 768, 1630, {
   margin:48, padY:112, eyebrow:11, stackHead:true, headGap:28, headMt:24, h2:38, h2Max:520, lead:17, leadMax:560,
-  gap1:60, chip:13, chipPad:'11px 14px', bub:15, bubPad:'13px 18px', bubMax:280, turnGap:18, arrow:52,
+  gap1:56, turnStack:true, chip:13, chipPad:'11px 14px', bub:15, bubPad:'13px 18px', bubMax:300,
   cap:14, capMt:24, capMax:560,
   gap2:60, panelPad:'44px 44px', key:12, keyGap:18, keyMb:24,
-  colB:165, rowGapX:22, rowPadY:20, rowLabel:21, rowWho:12.5,
+  colB:175, rowGapX:22, rowPadY:20, rowLabel:21, rowWho:12.5,
   mw:12, mh:16, mGap:7, footPadT:22, foot:18,
   gap3:60, rulesMb:22, rule:24, rulePadY:20,
   gap4:56, closer:28, closerMax:600 });
 
 build('Care375.dc.html', 375, 1775, {
   margin:24, padY:80, eyebrow:10.5, stackHead:true, headGap:22, headMt:20, h2:31, h2Max:340, lead:16, leadMax:340,
-  gap1:48, turnStack:true, chip:13, chipPad:'10px 14px', bub:14.5, bubPad:'12px 16px', bubMax:280,
+  gap1:44, turnStack:true, chip:13, chipPad:'10px 14px', bub:14.5, bubPad:'12px 16px', bubMax:280,
   cap:13.5, capMt:22, capMax:340,
   gap2:48, panelPad:'32px 24px', key:11.5, keyGap:14, keyMb:22, shelfStack:true,
   rowStackGap:13, rowPadY:20, rowLabel:20, rowWho:12.5,

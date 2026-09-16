@@ -19,25 +19,25 @@
   </style>
 </helmet>
 
-<div style="width: 740px; min-height: 2000px; background: #F7F3ED; color: #1C1A17; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px;">
+<div style="width: 740px; min-height: 2040px; background: #F7F3ED; color: #1C1A17; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px;">
 
   <div style="display: flex; flex-direction: column; gap: 10px;">
     <div style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E7A61;">Care balance</div>
-    <h2 class="serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.12; letter-spacing: -0.018em;">How this section shows a balance without showing money</h2>
+    <h2 class="serif" style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.12; letter-spacing: -0.018em;">Her circle fills it.<br>Nura spends it on her.</h2>
   </div>
 
   <div style="background: #4E2A44; border-radius: 2px; padding: 26px 30px;">
     <div class="lbl" style="color: #D9CFC3; margin-bottom: 12px;">The approach, in one line</div>
-    <div class="serif" style="font-size: 21px; font-weight: 400; line-height: 1.44; color: #F7F3ED; font-style: italic;">Count the care, never the cash — the balance is a short list of real things, held by the people who put them there, and it is the one thing she is never shown.</div>
+    <div class="serif" style="font-size: 21px; font-weight: 400; line-height: 1.44; color: #F7F3ED; font-style: italic;">The balance fills as tokens, never as a figure — a meal, an afternoon, a visit — and the only person on the page who never sees it is her.</div>
   </div>
 
   <div style="display: flex; flex-direction: column; gap: 12px;">
     <div class="lbl">Why it is built this way</div>
-    <div class="p">A balance is a number, and every convention for drawing one is a convention for drawing money: the progress bar, the goal, the thermometer, the running total. Each of them turns her recovery into a target somebody is falling short of. So the section does not draw a quantity at all. It draws an <em>inventory</em> — four things, counted in the things themselves, the way you would count what is left in a cupboard.</div>
-    <div class="p">The marks are deliberately not a bar. They are spaced apart so they read as separate objects, and no two rows share a total, because a shared denominator is what makes a row look like progress toward something. Four dinners is not 66% of anything. It is four dinners.</div>
-    <div class="p">The turn at the top is the whole mechanic in two objects: someone adds, and a message arrives. There is no third object between them, because there is nothing she needs to understand about the middle. The one line under it does the work the brief asks for — <em>she is told who it came from, she is never told what it cost</em>. Names travel. Amounts never do. That distinction keeps the gift warm without letting it become a price list.</div>
-    <div class="p">The last of the three rules is the section's real argument. Somebody has to watch the balance, and it must not be her. Telling her circle when it runs low — quietly, and only them — is what stops a gift from turning into a bill she is behind on.</div>
-  </div>
+    <div class="p">The brief asks for the balance to fill <em>as small tokens — a meal, a visit, an afternoon — not as a dollar figure</em>, and that instruction decides the whole section. Every default way of drawing a balance is a way of drawing money: the progress bar, the goal, the thermometer, the running total. Each one turns her recovery into a target somebody is behind on. So nothing here is a quantity. It is an inventory, counted in the things themselves, the way you count what is left in a cupboard.</div>
+    <div class="p">The tokens are spaced so they read as separate objects rather than segments of a bar, and no two rows share a total — a shared denominator is exactly what makes a row look like progress toward a goal. Four dinners is not 66% of anything. Hollow is what has already arrived and solid is what is still coming, running left to right because that is the direction time runs. Depletion is not loss here: a token going hollow means somebody was fed.</div>
+    <div class="p">The strip at the top is the brief's own sentence made into objects — <em>a sister starts it, others add to it, and it turns into dinners that arrive</em>. Two chips and a message. The first two are set in the system's sans because they are things people do; the third is the serif-page's message bubble, the same one the hero uses, because it is the only one of the three she ever sees. That change of voice is the transformation, and it does the work no arrow could.</div>
+    <div class="p">The line under the strip is the section's rule: names travel, amounts never do. She is told who it came from, because knowing your sister fed you <em>is</em> the gift; she is never told what it cost, because that is what turns a gift into a price list.</div>
+    <div class="p">The last of the three behaviours is the real argument. Somebody has to watch the balance and it must not be her. Telling her circle when it runs low — quietly, and only them — is what stops a gift from becoming a bill she is behind on. It is also the answer to the obvious objection about the panel above: on this page the reader <em>is</em> the circle, so showing it to them is correct. Showing it to her would not be.</div>
 
   <div style="height: 1px; background: #E2DAD0;"></div>
 
@@ -53,14 +53,14 @@
 
       <div class="n">2</div>
       <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
-        <div class="bt">The turn — and the pause inside it</div>
-        <div class="beat">The chip fades up first, 620ms on ease-rise. Then <strong>nothing for 420ms.</strong> The arrow draws left to right over 620ms on ease-settle, and the message rises as it lands. That hold is the only place in the section where waiting is doing the argument's work: what she gets is not the money, and the beat between the two objects is where the money stops existing. Close the gap and it reads as a transaction.</div>
+        <div class="bt">The strip, read like a sentence</div>
+        <div class="beat">Three objects, never together. “Her sister starts it” fades up at 620ms on ease-rise. Its rule draws left to right over 620ms on ease-settle and “Eleven others add to it” lands as it arrives; the second rule follows the same way. Then <strong>nothing for 420ms</strong> before the message rises. That hold is the only place in the section where waiting does the argument's work — the beat between what was funded and what showed up is where the money stops existing. Close it and the strip reads as a checkout.</div>
       </div>
 
       <div class="n">3</div>
       <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
-        <div class="bt">The shelf, counted out one at a time</div>
-        <div class="beat">The heavy rule draws first, 620ms on ease-settle. Rows arrive top to bottom, 130ms apart. Inside a row the hollow marks come first — what has already arrived, the past — then the solid ones, 90ms apart, left to right. Each mark is its own fade at 220ms; the row is never a single element growing in width, because a thing growing in width is a bar, and a bar is a budget. Total row stagger is capped at 540ms so the longest row does not outrun the next one starting.</div>
+        <div class="bt">The balance filling, one token at a time</div>
+        <div class="beat">This is the beat the brief specifies. The heavy rule draws first, 620ms on ease-settle. Rows arrive top to bottom, 130ms apart. Inside a row the hollow tokens come first — what has already arrived — then the solid ones, 90ms apart, left to right, each its own 220ms fade. The row is never one element growing in width: a thing growing in width is a bar, and a bar is a budget. Row stagger is capped at 540ms so the longest row does not outrun the next one starting.</div>
       </div>
 
       <div class="n">4</div>
@@ -75,7 +75,7 @@
 
   <div style="display: flex; flex-direction: column; gap: 12px;">
     <div class="lbl">Live behaviour · when someone actually adds</div>
-    <div class="p">One new solid mark appears at the end of its row, 420ms on ease-rise, and the row's meta updates. That is the entire event. No number counts up, no total re-renders, no sound, no celebration. Somebody quietly put a dinner on the shelf; the page should behave the way a person would.</div>
+    <div class="p">One new solid token appears at the end of its row, 420ms on ease-rise, and the row's names update. That is the entire event. No figure counts up, no total re-renders, no sound, no celebration. Somebody quietly put a dinner on the shelf; the page should behave the way a person would. When Nura spends one, the token goes hollow in place over 420ms — it does not leave the row, because what she was given did not stop having happened.</div>
   </div>
 
   <div style="display: flex; flex-direction: column; gap: 12px;">
@@ -90,12 +90,13 @@
 
   <div style="display: flex; flex-direction: column; gap: 12px;">
     <div class="lbl">Accessibility</div>
-    <div class="p">The marks are decorative individually and hidden from the reader; the row carries the meaning as a label — “Dinners: two already arrived, four still waiting for her.” Plum on field clears contrast at this size, but the hollow mark's hairline does not, which is why quantity is never carried by the mark alone. The legend sits above the first row rather than below the last, so it is read before it is needed.</div>
+    <div class="p">The marks are decorative individually and hidden from the reader; the row carries the meaning as a label — “Dinners that arrive: two already arrived, four still coming.” Plum on field clears contrast at this size, but the hollow token's hairline does not, which is why quantity is never carried by the token alone. The legend sits above the first row rather than below the last, so it is read before it is needed.</div>
   </div>
 
   <div style="display: flex; flex-direction: column; gap: 12px;">
     <div class="lbl">Copy flags for the client</div>
-    <div class="p">“Amount” and “cost” appear only in the negative, and only once each. “Balance” is the brief's own word for this section and is kept; if the packages sheet rules it out downstream, the section survives being renamed <em>What is in it now</em>, which is already the panel's label. The four things shown are placeholders for whatever the real catalogue turns out to be — the layout holds any four, and breaks at seven.</div>
+    <div class="p">The heading is the brief's, verbatim. The three things are the brief's three, in its order — dinners that arrive, a sitter who comes, a visit that gets booked — and the layout holds any three to five of them, breaking at seven.</div>
+    <div class="p">One deliberate departure: the brief's line is “she never sees a wallet or a number.” <em>Wallet</em> is on the banned list in the packages sheet, and a banned word does not become safe by being negated — putting it on the page is still the only time a reader meets it. The idea survives intact as “she never sees a number,” and the three behaviour rules carry the rest. “Amount” and “cost” appear once each, in the negative, for the same reason.</div>
   </div>
 
 </div>
