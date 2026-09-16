@@ -159,7 +159,7 @@
       "x": 0,
       "y": 0,
       "w": 375,
-      "h": 1300,
+      "h": 1070,
       "title": "Data forward · 375 phone"
     },
     {
@@ -168,7 +168,7 @@
       "x": 475,
       "y": 0,
       "w": 768,
-      "h": 1290,
+      "h": 1190,
       "title": "Data forward · 768 tablet"
     },
     {
@@ -177,7 +177,7 @@
       "x": 1343,
       "y": 0,
       "w": 1280,
-      "h": 1160,
+      "h": 1120,
       "title": "Data forward · 1280 laptop"
     },
     {
@@ -186,7 +186,7 @@
       "x": 2723,
       "y": 0,
       "w": 1440,
-      "h": 1340,
+      "h": 1300,
       "title": "Data forward · 1440 wide desktop"
     },
     {
@@ -195,7 +195,7 @@
       "x": 4263,
       "y": 0,
       "w": 740,
-      "h": 1720,
+      "h": 1800,
       "title": "Data forward — motion and tone"
     }
   ],
@@ -278,23 +278,23 @@
       "x": 2723,
       "y": -380,
       "w": 600,
-      "text": "The heading, the paragraph and the three closing lines are the brief's copy, verbatim. Everything else here is structure.\n\nThe section never argues. A privacy block fails the moment it starts reassuring you, because that tells you there is something to be afraid of — and a mother two weeks postpartum has no patience for a defence. So it shows a trade in two rows and lets her do the arithmetic.\n\nHer side is the serif, in the first person. What it takes off her is the sans. That split has been running since the hero and is never explained; by this section the reader has felt it three times."
+      "text": "The heading and the three closing lines are the brief's copy, verbatim. The lead is the brief's sentence with its second half removed — what Nura uses the two records FOR is now shown by the diagram rather than restated under it.\n\nThe section never argues. A privacy block fails the moment it starts reassuring you, because that tells the reader there is something to be afraid of — and a mother two weeks postpartum has no patience for a defence. So it shows a trade and lets her do the arithmetic."
     },
     {
       "id": "df-rows",
       "page": "page-4",
       "x": 1343,
-      "y": 1380,
+      "y": 1280,
       "w": 600,
-      "text": "Only two things appear in the trade, because only two things are in the brief's paragraph: her delivery record and her insurance. The temptation is to pad it to four for a fuller grid. Two is the honest number, and a short list of real things reads as more trustworthy than a long list of vague ones.\n\nColumn heads are “What she shares” and “What it takes off her” — not “Data” and “Benefits.”"
+      "text": "Only two things appear on the left, because only two are in the brief's paragraph: her delivery record and her insurance. The pull is to pad it to four for a fuller composition. Two is the honest number, and a short list of real things reads as more trustworthy than a long list of vague ones.\n\nEach carries a four-word return — “nothing to repeat”, “everything booked, covered”. That is the entire argument of the section, in eight words."
     },
     {
       "id": "df-diagram",
       "page": "page-4",
       "x": 0,
-      "y": 1380,
+      "y": 1280,
       "w": 560,
-      "text": "The diagram is the brief's ask: her record and her plan flowing into one thread. Two hairlines, two dots, one bubble, and nothing else — no arrowheads, because nothing is being sent anywhere; no padlock, because a lock announces a risk.\n\nAt 375 it turns ninety degrees: two sources across the top, one thread beneath. Same idea, same weight, no shrinking of the desktop version into a stamp."
+      "text": "What comes back is not a description of the thread, it is the thread — the same bubbles, the same shape, the same entrance as the hero. She gave two things; these arrived. Nothing captions it.\n\nNo arrowheads, because nothing is being sent anywhere. No padlock, no shield, no server, no toggles, no green. Every one of those is the reflex move for a data section and every one announces risk.\n\nAt 768 and 375 the diagram turns ninety degrees — two sources across the top, the thread beneath — rather than shrinking the desktop version into a stamp."
     }
   ],
   "launch": {

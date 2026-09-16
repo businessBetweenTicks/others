@@ -17,7 +17,7 @@
   </style>
 </helmet>
 
-<div style="width: 740px; min-height: 1720px; background: #F7F3ED; color: #1C1A17; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px;">
+<div style="width: 740px; min-height: 1800px; background: #F7F3ED; color: #1C1A17; padding: 40px; box-sizing: border-box; display: flex; flex-direction: column; gap: 32px;">
 
   <div style="display: flex; flex-direction: column; gap: 10px;">
     <div style="font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: #6E7A61;">It works because she lets it</div>
@@ -43,30 +43,36 @@
     <div style="display: grid; grid-template-columns: 30px 1fr; gap: 0 18px;">
       <div class="serif" style="font-size: 20px; color: #D9CFC3; padding: 14px 0 0 0;">1</div>
       <div style="padding: 14px 0; border-top: 1px solid #1C1A17;">
-        <div style="font-size: 13px; margin-bottom: 6px;">Heading, then the paragraph</div>
-        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">Opacity 0 → 1, y +14px → 0, 620ms on ease-rise, 130ms apart. The eyebrow goes first, alone, 220ms ahead of the heading.</div>
+        <div style="font-size: 13px; margin-bottom: 6px;">Heading, then the line beside it</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">Opacity 0 → 1, y +14px → 0, 620ms on ease-rise. The eyebrow goes first, alone, 220ms ahead of the heading.</div>
       </div>
 
       <div class="serif" style="font-size: 20px; color: #D9CFC3; padding: 14px 0 0 0;">2</div>
       <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
-        <div style="font-size: 13px; margin-bottom: 6px;">The two rows of the trade</div>
-        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">Each row's hairline draws left to right over 620ms on ease-settle — a rule being ruled, not a bar filling. Her line fades up as the rule passes under it; what it takes off her follows 220ms later, so the reader always reads the giving before the getting. Rows are 130ms apart.</div>
+        <div style="font-size: 13px; margin-bottom: 6px;">The two things she gives</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">Her lines fade up together, 620ms on ease-rise. Their four-word returns — “nothing to repeat”, “everything booked, covered” — follow 220ms behind, so the giving is read before the getting. The dots draw last, 420ms on ease-soft.</div>
       </div>
 
       <div class="serif" style="font-size: 20px; color: #D9CFC3; padding: 14px 0 0 0;">3</div>
       <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
         <div style="font-size: 13px; margin-bottom: 6px;">The two lines becoming one</div>
-        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">The two dots fade in together, 420ms on ease-soft. Then each curve draws on <span style="font-family: ui-monospace, monospace; font-size: 11px;">stroke-dashoffset</span>, 900ms on ease-settle, the second starting 220ms after the first, so they arrive at the join a beat apart rather than together. The moss dot draws last, 420ms. The bubble arrives 220ms after that, 620ms on ease-rise. Nothing pulses, nothing travels along the line, and the line never animates again once drawn.</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">Each curve draws on <span style="font-family: ui-monospace, monospace; font-size: 11px;">stroke-dashoffset</span>, 900ms on ease-settle, the second starting 220ms after the first so they reach the join a beat apart rather than together. The moss dot draws last, 420ms. Nothing pulses, nothing travels along the line, and the line never animates again once drawn.</div>
       </div>
 
       <div class="serif" style="font-size: 20px; color: #D9CFC3; padding: 14px 0 0 0;">4</div>
+      <div style="padding: 14px 0; border-top: 1px solid #E2DAD0;">
+        <div style="font-size: 13px; margin-bottom: 6px;">What comes back</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">The three messages arrive one at a time, 620ms each on ease-rise, 130ms apart — the same entrance the hero thread uses, because they are the same object. This is the payoff of the whole section: she gave two things, and this is what she got. No caption explains it.</div>
+      </div>
+
+      <div class="serif" style="font-size: 20px; color: #D9CFC3; padding: 14px 0 0 0;">5</div>
       <div style="padding: 14px 0; border-top: 1px solid #E2DAD0; border-bottom: 1px solid #1C1A17;">
         <div style="font-size: 13px; margin-bottom: 6px;">The three lines that close it</div>
-        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">620ms each on ease-rise, 130ms apart, and then nothing. “She can disconnect any time” is the last thing that moves in the section, which is the point of putting it last.</div>
+        <div style="font-size: 11.5px; line-height: 1.62; color: #55504A;">The hairline draws left to right over 620ms on ease-settle, then the lines fade up 620ms each, 130ms apart, and then nothing. “She can disconnect any time” is the last thing that moves in the section, which is the point of putting it last.</div>
       </div>
     </div>
 
-    <div style="font-size: 11.5px; line-height: 1.62; color: #8A8279;">About 4.2s end to end. Same three easing curves and four durations as the hero — this section introduces no new motion vocabulary, because a section about trust is the worst possible place to start behaving differently.</div>
+    <div style="font-size: 11.5px; line-height: 1.62; color: #8A8279;">About 4.8s end to end. Same three easing curves and four durations as the hero — this section introduces no new motion vocabulary, because a section about trust is the worst possible place to start behaving differently.</div>
   </div>
 
   <div style="height: 1px; background: #E2DAD0;"></div>
@@ -94,8 +100,8 @@
   <div style="display: flex; flex-direction: column; gap: 12px;">
     <div class="lbl">Reduced motion, and the copy under it</div>
     <div style="background: #EFE9E0; border-radius: 2px; padding: 20px; display: flex; flex-direction: column; gap: 12px;">
-      <div style="font-size: 12px; line-height: 1.65; color: #55504A;"><strong style="font-weight: 500; color: #1C1A17;">prefers-reduced-motion: reduce</strong> — the section renders complete, curves already drawn. It loses nothing, because the diagram was never carrying the argument; the two rows were.</div>
-      <div style="font-size: 12px; line-height: 1.65; color: #55504A;"><strong style="font-weight: 500; color: #1C1A17;">Text alternative</strong> — the diagram is described as: “Her delivery record and her insurance become one thread.” The rows need none; they are already text.</div>
+      <div style="font-size: 12px; line-height: 1.65; color: #55504A;"><strong style="font-weight: 500; color: #1C1A17;">prefers-reduced-motion: reduce</strong> — the section renders complete, curves already drawn. It loses nothing, because the diagram reads correctly as a still — two things on the left, three messages on the right, joined.</div>
+      <div style="font-size: 12px; line-height: 1.65; color: #55504A;"><strong style="font-weight: 500; color: #1C1A17;">Text alternative</strong> — the diagram is described as: “Her delivery record and her insurance become one thread, which books her six-week visit, her dinners and her Thursday afternoon.”</div>
       <div style="font-size: 12px; line-height: 1.65; color: #55504A;"><strong style="font-weight: 500; color: #1C1A17;">One copy flag for the client.</strong> The lead paragraph is the brief's, verbatim, including “who her plan covers.” The packages sheet lists <em>plan</em> as a word to avoid, in the subscription sense — here it plainly means her insurance, so it reads clean, but if it should go, “who her insurance covers” is a one-word swap that costs nothing.</div>
     </div>
   </div>

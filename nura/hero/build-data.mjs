@@ -5,53 +5,79 @@ const T = { ground:'#F7F3ED', field:'#EFE9E0', paper:'#FFFDFA', hairline:'#E2DAD
 
 const EYEBROW = 'How it knows';
 const HEADING = 'It works because she lets it.';
-const LEAD = 'Her delivery record and her insurance already exist. Nura reads them — only with her yes, only on her own login — and uses them to know what to check, and who her plan covers.';
+// Trimmed. The second half of the brief's sentence — what it uses them FOR — is
+// now carried by the diagram instead of restated under it.
+const LEAD = 'Her delivery record and her insurance already exist. Nura reads them — only with her yes, only on her own login.';
 
-// Her side is set in the serif, because the serif is her voice. What it takes off
-// her is set in the sans, because the sans is the work. Nothing is explained.
-const EXCHANGE = [
-  ['My delivery record.', 'So Nura knows what to check, and when. Nothing to repeat, and no forms on her side.'],
-  ['My insurance.', 'So every appointment it books is one her plan already covers. No call afterwards to find out it wasn’t.'],
+const SOURCES = [
+  ['My delivery record.', 'nothing to repeat'],
+  ['My insurance.', 'everything booked, covered'],
 ];
-
+const BACK = [
+  'Your six-week visit is Tuesday at 10.',
+  'Dinner lands at six tonight.',
+  'Ana comes Thursday at four.',
+];
 const VOW = ['It is hers.',
              'It is read, not shared — not with the giver, not with her doctor, not with anyone.',
              'She can disconnect any time.'];
 
-const dot = (c) => `<span style="display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: ${c}; flex-shrink: 0;"></span>`;
+const dot = (c, s=6) => `<span style="display: inline-block; width: ${s}px; height: ${s}px; border-radius: 50%; background: ${c}; flex-shrink: 0;"></span>`;
 
-// Two hairlines converging into one bubble. No arrowheads, no boxes, no icons,
-// no padlocks. Laid out in flow so the curves start exactly at the dots.
-const diagram = (h, label, bub) => `
-      <div style="display: flex; align-items: center;">
-        <div style="display: flex; flex-direction: column; justify-content: space-between; height: ${h}px; padding-right: 9px;">
-          <div style="display: flex; align-items: center; gap: 9px; font-size: ${label}px; color: ${T.ink2}; white-space: nowrap;">Her delivery record ${dot(T.ink3)}</div>
-          <div style="display: flex; align-items: center; gap: 9px; font-size: ${label}px; color: ${T.ink2}; white-space: nowrap;">Her insurance ${dot(T.ink3)}</div>
+// She gives two things. What comes back is the thread itself — real messages, not
+// a description of messages. No arrowheads: nothing is being sent anywhere.
+function diagram(o) {
+  const src = ([mine, back], i) => `
+          <div style="height: ${o.srcH}px; display: flex; align-items: center; justify-content: flex-end; gap: 14px;">
+            <div style="text-align: right;">
+              <div class="serif" style="font-size: ${o.srcSize}px; font-style: italic; line-height: 1.25; color: ${T.ink};">${mine}</div>
+              <div style="font-size: ${o.srcMeta}px; line-height: 1.5; color: ${T.ink3}; margin-top: 7px;">${back}</div>
+            </div>
+            ${dot(T.ink3, 6)}
+          </div>`;
+  const c1 = o.srcH / 2, c2 = o.h - o.srcH / 2, mid = o.h / 2;
+  const bubbles = BACK.map(t => `
+            <div style="background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 14px 14px 14px 4px; padding: ${o.bubPad}; font-size: ${o.bub}px; line-height: 1.5; color: ${T.ink};">${t}</div>`).join('');
+
+  return `
+      <div style="display: flex; align-items: center; gap: ${o.gap}px;">
+        <div style="width: ${o.srcW}px; flex-shrink: 0; height: ${o.h}px; display: flex; flex-direction: column; justify-content: space-between;">
+${SOURCES.map(src).join('')}
         </div>
-        <svg width="${Math.round(h * 1.05)}" height="${h}" viewBox="0 0 200 ${h}" fill="none" preserveAspectRatio="none" style="flex-shrink: 0;">
-          <path d="M0 3 C 74 3, 96 ${h / 2 - 5}, 200 ${h / 2 - 3}" stroke="${T.mute}" stroke-width="1" vector-effect="non-scaling-stroke"></path>
-          <path d="M0 ${h - 3} C 74 ${h - 3}, 96 ${h / 2 + 5}, 200 ${h / 2 + 3}" stroke="${T.mute}" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+        <svg width="${o.curveW}" height="${o.h}" viewBox="0 0 ${o.curveW} ${o.h}" fill="none" style="flex-shrink: 0;">
+          <path d="M0 ${c1} C ${o.curveW * 0.42} ${c1}, ${o.curveW * 0.56} ${mid - 4}, ${o.curveW} ${mid - 3}" stroke="${T.mute}" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+          <path d="M0 ${c2} C ${o.curveW * 0.42} ${c2}, ${o.curveW * 0.56} ${mid + 4}, ${o.curveW} ${mid + 3}" stroke="${T.mute}" stroke-width="1" vector-effect="non-scaling-stroke"></path>
         </svg>
-        <div style="display: flex; align-items: center; gap: 10px; flex-shrink: 0;">
-          ${dot(T.moss)}
-          <div style="background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 14px 14px 14px 4px; padding: 11px 15px; font-size: ${bub}px; color: ${T.ink}; white-space: nowrap;">One thread.</div>
+        <div style="display: flex; align-items: center; gap: ${o.gap}px;">
+          ${dot(T.moss, 7)}
+          <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px;">${bubbles}
+          </div>
         </div>
       </div>`;
+}
 
-// At 375 the same idea turns ninety degrees: two sources at the top, one thread below.
-const diagramStacked = () => `
+// At 375 the same idea turns ninety degrees: two sources across the top, the thread below.
+const diagramStacked = (o) => `
       <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
         <div style="display: flex; width: 100%;">
-          <div style="width: 50%; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 11.5px; color: ${T.ink2};">Her delivery record ${dot(T.ink3)}</div>
-          <div style="width: 50%; display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 11.5px; color: ${T.ink2};">Her insurance ${dot(T.ink3)}</div>
+          <div style="width: 50%; height: ${o.stH}px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 9px; text-align: center;">
+            <div class="serif" style="font-size: ${o.stLabel}px; font-style: italic; line-height: 1.25; color: ${T.ink};">My delivery record.</div>
+            <div style="font-size: ${o.stMeta}px; color: ${T.ink3};">nothing to repeat</div>
+            ${dot(T.ink3, 6)}
+          </div>
+          <div style="width: 50%; height: ${o.stH}px; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 9px; text-align: center;">
+            <div class="serif" style="font-size: ${o.stLabel}px; font-style: italic; line-height: 1.25; color: ${T.ink};">My insurance.</div>
+            <div style="font-size: ${o.stMeta}px; color: ${T.ink3};">everything booked, covered</div>
+            ${dot(T.ink3, 6)}
+          </div>
         </div>
-        <svg width="100%" height="76" viewBox="0 0 279 76" fill="none" preserveAspectRatio="none">
-          <path d="M70 0 C 70 46, 139 28, 139 76" stroke="${T.mute}" stroke-width="1" vector-effect="non-scaling-stroke"></path>
-          <path d="M209 0 C 209 46, 139 28, 139 76" stroke="${T.mute}" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+        <svg width="100%" height="${o.stSvgH}" viewBox="0 0 279 ${o.stSvgH}" fill="none" preserveAspectRatio="none">
+          <path d="M70 0 C 70 ${o.stSvgH * 0.6}, 139 ${o.stSvgH * 0.36}, 139 ${o.stSvgH}" stroke="${T.mute}" stroke-width="1" vector-effect="non-scaling-stroke"></path>
+          <path d="M209 0 C 209 ${o.stSvgH * 0.6}, 139 ${o.stSvgH * 0.36}, 139 ${o.stSvgH}" stroke="${T.mute}" stroke-width="1" vector-effect="non-scaling-stroke"></path>
         </svg>
-        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
-          ${dot(T.moss)}
-          <div style="background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 14px 14px 14px 4px; padding: 11px 15px; font-size: 13px; color: ${T.ink};">One thread.</div>
+        ${dot(T.moss, 7)}
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 9px; width: 100%; margin-top: 18px;">
+${BACK.map(t => `          <div style="background: ${T.paper}; border: 1px solid ${T.hairline}; border-radius: 14px 14px 14px 4px; padding: 11px 14px; font-size: ${o.stBub}px; line-height: 1.5; color: ${T.ink};">${t}</div>`).join('\n')}
         </div>
       </div>`;
 
@@ -82,106 +108,50 @@ const tail = `
 `;
 
 const eyebrow = (fs) => `<div style="font-size: ${fs}px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: ${T.moss};">${EYEBROW}</div>`;
-const colHead = (t) => `<div style="font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: ${T.ink3};">${t}</div>`;
+const vow = (fs, gap) => `<div style="display: flex; flex-direction: column; gap: ${gap}px;">
+${VOW.map(l => `      <div class="serif" style="font-size: ${fs}px; font-weight: 400; line-height: 1.4; letter-spacing: -0.01em; color: ${T.ink};">${l}</div>`).join('\n')}
+    </div>`;
 
-const vow = (fs) => VOW.map(l =>
-  `        <div class="serif" style="font-size: ${fs}px; font-weight: 400; line-height: 1.42; letter-spacing: -0.01em; color: ${T.ink};">${l}</div>`).join('\n');
-
-// ---------------- 1440 / 1280 share a structure ----------------
-function desktop(file, W, H, o) {
-  const rows = EXCHANGE.map(([mine, back], i) => `
-      <div style="display: grid; grid-template-columns: ${o.exLeft}px minmax(0, 1fr); gap: ${o.exGap}px; padding: ${o.rowPad}px 0; border-top: 1px solid ${T.hairline};${i === EXCHANGE.length - 1 ? ` border-bottom: 1px solid ${T.hairline};` : ''}">
-        <div class="serif" style="font-size: ${o.mine}px; font-weight: 400; font-style: italic; line-height: 1.3; letter-spacing: -0.01em; color: ${T.ink};">${mine}</div>
-        <div style="font-size: ${o.back}px; line-height: 1.62; color: ${T.ink2}; max-width: ${o.backMax}px; text-wrap: pretty;">${back}</div>
-      </div>`).join('');
-
+function build(file, W, H, o) {
   writeFileSync(file, head(W, H) + `
   <div style="padding: ${o.padY}px ${o.margin}px;">
 
-    <div style="display: grid; grid-template-columns: minmax(0, ${o.headL}fr) minmax(0, ${o.headR}fr); gap: ${o.headGap}px; align-items: start;">
+    <div style="display: grid; grid-template-columns: ${o.stackHead ? 'minmax(0, 1fr)' : 'minmax(0, 5fr) minmax(0, 6fr)'}; gap: ${o.headGap}px; align-items: ${o.stackHead ? 'start' : 'end'};">
       <div style="display: flex; flex-direction: column;">
-        ${eyebrow(11)}
+        ${eyebrow(o.eyebrow)}
         <h2 class="serif" style="margin: ${o.headMt}px 0 0 0; font-size: ${o.h2}px; font-weight: 400; line-height: 1.12; letter-spacing: -0.02em; max-width: ${o.h2Max}px; text-wrap: pretty;">${HEADING}</h2>
       </div>
-      <p style="margin: ${o.leadMt}px 0 0 0; font-size: ${o.lead}px; line-height: 1.66; color: ${T.ink2}; text-wrap: pretty;">${LEAD}</p>
+      <p style="margin: 0; font-size: ${o.lead}px; line-height: 1.66; color: ${T.ink2}; max-width: ${o.leadMax}px; text-wrap: pretty;">${LEAD}</p>
     </div>
 
-    <div style="margin-top: ${o.gap1}px;">
-      <div style="display: grid; grid-template-columns: ${o.exLeft}px minmax(0, 1fr); gap: ${o.exGap}px; padding-bottom: ${o.colHeadPb}px;">
-        ${colHead('What she shares')}
-        ${colHead('What it takes off her')}
+    <div style="margin-top: ${o.gap1}px; background: ${T.field}; border-radius: 2px; padding: ${o.panelPad};">
+      <div style="display: flex; justify-content: flex-start;">
+${o.stacked ? diagramStacked(o) : diagram(o)}
       </div>
-${rows}
-    </div>
-
-    <div style="margin-top: ${o.gap2}px; background: ${T.field}; border-radius: 2px; padding: ${o.panelPad}; display: grid; grid-template-columns: minmax(0, ${o.panL}fr) minmax(0, ${o.panR}fr); gap: ${o.panelGap}px; align-items: center;">
-      <div style="display: flex; flex-direction: column; gap: 22px;">
-${diagram(o.diagH, 12.5, 13)}
-        <div style="font-size: 12px; line-height: 1.6; color: ${T.ink3}; max-width: 460px;">Her record and her plan, becoming one thread. Drawn once, slowly, as the section arrives.</div>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: ${o.vowGap}px;">
-${vow(o.vowSize)}
-      </div>
+      <div style="height: 1px; background: ${T.hairline}; margin: ${o.gap2}px 0;"></div>
+      ${vow(o.vowSize, o.vowGap)}
     </div>
 
   </div>` + tail);
 }
 
-desktop('Data1440.dc.html', 1440, 1340, {
-  margin:96, padY:152, headL:5, headR:6, headGap:96, headMt:32, h2:46, h2Max:460, lead:19, leadMt:6,
-  gap1:104, exLeft:420, exGap:96, colHeadPb:20, rowPad:34, mine:30, back:17, backMax:560,
-  gap2:104, panelPad:'64px 72px', panL:5, panR:6, panelGap:88, diagW:420, diagH:200, vowSize:27, vowGap:20 });
+build('Data1440.dc.html', 1440, 1300, {
+  margin:96, padY:152, eyebrow:11, headGap:96, headMt:32, h2:46, h2Max:460, lead:19, leadMax:480,
+  gap1:88, panelPad:'80px 96px', srcW:340, srcH:82, srcSize:29, srcMeta:13, gap:28, curveW:330,
+  h:312, bub:15, bubPad:'14px 18px', gap2:68, vowSize:26, vowGap:18 });
 
-desktop('Data1280.dc.html', 1280, 1160, {
-  margin:64, padY:128, headL:5, headR:6, headGap:72, headMt:24, h2:40, h2Max:400, lead:17.5, leadMt:4,
-  gap1:88, exLeft:360, exGap:72, colHeadPb:18, rowPad:30, mine:26, back:16, backMax:500,
-  gap2:88, panelPad:'56px 60px', panL:5, panR:6, panelGap:64, diagW:380, diagH:186, vowSize:24, vowGap:18 });
+build('Data1280.dc.html', 1280, 1120, {
+  margin:64, padY:128, eyebrow:11, headGap:72, headMt:24, h2:40, h2Max:400, lead:17.5, leadMax:440,
+  gap1:72, panelPad:'68px 72px', srcW:300, srcH:76, srcSize:25, srcMeta:12.5, gap:24, curveW:250,
+  h:286, bub:14, bubPad:'13px 16px', gap2:56, vowSize:23, vowGap:16 });
 
-// ---------------- 768 ----------------
-{
-  const rows = EXCHANGE.map(([mine, back], i) => `
-      <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; padding: 28px 0; border-top: 1px solid ${T.hairline};${i === EXCHANGE.length - 1 ? ` border-bottom: 1px solid ${T.hairline};` : ''}">
-        <div class="serif" style="font-size: 24px; font-weight: 400; font-style: italic; line-height: 1.3; color: ${T.ink};">${mine}</div>
-        <div style="font-size: 16px; line-height: 1.62; color: ${T.ink2}; text-wrap: pretty;">${back}</div>
-      </div>`).join('');
+build('Data768.dc.html', 768, 1190, {
+  margin:48, padY:112, eyebrow:11, stackHead:true, stacked:true, stH:112, stLabel:25, stMeta:12.5, stSvgH:96, stBub:14.5, headGap:28, headMt:24, h2:38, h2Max:480, lead:17, leadMax:560,
+  gap1:64, panelPad:'52px 40px', srcW:212, srcH:70, srcSize:20, srcMeta:11.5, gap:18, curveW:130,
+  h:262, bub:13, bubPad:'11px 14px', gap2:44, vowSize:21, vowGap:14 });
 
-  writeFileSync('Data768.dc.html', head(768, 1290) + `
-  <div style="padding: 112px 48px;">
-    <div style="display: flex; flex-direction: column;">
-      ${eyebrow(11)}
-      <h2 class="serif" style="margin: 24px 0 0 0; font-size: 38px; font-weight: 400; line-height: 1.12; letter-spacing: -0.02em; max-width: 480px; text-wrap: pretty;">${HEADING}</h2>
-      <p style="margin: 28px 0 0 0; font-size: 17px; line-height: 1.66; color: ${T.ink2}; max-width: 560px; text-wrap: pretty;">${LEAD}</p>
-    </div>
-
-    <div style="margin-top: 80px;">
-      <div style="display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 40px; padding-bottom: 18px;">
-        ${colHead('What she shares')}
-        ${colHead('What it takes off her')}
-      </div>
-${rows}
-    </div>
-
-    <div style="margin-top: 80px; background: ${T.field}; border-radius: 2px; padding: 56px 48px; display: flex; flex-direction: column; gap: 52px;">
-      <div style="display: flex; flex-direction: column; gap: 20px;">
-${diagram(180, 12.5, 13)}
-        <div style="font-size: 12px; line-height: 1.6; color: ${T.ink3};">Her record and her plan, becoming one thread. Drawn once, slowly, as the section arrives.</div>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 18px;">
-${vow(24)}
-      </div>
-    </div>
-  </div>` + tail);
-}
-
-// ---------------- 375 — each pair stacks, her line first ----------------
-{
-  const rows = EXCHANGE.map(([mine, back], i) => `
-      <div style="display: flex; flex-direction: column; gap: 12px; padding: 24px 0; border-top: 1px solid ${T.hairline};${i === EXCHANGE.length - 1 ? ` border-bottom: 1px solid ${T.hairline};` : ''}">
-        <div class="serif" style="font-size: 23px; font-weight: 400; font-style: italic; line-height: 1.3; color: ${T.ink};">${mine}</div>
-        <div style="font-size: 15.5px; line-height: 1.62; color: ${T.ink2}; text-wrap: pretty;">${back}</div>
-      </div>`).join('');
-
-  writeFileSync('Data375.dc.html', head(375, 1300) + `
+// ---------------- 375 ----------------
+writeFileSync('Data375.dc.html', head(375, 1070) + `
   <div style="padding: 80px 24px;">
     <div style="display: flex; flex-direction: column;">
       ${eyebrow(10.5)}
@@ -189,21 +159,11 @@ ${vow(24)}
       <p style="margin: 22px 0 0 0; font-size: 16px; line-height: 1.66; color: ${T.ink2}; text-wrap: pretty;">${LEAD}</p>
     </div>
 
-    <div style="margin-top: 56px;">
-      <div style="padding-bottom: 14px;">${colHead('What she shares')}</div>
-${rows}
-    </div>
-
-    <div style="margin-top: 56px; background: ${T.field}; border-radius: 2px; padding: 36px 24px; display: flex; flex-direction: column; gap: 40px;">
-      <div style="display: flex; flex-direction: column; gap: 18px;">
-${diagramStacked()}
-        <div style="font-size: 11.5px; line-height: 1.6; color: ${T.ink3};">Her record and her plan, becoming one thread.</div>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-${vow(21)}
-      </div>
+    <div style="margin-top: 48px; background: ${T.field}; border-radius: 2px; padding: 36px 24px;">
+${diagramStacked({stH:104, stLabel:19, stMeta:11.5, stSvgH:72, stBub:13.5})}
+      <div style="height: 1px; background: ${T.hairline}; margin: 40px 0;"></div>
+      ${vow(21, 16)}
     </div>
   </div>` + tail);
-}
 
 console.log('wrote 4 data forward artboards');
