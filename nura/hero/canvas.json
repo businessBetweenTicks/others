@@ -27,6 +27,10 @@
     {
       "id": "page-7",
       "name": "The gift flow — six screens"
+    },
+    {
+      "id": "page-8",
+      "name": "First Week Check — section and page"
     }
   ],
   "artboards": [
@@ -389,6 +393,69 @@
       "w": 740,
       "h": 2780,
       "title": "The flow — chrome, motion and tone"
+    },
+    {
+      "file": "FWC375.dc.html",
+      "page": "page-8",
+      "x": 0,
+      "y": 0,
+      "w": 375,
+      "h": 1035,
+      "title": "Section 8 · 375 phone"
+    },
+    {
+      "file": "FWC768.dc.html",
+      "page": "page-8",
+      "x": 475,
+      "y": 0,
+      "w": 768,
+      "h": 1040,
+      "title": "Section 8 · 768 tablet"
+    },
+    {
+      "file": "FWC1280.dc.html",
+      "page": "page-8",
+      "x": 1343,
+      "y": 0,
+      "w": 1280,
+      "h": 980,
+      "title": "Section 8 · 1280 laptop"
+    },
+    {
+      "file": "FWC1440.dc.html",
+      "page": "page-8",
+      "x": 2723,
+      "y": 0,
+      "w": 1440,
+      "h": 1130,
+      "title": "Section 8 · 1440 wide desktop"
+    },
+    {
+      "file": "FWCPage1440.dc.html",
+      "page": "page-8",
+      "x": 4263,
+      "y": 0,
+      "w": 1440,
+      "h": 3140,
+      "title": "The page · 1440"
+    },
+    {
+      "file": "FWCPage375.dc.html",
+      "page": "page-8",
+      "x": 5803,
+      "y": 0,
+      "w": 375,
+      "h": 3650,
+      "title": "The page · 375"
+    },
+    {
+      "file": "FWCSpec.dc.html",
+      "page": "page-8",
+      "x": 6278,
+      "y": 0,
+      "w": 740,
+      "h": 2190,
+      "title": "First Week Check — what was cut, and the motion"
     }
   ],
   "annotations": [
@@ -599,10 +666,34 @@
       "y": 900,
       "w": 700,
       "text": "The brief asks for phone screens with the tablet and desktop treatment noted, so here is the note made concrete.\n\nDesktop: the counter becomes named steps, because at this width there is room to say where you are instead of counting. Seven-to-four split — the decision left at a 520–560px measure, a sticky summary rail right in Field holding the gift so far, the share link and the action.\n\n768 keeps the named steps but drops the rail, which would squeeze the decision at that width: single column, and the summary collapses to one expandable line above the sticky action.\n\nNo confetti at the end. Somebody's friend has just had a baby and is not sleeping; the tone after payment is relief, not celebration."
+    },
+    {
+      "id": "fw-words",
+      "page": "page-8",
+      "x": 2723,
+      "y": -420,
+      "w": 640,
+      "text": "The brief's motion note is “quiet; let the words carry it,” and that is a licence worth taking literally.\n\nEvery other section on this page argues with a diagram. This one has no diagram, no device, no panel, no accent — a heading, her account in the serif, one message bubble, a link. It is the only purely typographic section on the site, and that contrast is what gives it the real space the brief asks for rather than a footnote. Nothing here needed inventing; it needed room.\n\nThe closing line is the best sentence in all three documents, so it is set largest, alone, above the link."
+    },
+    {
+      "id": "fw-gap",
+      "page": "page-8",
+      "x": 4263,
+      "y": -420,
+      "w": 700,
+      "text": "The page's one piece of design: her four actions in a narrow column beside Nura's eleven in a wide one.\n\nThe columns are deliberately unequal and the short one is allowed to end early, leaving white space where her week would have been. That gap is the product — the same argument the hero makes with “she did none of it,” made once more with evidence.\n\nIn the motion, her four rows arrive first, then a 420ms pause, then Nura's eleven. Her column finishes and visibly waits while the other keeps going. Overlap them and the point is lost."
+    },
+    {
+      "id": "fw-cut",
+      "page": "page-8",
+      "x": 5803,
+      "y": 3720,
+      "w": 700,
+      "text": "Three cuts from the source document, made on the brief's own instruction that nothing about vendors, pricing math, clinical plans or medical records travels beyond the one data forward paragraph.\n\n1. The named county programme and its rollout dates — now “my state has a free nurse who comes to the house in my county.” True, hers, and it commits the client to no coverage map in public.\n2. The weight-loss thresholds, day-14 triggers and the fax protocol. A marketing page that prints thresholds is making a clinical promise in public. The substance survives as one plain paragraph in a quiet panel.\n3. “Why nobody else sells this” — competitor rates ending in “that is the sentence to test in the debut.” A note to the founders, not page copy. Cut entirely, and named here rather than quietly dropped, because it is the passage most likely to be pasted onto a page by mistake.\n\nKept on purpose: “app,” twice, both in her voice and both negations. Naming what Nura is not is the positioning the whole site rests on."
     }
   ],
   "launch": {
     "view": "canvas",
-    "page": "page-7"
+    "page": "page-8"
   }
 }
